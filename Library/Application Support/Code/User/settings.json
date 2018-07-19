@@ -22,8 +22,8 @@
         "tab.inactiveBackground": "#000",
         "tab.hoverBackground": "#1ec50350",
         "tab.border": "#000",
-        "terminal.foreground" : "#00d22b",
-        "terminal.background" : "#000"
+        "terminal.foreground": "#00d22b",
+        "terminal.background": "#000"
     },
     "workbench.iconTheme": "material-icon-theme",
     "workbench.fontAliasing": "auto",
