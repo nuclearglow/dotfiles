@@ -122,5 +122,8 @@
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.enabled": false,
     "gitlens.keymap": "none",
-    "gitlens.historyExplorer.enabled": true
+    "gitlens.historyExplorer.enabled": true,
+    "files.associations": {
+        ".functions": "shellscript"
+    }
 }

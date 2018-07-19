@@ -27,6 +27,17 @@ unset MAILCHECK
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
+### Custom Files ###
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.aliases can be used for aliases
+# * ~/.functions can be used for custom bash scripts
+# * ~/.extras can be used for other settings you don’t want to commit.
+for file in ~/.{exports,aliases,functions,extras}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+
+
 ### SSH ###
 
 # Launch SSH agent if not running
