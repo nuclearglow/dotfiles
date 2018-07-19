@@ -59,6 +59,8 @@ export PATH=$MAVEN_HOME/bin:$PATH
 export PATH=$GRADLE_HOME/bin:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
+# own scripts on path
+export PATH=/Users/vowe/bin:$PATH
 
 ### GIT ###
 GIT_SSH="/usr/bin/ssh"
