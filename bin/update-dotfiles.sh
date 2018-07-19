@@ -1,5 +1,8 @@
 # update installer scripts
 ~/bin/save-code-extensions.sh
+# Homebrew
+brew bundle dump --global -f
+cp ~/Brewfile ~/workspace/dotfiles
 # ~/bin folder
 cp ~/bin/*.sh ~/workspace/dotfiles/bin
 cp -R ~/bin/git-aware-prompt ~/workspace/dotfiles/bin/
@@ -14,3 +17,4 @@ cp ~/.bash_profile ~/workspace/dotfiles
 cp ~/.gitignore_global ~/workspace/dotfiles
 cp ~/.gitk ~/workspace/dotfiles
 cp ~/.nvmrc ~/workspace/dotfiles
+cp ~/.wgetrc ~/workspace/dotfiles
