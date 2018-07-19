@@ -9,6 +9,7 @@ cp -R ~/iterm-settings ~/workspace/dotfiles
 cp ~/Library/Application\ Support/Code/User/*.json ~/workspace/dotfiles/Library/Application\ Support/Code/User/
 cp -R ~/Library/Application\ Support/Code/User/snippets ~/workspace/dotfiles/Library/Application\ Support/Code/User/
 # dotfiles
+cp ~/.macos ~/workspace/dotfiles
 cp ~/.bash_profile ~/workspace/dotfiles
 cp ~/.gitignore_global ~/workspace/dotfiles
 cp ~/.gitk ~/workspace/dotfiles
