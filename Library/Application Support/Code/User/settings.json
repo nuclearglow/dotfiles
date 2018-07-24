@@ -126,5 +126,6 @@
     "files.associations": {
         ".functions": "shellscript",
         ".exports": "shellscript"
-    }
+    },
+    "jest.showCoverageOnLoad": true
 }

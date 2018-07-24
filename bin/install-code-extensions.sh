@@ -4,7 +4,6 @@ code --install-extension alexdima.copy-relative-path
 code --install-extension christian-kohler.path-intellisense
 code --install-extension CoenraadS.bracket-pair-colorizer
 code --install-extension cssho.vscode-svgviewer
-code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
 code --install-extension EditorConfig.EditorConfig
@@ -19,6 +18,7 @@ code --install-extension ms-python.python
 code --install-extension ms-vscode.atom-keybindings
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension Orta.vscode-jest
 code --install-extension PKief.material-icon-theme
 code --install-extension rbbit.typescript-hero
 code --install-extension robertohuertasm.vscode-icons
