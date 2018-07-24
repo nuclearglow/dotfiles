@@ -14,11 +14,9 @@ cp -R ~/Library/Application\ Support/Code/User/snippets ~/workspace/dotfiles/Lib
 # dotfiles
 cp ~/.macos ~/workspace/dotfiles
 cp ~/.bash_profile ~/workspace/dotfiles
-cp ~/.gitignore_global ~/workspace/dotfiles
+cp ~/.gitignore ~/workspace/dotfiles
 cp ~/.gitk ~/workspace/dotfiles
 cp ~/.nvmrc ~/workspace/dotfiles
 cp ~/.wgetrc ~/workspace/dotfiles
 cp ~/.aliases ~/workspace/dotfiles
 cp ~/.functions ~/workspace/dotfiles
-cp ~/.paths ~/workspace/dotfiles
-cp ~/.extras ~/workspace/dotfiles

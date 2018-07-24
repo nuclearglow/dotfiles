@@ -124,6 +124,7 @@
     "gitlens.keymap": "none",
     "gitlens.historyExplorer.enabled": true,
     "files.associations": {
-        ".functions": "shellscript"
+        ".functions": "shellscript",
+        ".exports": "shellscript"
     }
 }
