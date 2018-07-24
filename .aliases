@@ -21,6 +21,9 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
 
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
 # git|k force EN alias
 alias git='LANG=en_US.UTF-8 git'
 alias gitk='LANG=en_US.UTF-8 gitk'

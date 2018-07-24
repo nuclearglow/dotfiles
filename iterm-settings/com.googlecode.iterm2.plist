@@ -601,9 +601,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 589 620 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>429 667 796 473 0 0 1920 1178 </string>
+	<string>429 711 770 429 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 20 1676 1007 0 0 1920 1178 </string>
+	<string>144 68 1676 1007 0 0 1920 1178 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2211,7 +2211,7 @@
 	<key>PrefsCustomFolder</key>
 	<string>/Users/vowe/iterm-settings</string>
 	<key>PromptOnQuit</key>
-	<true/>
+	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>RightCommand</key>
@@ -2227,7 +2227,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-19T12:13:15Z</date>
+	<date>2018-07-24T08:48:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
