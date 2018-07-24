@@ -53,24 +53,15 @@ export SSH_AUTH_SOCK=${HOME}/.ssh/ssh_auth_sock;
 
 ### GIT ###
 GIT_SSH="/usr/bin/ssh"
-# git|k force EN alias
-alias git='LANG=en_US.UTF-8 git'
-alias gitk='LANG=en_US.UTF-8 gitk'
 
 # Git aware prompt
 export GITAWAREPROMPT=${HOME}/bin/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 
 ### PS1 ###
-
-# nuke PS1
 export PS1="\[\e[0;31m\]\u\[\e[0m\]@\[\e[1;33m\]\h\[\e[0m\] \[\e[1;37m\]\w\[\e[0m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] \\[\033[0;31m\]>\[\e[0m\] "
 export SUDO_PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] \[\e[1;37m\]☢\[\e[0m\] "
-
-# nuke colors
 export CLICOLOR=1
-export LSCOLORS="gxBxhxDxfxhxhxhxhxcxcx"
-export GREP_OPTIONS='--color=auto'
 
 ### NVM  uses ~/.nvmrc ###
 export NVM_DIR=$HOME/.nvm
@@ -88,4 +79,3 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall;
-
