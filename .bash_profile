@@ -3,85 +3,62 @@
 # arch
 export ARCHFLAGS="-arch x86_64"
 
-### BASH-IT ###
-
 # standard editor
 export EDITOR=vim
-
-# Path to the bash it configuration
-export BASH_IT="/Users/vowe/.bash_it"
-
-# Lock and Load a custom theme file
-# location /.bash_it/themes/
-#export BASH_IT_THEME='bobby'
-
-# Your place for hosting Git repos. I use this for private repos.
-#export GIT_HOSTING='git@git.domain.com'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-# Set this to the command you use for todo.txt-cli
-#export TODO="t"
-
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
-### Custom Files ###
+### Bash It
+export BASH_IT=~/.bash_it
+source $BASH_IT/bash_it.sh
+
+### shopts ###
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend;
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell;
+
+### Custom Dotfiles ###
 
 # Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
+# * ~/.exports can be used to extend `$PATH`.
 # * ~/.aliases can be used for aliases
 # * ~/.functions can be used for custom bash scripts
 # * ~/.extras can be used for other settings you don’t want to commit.
 for file in ~/.{exports,aliases,functions,extras}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 ### SSH ###
-
 # Launch SSH agent if not running
 if ! ps aux |grep $(whoami) |grep ssh-agent |grep -v grep >/dev/null; then ssh-agent ; fi
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock;
 fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock;
+export SSH_AUTH_SOCK=${HOME}/.ssh/ssh_auth_sock;
 
-# Load Bash It
-source $BASH_IT/bash_it.sh
 
-### SYSTEM PATHS ###
-
-# J2EE, Java, Android
-export ANT_HOME=/usr/local/opt/ant
-export MAVEN_HOME=/usr/local/opt/maven
-export GRADLE_HOME=/usr/local/opt/gradle
-export ANDROID_HOME=/usr/local/share/android-sdk
-export INTEL_HAXM_HOME=/usr/local/Caskroom/intel-haxm
-
-# $PATH
-export PATH=${PATH}:/Users/vowe/Applications
-# Use homebrew packages first
-export PATH=/usr/local/bin:${PATH}
-# tools on path
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
-export PATH=$ANT_HOME/bin:$PATH
-export PATH=$MAVEN_HOME/bin:$PATH
-export PATH=$GRADLE_HOME/bin:$PATH
-export PATH=$ANDROID_HOME/tools:$PATH
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-# own scripts on path
-export PATH=/Users/vowe/bin:$PATH
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
 ### GIT ###
 GIT_SSH="/usr/bin/ssh"
-
-# Git|k force EN alias
+# git|k force EN alias
 alias git='LANG=en_US.UTF-8 git'
 alias gitk='LANG=en_US.UTF-8 gitk'
 
 # Git aware prompt
-export GITAWAREPROMPT=~/bin/git-aware-prompt
+export GITAWAREPROMPT=${HOME}/bin/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 
 ### PS1 ###
@@ -95,19 +72,20 @@ export CLICOLOR=1
 export LSCOLORS="gxBxhxDxfxhxhxhxhxcxcx"
 export GREP_OPTIONS='--color=auto'
 
-### DEV PROJECT PATHS ###
-export WORKSPACE=/Users/vowe/workspace
-export VV=$WORKSPACE/vv
-export CLOUDLESS=$WORKSPACE/cloudless
-
-### NVM to set NodeJS ###
-export NVM_DIR="$HOME/.nvm"
+### NVM  uses ~/.nvmrc ###
+export NVM_DIR=$HOME/.nvm
 . "/usr/local/opt/nvm/nvm.sh"
 npm config delete prefix && nvm use
 
-### Python Machine Learning Setup
-export ML="/Users/vowe/workspace/ml"
-# added by Miniconda3 installer
-export PATH="/Users/vowe/.miniconda3/bin:$PATH"
-# conda autocomplete
+### Auto Completions ###
+
+### Miniconda ###
 eval "$(register-python-argcomplete conda)"
+
+# Add tab completion for `defaults read|write NSGlobalDomain`
+# You could just use `-g` instead, but I like being explicit
+complete -W "NSGlobalDomain" defaults;
+
+# Add `killall` tab completion for common apps
+complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal" killall;
+
