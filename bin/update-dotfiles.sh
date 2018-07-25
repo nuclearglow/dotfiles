@@ -17,6 +17,7 @@ cp ~/.bash_profile ~/workspace/dotfiles
 cp ~/.gitignore ~/workspace/dotfiles
 cp ~/.gitk ~/workspace/dotfiles
 cp ~/.nvmrc ~/workspace/dotfiles
+cp ~/.vimrc ~/workspace/dotfiles
 cp ~/.wgetrc ~/workspace/dotfiles
 cp ~/.aliases ~/workspace/dotfiles
 cp ~/.functions ~/workspace/dotfiles

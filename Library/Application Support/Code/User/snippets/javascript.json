@@ -21,13 +21,8 @@
 	},
 	"snippet-log": {
 		"prefix": "log",
-		"body": "console.log('$1', $1);$2",
+		"body": "console.log({$1});\n$2",
 		"description": "Console log"
-	},
-	"snippet-simple-log": {
-		"prefix": "log",
-		"body": "console.log('$1');$2",
-		"description": "Simple Console log"
 	},
 	"snippet-it": {
 		"prefix": "it",
