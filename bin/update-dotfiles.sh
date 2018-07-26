@@ -21,3 +21,4 @@ cp ~/.vimrc ~/workspace/dotfiles
 cp ~/.wgetrc ~/workspace/dotfiles
 cp ~/.aliases ~/workspace/dotfiles
 cp ~/.functions ~/workspace/dotfiles
+
