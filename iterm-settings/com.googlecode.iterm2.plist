@@ -597,13 +597,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>-824 195 445 103 -1680 0 1680 1027 </string>
+	<string>-824 -227 445 77 -1680 -314 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 589 620 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>429 667 796 473 0 0 1920 1178 </string>
+	<string>-1343 193 918 492 -1680 -314 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>144 68 1676 1007 0 0 1920 1178 </string>
+	<string>-1680 -314 1680 1028 -1680 -314 1680 1028 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1252,7 +1252,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 12</string>
+			<string>Monaco 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2227,7 +2227,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-24T08:48:30Z</date>
+	<date>2018-07-25T08:48:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

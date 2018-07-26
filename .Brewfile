@@ -1,3 +1,4 @@
+tap "buo/cask-upgrade"
 tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/cask"
