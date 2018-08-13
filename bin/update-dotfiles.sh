@@ -12,6 +12,8 @@ cp -R ~/iterm-settings ~/workspace/dotfiles
 # vscode
 cp ~/Library/Application\ Support/Code/User/*.json ~/workspace/dotfiles/Library/Application\ Support/Code/User/
 cp -R ~/Library/Application\ Support/Code/User/snippets ~/workspace/dotfiles/Library/Application\ Support/Code/User/
+code --list-extensions | xargs -L 1 echo code --install-extension > .vscode-extensions
+cp ~/.vscode-extensions ~/workspace/dotfiles
 # dotfiles
 cp ~/.macos ~/workspace/dotfiles
 cp ~/.bash_profile ~/workspace/dotfiles
