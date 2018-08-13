@@ -6,7 +6,7 @@ cp ~/.Brewfile ~/workspace/dotfiles
 # ~/bin folder
 cp ~/bin/*.sh ~/workspace/dotfiles/bin
 cp -R ~/.bash_it ~/workspace/dotfiles/
-cp -R ~/bin/git-aware-prompt ~/workspace/dotfiles/bin/
+cp -R ~/bin/git-aware-prompt ~/workspace/dotfiles/bin
 zip -r ~/workspace/dotfiles/bin/OpeniTermTab.app.zip ~/bin/OpeniTermTab.app
 cp -R ~/iterm-settings ~/workspace/dotfiles
 # vscode
