@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# UTF-8
+export LC_ALL=de_DE.UTF-8
+export LANG=de_DE.UTF-8
+
 # arch
 export ARCHFLAGS="-arch x86_64"
 
@@ -12,10 +16,6 @@ unset MAILCHECK
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
-### Bash It
-export BASH_IT=~/.bash_it
-source $BASH_IT/bash_it.sh
-
 ### shopts ###
 
 # Case-insensitive globbing (used in pathname expansion)
@@ -26,6 +26,13 @@ shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
+
+# Globstar support (bash 4.x)
+shopt -s globstar;
+
+### Bash It
+export BASH_IT=~/.bash_it
+source $BASH_IT/bash_it.sh
 
 ### Custom Dotfiles ###
 
@@ -68,11 +75,10 @@ export NVM_DIR=$HOME/.nvm
 . "/usr/local/opt/nvm/nvm.sh"
 npm config delete prefix && nvm use
 
-### Auto Completions ###
-
 ### Miniconda ###
-eval "$(register-python-argcomplete conda)"
+#eval "$(register-python-argcomplete conda)"
 
+### OS X ###
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
