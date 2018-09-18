@@ -30,6 +30,7 @@
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.showIcons": true,
+    "workbench.editor.closeOnFileDelete": false,
     "problems.decorations.enabled": true,
     "explorer.openEditors.visible": 0,
     "explorer.autoReveal": true,
@@ -85,6 +86,27 @@
     "scss.validate": false,
     "less.validate": false,
     "stylelint.enable": true,
+    "html.format.enable": true,
+    "html.autoClosingTags": true,
+    "html.format.contentUnformatted": "pre,code,textarea",
+    "html.format.endWithNewline": false,
+    "html.format.extraLiners": "head, body, /html",
+    "html.format.indentHandlebars": false,
+    "html.format.indentInnerHtml": false,
+    "html.format.maxPreserveNewLines": null,
+    "html.format.preserveNewLines": true,
+    "html.format.unformatted": "wbr",
+    "html.format.wrapAttributes": "auto",
+    "html.format.wrapLineLength": 0,
+    "html.suggest.angular1": false,
+    "html.suggest.html5": true,
+    "html.suggest.ionic": false,
+    "html.trace.server": "off",
+    "html.validate.scripts": true,
+    "html.validate.styles": true,
+    "css.lint.idSelector": "ignore",
+    "less.lint.idSelector": "ignore",
+    "scss.lint.idSelector": "ignore",
     "bracketPairColorizer.consecutivePairColors": [
         "()",
         "[]",
@@ -125,7 +147,8 @@
     "gitlens.historyExplorer.enabled": true,
     "files.associations": {
         ".functions": "shellscript",
-        ".exports": "shellscript"
+        ".exports": "shellscript",
+        ".aliases": "shellscript"
     },
     "jest.showCoverageOnLoad": true
 }
