@@ -1,5 +1,6 @@
 # update installer scripts
 ~/bin/save-code-extensions.sh
+cp ~/bin/install-code-extensions.sh ~/workspace/dotfiles/.vscode-extensions
 # Homebrew
 cd && brew bundle dump --global --force
 cp ~/.Brewfile ~/workspace/dotfiles
@@ -7,7 +8,7 @@ cp ~/.Brewfile ~/workspace/dotfiles
 cp ~/bin/*.sh ~/workspace/dotfiles/bin
 cp -R ~/.bash_it ~/workspace/dotfiles/
 cp -R ~/bin/git-aware-prompt ~/workspace/dotfiles/bin/
-zip -r ~/workspace/dotfiles/bin/OpeniTermTab.app.zip ~/bin/OpeniTermTab.app
+zip -rq ~/workspace/dotfiles/bin/OpeniTermTab.app.zip ~/bin/OpeniTermTab.app
 cp -R ~/iterm-settings ~/workspace/dotfiles
 # vscode
 cp ~/Library/Application\ Support/Code/User/*.json ~/workspace/dotfiles/Library/Application\ Support/Code/User/

@@ -1,0 +1,10 @@
+{
+    "$schema": "https://raw.githubusercontent.com/silverbulleters/sonarqube-inject-vsc/master/schemas/global.json",
+    "servers": [
+        {
+            "id": "vv-sonar",
+            "url": "https://",
+            "token": ""
+        }
+    ]
+}

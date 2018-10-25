@@ -43,5 +43,15 @@
 		"prefix": "deb",
 		"body": "debugger;",
 		"description": "debugger"
+	},
+	"snippet-tslint-disable": {
+		"prefix": "tslint",
+		"body": "/* tslint:disable:$1 */",
+		"description": "tslint diable rule"
+	},
+	"snippet-tslint-disable-one-line": {
+		"prefix": "tslint",
+		"body": "/* tslint:disable-next-line:$1 */",
+		"description": "tslint diable rule on next line"
 	}
 }

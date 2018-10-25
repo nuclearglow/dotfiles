@@ -191,5 +191,13 @@
     {
         "key": "shift+cmd+r",
         "command": "python.execInTerminal"
+    },
+    {
+        "key": "cmd+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "cmd+t",
+        "command": "workbench.action.terminal.focus"
     }
 ]

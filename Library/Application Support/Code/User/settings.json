@@ -150,5 +150,9 @@
         ".exports": "shellscript",
         ".aliases": "shellscript"
     },
-    "jest.showCoverageOnLoad": true
+    "jest.showCoverageOnLoad": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescriptHero.imports.disableImportsSorting": false,
+    "typescriptHero.imports.disableImportRemovalOnOrganize": true,
+    "javascript.updateImportsOnFileMove.enabled": "always"
 }
