@@ -33,5 +33,9 @@ export PATH="$ANDROID_HOME/build-tools/$(ls -tr $ANDROID_HOME/build-tools/ | tai
 # Fastlane
 export PATH="${HOME}/.fastlane/bin:$PATH"
 
+# Go
+export GOPATH="${HOME}/.go"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
 ### development ###
 export VV="${HOME}/workspace/vv"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Mac OS X shell start
+# Mac OS X shell startup
 
 # UTF-8
 export LC_ALL=en_US.UTF-8
@@ -18,7 +18,14 @@ unset MAILCHECK
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
+### Bash It
+export BASH_IT=~/.bash_it
+source $BASH_IT/bash_it.sh
+
 ### shopts ###
+
+# Globstar support (bash 4.x)
+shopt -s globstar;
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -28,13 +35,6 @@ shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
-
-# Globstar support (bash 4.x)
-shopt -s globstar;
-
-### Bash It
-export BASH_IT=~/.bash_it
-source $BASH_IT/bash_it.sh
 
 ### Custom Dotfiles ###
 
@@ -63,24 +63,34 @@ export SSH_AUTH_SOCK=${HOME}/.ssh/ssh_auth_sock;
 ### GIT ###
 GIT_SSH="/usr/bin/ssh"
 
-# Git aware prompt
-export GITAWAREPROMPT=${HOME}/bin/git-aware-prompt
-source $GITAWAREPROMPT/main.sh
+# Git aware prompt - replaced by powerline-go
+#export GITAWAREPROMPT=${HOME}/bin/git-aware-prompt
+#source $GITAWAREPROMPT/main.sh
 
-### PS1 ###
-export PS1="\[\e[0;31m\]\u\[\e[0m\]@\[\e[1;33m\]\h\[\e[0m\] \[\e[1;37m\]\w\[\e[0m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] \\[\033[0;31m\]>\[\e[0m\] "
-export SUDO_PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] \[\e[1;37m\]☢\[\e[0m\] "
+### custom PS1 ### - replaced by powerline-go
+# export PS1="\[\e[0;31m\]\u\[\e[0m\]@\[\e[1;33m\]\h\[\e[0m\] \[\e[1;37m\]\w\[\e[0m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] \\[\033[0;31m\]>\[\e[0m\] "
+# export SUDO_PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] \[\e[1;37m\]☢\[\e[0m\] "
 export CLICOLOR=1
 
-### NVM  uses ~/.nvmrc ###
+### PS1: Powerline-go ###
+function _update_ps1() {
+    PS1="$($HOME/bin/powerline-go -error $?)"
+}
+
+if [ "$TERM" != "linux" ] && [ -f "$HOME/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
+### NVM uses ~/.nvmrc ###
 export NVM_DIR=$HOME/.nvm
 . "/usr/local/opt/nvm/nvm.sh"
 npm config delete prefix && nvm use
 
-### Miniconda ###
-#eval "$(register-python-argcomplete conda)"
+### Auto Completions ###
 
-### OS X ###
+### Miniconda ###
+eval "$(register-python-argcomplete conda)"
+
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;

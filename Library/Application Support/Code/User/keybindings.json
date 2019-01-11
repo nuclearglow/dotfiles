@@ -193,11 +193,15 @@
         "command": "python.execInTerminal"
     },
     {
-        "key": "cmd+t",
-        "command": "-workbench.action.showAllSymbols"
+        "key": "shift+cmd+t",
+        "command": "-workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "-workbench.action.terminal.toggleTerminal"
     },
     {
         "key": "cmd+t",
-        "command": "workbench.action.terminal.focus"
+        "command": "-workbench.action.showAllSymbols"
     }
 ]
