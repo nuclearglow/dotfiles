@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# The standard shell configuration for Mac OS X
+
 # arch
 export ARCHFLAGS="-arch x86_64"
 
