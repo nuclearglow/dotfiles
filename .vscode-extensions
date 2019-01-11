@@ -7,6 +7,7 @@ code --install-extension cssho.vscode-svgviewer
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
 code --install-extension EditorConfig.EditorConfig
+code --install-extension eg2.tslint
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension humao.rest-client
 code --install-extension James-Yu.latex-workshop
@@ -19,11 +20,14 @@ code --install-extension ms-vscode.atom-keybindings
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension Orta.vscode-jest
+code --install-extension PeterJausovec.vscode-docker
 code --install-extension PKief.material-icon-theme
+code --install-extension pnp.polacode
 code --install-extension rbbit.typescript-hero
 code --install-extension robertohuertasm.vscode-icons
 code --install-extension ryu1kn.partial-diff
 code --install-extension shinnn.stylelint
+code --install-extension silverbulleters.sonarqube-inject
 code --install-extension sleistner.vscode-fileutils
 code --install-extension victormejia.one-monokai-darker
 code --install-extension vthiery.prettify-selected-json

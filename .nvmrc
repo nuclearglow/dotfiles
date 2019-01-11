@@ -1,3 +1,4 @@
-node
+stable
+#lts/carbon
 #v10.7.0
-# lts/carbon
+#lts/carbon

@@ -1,0 +1,67 @@
+{
+    "plugins": [
+        "stylelint-declaration-use-variable",
+        "stylelint-scss"
+    ],
+    "rules": {
+        "scss/at-import-no-partial-leading-underscore": true,
+        "scss/selector-no-redundant-nesting-selector": true,
+        "sh-waqar/declaration-use-variable": [
+            ["/color/", {
+                "ignoreValues": [
+                    "transparent",
+                    "inherit",
+                    "/transparent/",
+                    "/rgba/"
+                ]
+            }]
+        ],
+        "declaration-bang-space-before": "always",
+        "declaration-bang-space-after": "never",
+        "declaration-property-value-blacklist": {
+            "/^border-\\w+$/": ["none"]
+        },
+        "color-named": "never",
+        "declaration-block-no-duplicate-properties": [ true, {
+            "ignoreProperties": [
+                "/background/",
+                "/border/",
+                "/transform/"
+            ]
+        }],
+        "block-no-empty": true,
+        "no-missing-end-of-source-newline": true,
+        "color-hex-length": "short",
+        "color-hex-case": "lower",
+        "color-no-invalid-hex": true,
+        "indentation": null,
+        "selector-max-id": 0,
+        "no-duplicate-selectors": true,
+        "max-nesting-depth": 6,
+        "property-no-unknown": true,
+        "unit-whitelist": [
+            "ch", "em", "ex", "rem",
+            "cm", "in", "mm", "pc", "pt", "px", "q",
+            "vh", "vw", "vmin", "vmax",
+            "deg", "grad", "rad", "turn",
+            "ms", "s",
+            "Hz", "kHz",
+            "dpi", "dpcm", "dppx",
+            "%"
+        ],
+        "selector-no-qualifying-type": [true, {
+            "ignore": ["attribute", "class", "id"]
+        }],
+        "shorthand-property-no-redundant-values": null,
+        "at-rule-semicolon-newline-after": "always",
+        "selector-list-comma-newline-after": null,
+        "function-comma-space-after": "always",
+        "declaration-colon-space-after": "always",
+        "declaration-block-trailing-semicolon": "always",
+        "no-eol-whitespace": true,
+        "number-no-trailing-zeros": null,
+        "block-opening-brace-newline-after": "always",
+        "selector-class-pattern": "^[a-z0-9\\-]+$",
+        "declaration-no-important": true
+    }
+}
