@@ -25,7 +25,7 @@ source $BASH_IT/bash_it.sh
 ### shopts ###
 
 # Globstar support (bash 4.x)
-shopt -s globstar;
+#shopt -s globstar;
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -74,7 +74,7 @@ export CLICOLOR=1
 
 ### PS1: Powerline-go ###
 function _update_ps1() {
-    PS1="$($HOME/bin/powerline-go -error $?)"
+    PS1="$($HOME/bin/powerline-go -theme $HOME/.nuky.powerline.theme.json -modules venv,user,host,ssh,cwd,perms,git,jobs,exit,root,docker -numeric-exit-codes -error $?)"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$HOME/bin/powerline-go" ]; then
