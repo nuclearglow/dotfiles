@@ -5,13 +5,23 @@ TODO: reorganize management between mac-os-x and linux
 
 TODO:
 Mac Keyboard Settings
-http://www.unixfu.ch/apple-tastatur-mit-ubuntu-linux-verwenden/
+German Macintosh No Dead keys verwenden
+Tweaks: 
+Misc compat options: 
+	Apple Aluminium: Emulate PC keys
+Keys to choose 3rd level:
+	Right Alt
+Swap < and ^:
+	echo 0 | sudo tee /sys/module/hid_apple/parameters/iso_layout
+	und permanently:
+	echo options hid_apple iso_layout=0 | sudo tee -a /etc/modprobe.d/hid_apple.conf
 
 sudo apt-get install console-data
 sudo apt-get install console-setup
 sudo apt-get install console-locales
 sudo apt-get install keyboard-configuration
 sudo dpkg-reconfigure keyboard-configuration
+
 
 General Infos
 https://wiki-ubuntuusers.de
