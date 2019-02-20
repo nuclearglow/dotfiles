@@ -1,20 +1,23 @@
 {
-    "plugins": [
-        "stylelint-declaration-use-variable",
-        "stylelint-scss"
-    ],
+    "extends": ["stylelint-config-recommended", "./node_modules/prettier-stylelint/config.js"],
+    "plugins": ["stylelint-declaration-use-variable", "stylelint-scss"],
     "rules": {
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": ["include", "mixin"]
+            }
+        ],
+        "string-quotes": "single",
         "scss/at-import-no-partial-leading-underscore": true,
         "scss/selector-no-redundant-nesting-selector": true,
         "sh-waqar/declaration-use-variable": [
-            ["/color/", {
-                "ignoreValues": [
-                    "transparent",
-                    "inherit",
-                    "/transparent/",
-                    "/rgba/"
-                ]
-            }]
+            [
+                "/color/",
+                {
+                    "ignoreValues": ["transparent", "inherit", "/transparent/", "/rgba/"]
+                }
+            ]
         ],
         "declaration-bang-space-before": "always",
         "declaration-bang-space-after": "never",
@@ -22,17 +25,16 @@
             "/^border-\\w+$/": ["none"]
         },
         "color-named": "never",
-        "declaration-block-no-duplicate-properties": [ true, {
-            "ignoreProperties": [
-                "/background/",
-                "/border/",
-                "/transform/"
-            ]
-        }],
-        "block-no-empty": true,
+        "declaration-block-no-duplicate-properties": [
+            true,
+            {
+                "ignoreProperties": ["/background/", "/border/", "/transform/"]
+            }
+        ],
+        "no-descending-specificity": null,
+        "block-no-empty": null,
+        "no-empty-source": null,
         "no-missing-end-of-source-newline": true,
-        "color-hex-length": "short",
-        "color-hex-case": "lower",
         "color-no-invalid-hex": true,
         "indentation": null,
         "selector-max-id": 0,
@@ -40,18 +42,40 @@
         "max-nesting-depth": 6,
         "property-no-unknown": true,
         "unit-whitelist": [
-            "ch", "em", "ex", "rem",
-            "cm", "in", "mm", "pc", "pt", "px", "q",
-            "vh", "vw", "vmin", "vmax",
-            "deg", "grad", "rad", "turn",
-            "ms", "s",
-            "Hz", "kHz",
-            "dpi", "dpcm", "dppx",
+            "ch",
+            "em",
+            "ex",
+            "rem",
+            "cm",
+            "in",
+            "mm",
+            "pc",
+            "pt",
+            "px",
+            "q",
+            "vh",
+            "vw",
+            "vmin",
+            "vmax",
+            "deg",
+            "grad",
+            "rad",
+            "turn",
+            "ms",
+            "s",
+            "Hz",
+            "kHz",
+            "dpi",
+            "dpcm",
+            "dppx",
             "%"
         ],
-        "selector-no-qualifying-type": [true, {
-            "ignore": ["attribute", "class", "id"]
-        }],
+        "selector-no-qualifying-type": [
+            true,
+            {
+                "ignore": ["attribute", "class", "id"]
+            }
+        ],
         "shorthand-property-no-redundant-values": null,
         "at-rule-semicolon-newline-after": "always",
         "selector-list-comma-newline-after": null,
@@ -61,7 +85,6 @@
         "no-eol-whitespace": true,
         "number-no-trailing-zeros": null,
         "block-opening-brace-newline-after": "always",
-        "selector-class-pattern": "^[a-z0-9\\-]+$",
         "declaration-no-important": true
     }
 }

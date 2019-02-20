@@ -1,0 +1,5 @@
+.vscode
+angular.json
+node_modules
+package.json
+*.md
