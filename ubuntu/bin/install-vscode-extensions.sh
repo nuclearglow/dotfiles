@@ -26,3 +26,6 @@ code --install-extension shinnn.stylelint
 code --install-extension sleistner.vscode-fileutils
 code --install-extension victormejia.one-monokai-darker
 code --install-extension vthiery.prettify-selected-json
+code --install-extension MS-vsliveshare.vsliveshare-audio
+code --install-extension infinity1207.angular2-switcher
+

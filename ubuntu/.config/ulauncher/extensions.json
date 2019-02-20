@@ -1,0 +1,37 @@
+{
+    "com.github.brpaz.ulauncher-decode": {
+        "url": "https://github.com/brpaz/ulauncher-decode", 
+        "last_commit_time": "2018-09-20T18:50:39Z", 
+        "id": "com.github.brpaz.ulauncher-decode", 
+        "updated_at": "2019-01-22T15:13:56.741216", 
+        "last_commit": "94c6eee64e7de8913c5251e6c50739265a32923a"
+    }, 
+    "com.github.brpaz.ulauncher-encode": {
+        "url": "https://github.com/brpaz/ulauncher-encode", 
+        "last_commit_time": "2018-09-20T18:50:48Z", 
+        "id": "com.github.brpaz.ulauncher-encode", 
+        "updated_at": "2019-01-22T15:14:19.053727", 
+        "last_commit": "6b0cb0932dc2cdc23e76f2ea83ba186dc7290c01"
+    }, 
+    "com.github.friday.ulauncher-clipboard": {
+        "url": "https://github.com/friday/ulauncher-clipboard", 
+        "last_commit_time": "2019-01-13T17:20:29Z", 
+        "id": "com.github.friday.ulauncher-clipboard", 
+        "updated_at": "2019-01-22T15:11:46.369158", 
+        "last_commit": "9a5d502230fb1f479d353c1da442078fc5337b04"
+    }, 
+    "com.github.brpaz.ulauncher-cheats": {
+        "url": "https://github.com/brpaz/ulauncher-cheats", 
+        "last_commit_time": "2018-10-21T13:45:07Z", 
+        "last_commit": "e804b6be47b128ebbcee247908c83c5658fba8a7", 
+        "id": "com.github.brpaz.ulauncher-cheats", 
+        "updated_at": "2019-02-06T22:49:01.638643"
+    }, 
+    "com.github.friday.ulauncher-gnome-settings": {
+        "url": "https://github.com/friday/ulauncher-gnome-settings", 
+        "last_commit_time": "2018-12-05T22:57:42Z", 
+        "id": "com.github.friday.ulauncher-gnome-settings", 
+        "updated_at": "2019-01-22T15:12:41.584537", 
+        "last_commit": "b207981cb3abf863abe4e9b21c90d4d004fcacff"
+    }
+}
