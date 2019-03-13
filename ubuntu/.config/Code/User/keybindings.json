@@ -11,11 +11,6 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "meta+[IntlBackslash]",
-        "command": "workbench.action.focusSideBar"
-    },
-    // open file from File Explorer
-    {
         "key": "enter",
         "command": "list.select",
         "when": "explorerViewletVisible && filesExplorerFocus"
@@ -226,5 +221,12 @@
         "command": "-cursorBottom",
         "when": "textInputFocus"
     },
-
+    {
+        "key": "f19",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "meta+[IntlBackslash]",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    }
 ]
