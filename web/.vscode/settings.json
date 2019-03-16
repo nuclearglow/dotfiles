@@ -1,0 +1,26 @@
+{
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "files.exclude": {
+        "e2e/.tmp": true
+    },
+    "prettier.tslintIntegration": true,
+	"prettier.stylelintIntegration": true,
+	"prettier.tabWidth": 4,
+	"editor.formatOnSave": true,
+	"editor.insertSpaces": true,
+	"editor.formatOnPaste": false,
+	"editor.formatOnType": false,
+	"typescript.preferences.quoteStyle": "single",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.format.enable": false,
+	"window.zoomLevel": 0,
+	"jest.debugMode": true,
+    "jest.pathToJest": "npm test --",
+    "jest.rootPath": "src",
+    "jest.enableCodeLens": false,
+    "jest.showCoverageOnLoad": false,
+}

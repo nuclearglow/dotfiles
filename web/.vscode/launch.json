@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Set a breakpoint in any *.spec.ts file, launch this Debug Configuration to debug the test in VS Code
+            "name": "Debug Jest Test",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "${workspaceRoot}/node_modules/jest/bin/jest",
+                "--runInBand",
+                "--rootDir=${workspaceRoot}",
+                "--config=${workspaceRoot}/src/jest.config.js",
+              ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+        }
+    ]
+}
