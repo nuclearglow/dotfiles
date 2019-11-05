@@ -1,9 +1,21 @@
 {
+    "$schema": "http://json.schemastore.org/prettierrc",
     "singleQuote": true,
     "printWidth": 160,
     "useTabs": false,
     "semi": true,
     "trailingComma": "none",
     "bracketSpacing": true,
-    "arrowParens": "always"
+    "arrowParens": "always",
+    "proseWrap": "preserve",
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "css",
+    "overrides": [
+        {
+            "files": "package*.json",
+            "options": {
+                "printWidth": 1000
+            }
+        }
+    ]
 }

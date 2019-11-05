@@ -91,7 +91,6 @@
     "scss.validate": false,
     "less.validate": false,
     "stylelint.enable": true,
-    "prettier.eslintIntegration": true,
     "bracketPairColorizer.consecutivePairColors": [
         "()",
         "[]",

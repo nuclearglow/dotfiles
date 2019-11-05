@@ -31,3 +31,4 @@ code --install-extension shinnn.stylelint
 code --install-extension sleistner.vscode-fileutils
 code --install-extension victormejia.one-monokai-darker
 code --install-extension vthiery.prettify-selected-json
+code --install-extension aaron-bond.better-comments

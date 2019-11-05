@@ -109,9 +109,11 @@ if ! shopt -oq posix; then
 fi
 
 ### nvm ###
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+### nvm ###
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$HOME/.nvmrc" ] && nvm use # This enables the standard node environment from ~/.nvmrc
 
 ### Load Bash It ###
 source "$BASH_IT"/bash_it.sh
