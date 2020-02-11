@@ -23,6 +23,7 @@
         ],
         "declaration-bang-space-before": "always",
         "declaration-bang-space-after": "never",
+        "function-calc-no-invalid": null,
         "declaration-property-value-blacklist": {
             "/^border-\\w+$/": ["none"]
         },

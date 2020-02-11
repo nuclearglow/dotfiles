@@ -40,4 +40,4 @@ alias map="xargs -n1"
 alias path='echo -e ${PATH//:/\\n}'
 
 # Chrome with disabled web security
-alias chrome-cors='google-chrome --disable-web-security --user-data-dir=""'
+alias chrome-cors='google-chrome --disable-web-security --user-data-dir="${HOME}/tmp"'
