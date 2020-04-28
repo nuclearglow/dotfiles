@@ -1,13 +1,7 @@
 # dotfiles
-TODO: Create base files, copy here
-TODO: Organize between mac-os-x and ubuntu in different folders
-TODO: reorganize management between mac-os-x and linux
 
-TODO:
-Mac Keyboard Settings
-German Macintosh No Dead keys verwenden
-Tweaks: 
-Misc compat options: 
+Tweaks:
+Misc compat options:
 	Apple Aluminium: Emulate PC keys
 Keys to choose 3rd level:
 	Right Alt
@@ -51,3 +45,23 @@ https://code.visualstudio.com/
 
 Command Line
 https://darrenburns.net/posts/tools
+
+# zsh
+
+## install and make default
+
+https://wiki.ubuntuusers.de/Zsh/
+https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell
+
+## oh-my-zsh
+
+https://github.com/ohmyzsh/ohmyzsh
+
+## powerlevel10k
+https://github.com/romkatv/powerlevel10k
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+
+## conda completion plugin
+
+git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
