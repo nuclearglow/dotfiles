@@ -1,5 +1,4 @@
 // Place your key bindings in this file to override the defaults
-// Place your key bindings in this file to overwrite the defaults
 [
     {
         "key": "meta+s",
@@ -31,21 +30,8 @@
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "meta+shift+o",
-        "command": "workbench.action.quickOpen"
-    },
-    {
-        "key": "meta+f12",
-        "command": "-editor.action.goToImplementation",
-        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
         "key": "meta+n",
         "command": "workbench.action.gotoLine"
-    },
-    {
-        "key": "ctrl+g",
-        "command": "-workbench.action.gotoLine"
     },
     {
         "key": "meta+i",
@@ -78,14 +64,6 @@
     {
         "key": "shift+meta+p",
         "command": "workbench.action.showCommands"
-    },
-    {
-        "key": "meta+1",
-        "command": "workbench.action.navigateEditorGroups"
-    },
-    {
-        "key": "meta+2",
-        "command": "workbench.action.navigateEditorGroups"
     },
     {
         "key": "ctrl+shift+up",
@@ -222,11 +200,13 @@
         "when": "textInputFocus"
     },
     {
-        "key": "f19",
-        "command": "workbench.action.terminal.focus"
+        "key": "alt+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     },
     {
-        "key": "meta+[IntlBackslash]",
-        "command": "workbench.files.action.showActiveFileInExplorer"
+        "key": "ctrl+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     }
 ]
