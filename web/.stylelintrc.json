@@ -1,14 +1,16 @@
 {
-    "extends": ["stylelint-config-recommended", "./node_modules/prettier-stylelint/config.js"],
-    "plugins": ["stylelint-declaration-use-variable", "stylelint-scss"],
+    "$schema": "http://json.schemastore.org/stylelintrc",
+    "extends": ["stylelint-config-recommended", "stylelint-config-prettier"],
+    "plugins": ["stylelint-declaration-use-variable", "stylelint-scss", "stylelint-prettier"],
+    "configBasedir": "./node_modules",
     "rules": {
+        "prettier/prettier": true,
         "at-rule-no-unknown": [
             true,
             {
-                "ignoreAtRules": ["include", "mixin"]
+                "ignoreAtRules": ["include", "mixin", "if", "else", "extend", "each"]
             }
         ],
-        "string-quotes": "single",
         "scss/at-import-no-partial-leading-underscore": true,
         "scss/selector-no-redundant-nesting-selector": true,
         "sh-waqar/declaration-use-variable": [
@@ -21,6 +23,7 @@
         ],
         "declaration-bang-space-before": "always",
         "declaration-bang-space-after": "never",
+        "function-calc-no-invalid": null,
         "declaration-property-value-blacklist": {
             "/^border-\\w+$/": ["none"]
         },
@@ -34,7 +37,6 @@
         "no-descending-specificity": null,
         "block-no-empty": null,
         "no-empty-source": null,
-        "no-missing-end-of-source-newline": true,
         "color-no-invalid-hex": true,
         "indentation": null,
         "selector-max-id": 0,
@@ -77,14 +79,8 @@
             }
         ],
         "shorthand-property-no-redundant-values": null,
-        "at-rule-semicolon-newline-after": "always",
         "selector-list-comma-newline-after": null,
-        "function-comma-space-after": "always",
-        "declaration-colon-space-after": "always",
-        "declaration-block-trailing-semicolon": "always",
-        "no-eol-whitespace": true,
         "number-no-trailing-zeros": null,
-        "block-opening-brace-newline-after": "always",
         "declaration-no-important": true
     }
 }

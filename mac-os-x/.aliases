@@ -39,6 +39,8 @@ alias week='date +%V'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+# Chrome with disabled web security
+alias chrome-cors='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-web-security --user-data-dir="${HOME}/tmp"'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -102,3 +104,6 @@ alias map="xargs -n1"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# List VS Code Extensions
+alias list-code-extensions='code --list-extensions | xargs -L 1 echo code --install-extension'
