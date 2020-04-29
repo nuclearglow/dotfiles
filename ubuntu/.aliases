@@ -34,8 +34,8 @@ alias egrep='egrep --color=auto'
 # Get week number
 alias week='date +%V'
 
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+# Clear
+alias c="clear"
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
