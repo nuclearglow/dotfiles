@@ -106,13 +106,13 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "meta+right",
-        "command": "-workbench.action.terminal.focusNextPane",
+        "key": "meta+left",
+        "command": "-workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
     {
-        "key": "meta+left",
-        "command": "workbench.action.terminal.focusPreviousPane",
+        "key": "meta+right",
+        "command": "-workbench.action.terminal.focusNextPane",
         "when": "terminalFocus"
     },
     {
@@ -208,5 +208,14 @@
         "key": "ctrl+space",
         "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+[Backquote]",
+        "command": "workbench.action.terminal.focusNext",
+    },
+    {
+        "key": "alt+down",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
     }
 ]
