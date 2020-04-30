@@ -217,5 +217,21 @@
         "key": "alt+down",
         "command": "-workbench.action.terminal.focusNext",
         "when": "terminalFocus"
+    },
+    {
+        "key": "meta+1",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+left",
+        "command": "-workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "meta+2",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "-workbench.action.focusRightGroup"
     }
 ]
