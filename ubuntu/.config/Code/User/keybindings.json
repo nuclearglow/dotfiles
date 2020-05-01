@@ -66,6 +66,10 @@
         "command": "workbench.action.showCommands"
     },
     {
+        "key": "shift+ctrl+a",
+        "command": "workbench.action.showCommands"
+    },
+    {
         "key": "ctrl+shift+up",
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus"
