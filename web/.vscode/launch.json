@@ -6,18 +6,21 @@
     "configurations": [
         {
             // Set a breakpoint in any *.spec.ts file, launch this Debug Configuration to debug the test in VS Code
-            "name": "Debug Jest Test",
+            // @link: https://dev.to/angular/setup-jest-for-angular-with-debugging-in-visual-studio-code-2d96#debugging
             "type": "node",
             "request": "launch",
+            "name": "Debug Jest Test",
+            "program": "${workspaceFolder}/node_modules/@angular/cli/bin/ng",
             "cwd": "${workspaceFolder}",
             "args": [
-                "${workspaceRoot}/node_modules/jest/bin/jest",
+                "test",
+                "--testMatch=\"**/+(*.)+(spec|test).+(ts|js)?(x)\"",
+                "--testPathPattern=${fileBasenameNoExtension}",
                 "--runInBand",
-                "--rootDir=${workspaceRoot}",
-                "--config=${workspaceRoot}/src/jest.config.js",
-              ],
+            ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
+            "disableOptimisticBPs": true,
         }
     ]
 }
