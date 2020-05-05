@@ -5,11 +5,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-### nvm ###
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use # This loads nvm
-[ -s "$HOME/.nvmrc" ] && nvm use # This enables the standard node environment from ~/.nvmrc
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
@@ -26,14 +21,14 @@ unset MAILCHECK
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
-ZLE_RPROMPT_INDENT=0
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
+ZLE_RPROMPT_INDENT=0
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,17 +98,23 @@ plugins=(
   node # i.e. node-docs fs
   nvm
   npm
-  ssh-agent # maybe define multiple identites
+  #ssh-agent # maybe define multiple identites
   ubuntu
   yarn
   zsh_reload # src
   conda-zsh-completion # conda custom completion plugin
+  z
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # disable zsh autocorrect
 unsetopt correct_all
+
+### nvm ###
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use # This loads nvm
+[ -s "$HOME/.nvmrc" ] && nvm use # This enables the standard node environment from ~/.nvmrc
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
