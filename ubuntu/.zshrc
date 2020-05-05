@@ -98,12 +98,13 @@ plugins=(
   node # i.e. node-docs fs
   nvm
   npm
-  #ssh-agent # maybe define multiple identites
   ubuntu
   yarn
   zsh_reload # src
-  conda-zsh-completion # conda custom completion plugin
-  z
+  # TODO: activate if needed
+  #ssh-agent # maybe define multiple identites
+  #conda-zsh-completion # conda custom completion plugin
+  #z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,26 +117,26 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use # This loads nvm
 [ -s "$HOME/.nvmrc" ] && nvm use # This enables the standard node environment from ~/.nvmrc
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/nuky/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/nuky/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/nuky/.miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/nuky/.miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/nuky/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/nuky/.miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/nuky/.miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/nuky/.miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
 
-# conda config
-autoload -U compinit && compinit
+# # conda config
+# autoload -U compinit && compinit
 
-# start currently used env
-conda activate ml
+# # start currently used env
+# conda activate ml
 
 # automatically call `nvm use` for all directories with a `.nvmrc` file
 autoload -U add-zsh-hook

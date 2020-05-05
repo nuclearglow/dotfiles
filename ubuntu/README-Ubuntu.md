@@ -60,8 +60,26 @@ https://github.com/ohmyzsh/ohmyzsh
 ## powerlevel10k
 https://github.com/romkatv/powerlevel10k
 
+```shell
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+```
 
 ## conda completion plugin
 
+```shell
 git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
+```
+
+# docker setup
+
+Build image
+
+```shell
+docker build -t ubuntu-base-nuky .
+```
+
+Open zsh on container
+
+```shell
+docker run --hostname=ubuntu-base-nuky -it ubuntu-base-nuky zsh
+```
