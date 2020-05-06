@@ -57,6 +57,11 @@ https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell
 
 https://github.com/ohmyzsh/ohmyzsh
 
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+
 ## powerlevel10k
 https://github.com/romkatv/powerlevel10k
 
