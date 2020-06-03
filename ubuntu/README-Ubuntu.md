@@ -57,11 +57,22 @@ https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell
 
 https://github.com/ohmyzsh/ohmyzsh
 
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## powerlevel10k
 https://github.com/romkatv/powerlevel10k
 
 ```shell
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+## setup dotfiles
+
+```shell
+git clone git@github.com:nuclearglow/dotfiles.git
+./dotfiles/ubuntu/configure_zsh.sh
 ```
 
 ## conda completion plugin
