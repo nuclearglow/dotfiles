@@ -12,6 +12,7 @@ alias ll='exa --all --header --long --group --classify --git'
 # git overrides
 alias gs='git status'
 alias gcm='git commit -m'
+alias gdel='git branch -d'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '

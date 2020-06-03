@@ -105,6 +105,8 @@ plugins=(
   #ssh-agent # maybe define multiple identites
   #conda-zsh-completion # conda custom completion plugin
   #z
+  #fzf # better completion for ctrl+r
+  #dotenv # autoload .env files and set the variables
 )
 
 source $ZSH/oh-my-zsh.sh
