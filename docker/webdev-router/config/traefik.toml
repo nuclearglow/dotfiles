@@ -1,0 +1,8 @@
+[log]
+   level = "INFO"
+
+[accessLog]
+
+[[tls.certificates]]
+   certFile = "/config/certs/localhost.pem"
+   keyFile = "/config/certs/localhost-key.pem"

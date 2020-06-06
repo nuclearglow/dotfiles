@@ -1,0 +1,61 @@
+version: "3.3"
+
+services:
+    traefik:
+        image: "traefik:v2.2"
+        command:
+            - "--log.level=WARN"
+            - "--accessLog=true"
+            # entry point 443 -> websecure -> 443
+            - "--entrypoints.websecure.address=:443"
+            # entry point -> web -> 80
+            - "--entrypoints.web.address=:80"
+            # enable secured dashboard
+            - "--api"
+            # enable file provider with configuration
+            - "--providers.file.directory=/config/"
+            - "--providers.file.watch=true"
+            # docker provider
+            - "--providers.docker=true"
+        ports:
+            # traefik ports are 80, 443, 8080
+            - "80:80"
+            - "443:443"
+        networks:
+            - web
+        labels:
+            # middleware redirect
+            - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+            # global web redirect to https
+            - "traefik.http.routers.redirs.rule=hostregexp(`{host:.+}`)"
+            - "traefik.http.routers.redirs.entrypoints=web"
+            - "traefik.http.routers.redirs.middlewares=redirect-to-https"
+            # /dashboard -> dashboard
+            - "traefik.http.routers.traefik.rule=Host(`localhost`) && (PathPrefix(`/dashboard/`) || PathPrefix(`/api/`))"
+            - "traefik.http.routers.traefik.service=api@internal"
+            - "traefik.http.routers.traefik.middlewares=admin"
+            - "traefik.http.routers.traefik.tls=true"
+            - "traefik.http.routers.traefik.entrypoints=websecure"
+            # dashboard basic auth
+            # echo $(htpasswd -nb admin password) | sed -e s/\\$/\\$\\$/g
+            - "traefik.http.middlewares.admin.basicauth.users=admin:$$apr1$$eJmCq7JN$$6qTnMj1hi9qXBOYBhdMhy."
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock:ro"
+            - "./config/:/config"
+
+    whoami:
+        depends_on:
+            - traefik
+        image: containous/whoami
+        container_name: "whoami"
+        networks:
+            - web
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.whoami.rule=Host(`localhost`)"
+            - "traefik.http.routers.whoami.tls=true"
+            - "traefik.http.routers.whoami.entrypoints=websecure"
+
+networks:
+    web:
+        external: true
