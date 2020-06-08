@@ -75,7 +75,7 @@ RUN set -ex \
     && gpg --verify /usr/local/bin/dependency-check.zip.asc \
     && unzip /usr/local/bin/dependency-check.zip -d /usr/local/bin/
 
-# user needed for Jenkins in dwp
+# non root user ci
 RUN groupadd ci --gid 6969
 RUN useradd ci --uid 4711 --gid ci --create-home --shell /bin/bash
 
