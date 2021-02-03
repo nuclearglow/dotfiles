@@ -1,7 +1,3 @@
-[log]
-   level = "INFO"
-
-[accessLog]
 
 [[tls.certificates]]
    certFile = "/config/certs/localhost.pem"

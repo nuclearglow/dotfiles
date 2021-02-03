@@ -14,13 +14,12 @@
             "cwd": "${workspaceFolder}",
             "args": [
                 "test",
-                "--testMatch=\"**/+(*.)+(spec|test).+(ts|js)?(x)\"",
                 "--testPathPattern=${fileBasenameNoExtension}",
-                "--runInBand",
+                "--runInBand"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "disableOptimisticBPs": true,
+            "disableOptimisticBPs": true
         }
     ]
 }
