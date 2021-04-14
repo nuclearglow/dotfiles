@@ -1,0 +1,92 @@
+[global_config]
+  borderless = True
+  sticky = True
+  title_transmit_bg_color = "#000000"
+  title_inactive_fg_color = "#888a85"
+  title_inactive_bg_color = "#000000"
+  suppress_multiple_term_dialog = True
+  title_use_system_font = False
+  title_font = MesloLGS NF 10
+[keybindings]
+  new_tab = <Primary>t
+  go_next = None
+  go_prev = None
+  go_up = None
+  go_down = None
+  go_left = None
+  go_right = None
+  next_tab = <Primary>Page_Down
+  prev_tab = <Primary>Page_Up
+  group_all = None
+  group_tab = None
+  new_window = <Primary><Shift>n
+  new_terminator = None
+  broadcast_group = None
+[profiles]
+  [[default]]
+    allow_bold = False
+    background_color = "#1e1e1e"
+    cursor_shape = ibeam
+    cursor_color = "#aaaaaa"
+    font = MesloLGS NF 12
+    foreground_color = "#00d22b"
+    scrollbar_position = hidden
+    scroll_on_output = True
+    scrollback_infinite = True
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:27
+      maximised = False
+      fullscreen = False
+      size = 1280, 1053
+      title = nuky@crunchy: ~
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = None, None, None, None, None, None
+      last_active_term = a4519895-2a4d-4a3d-98ae-59decb56c7c3, 7a1f8e58-2170-418a-9fdb-c9c9f136cbaf, 1c590ea7-2f97-4e1e-b3cc-9fb5dddebb93, 7ca887a2-44c6-4374-965f-63cde2f3f556, 4f86a083-7a3f-4ac8-9ae3-1d6354d3d56e, 6e7778ce-00eb-46f0-bcce-5e81119bd084
+      active_page = 5
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = a4519895-2a4d-4a3d-98ae-59decb56c7c3
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = default
+      uuid = 7a1f8e58-2170-418a-9fdb-c9c9f136cbaf
+    [[[terminal4]]]
+      type = Terminal
+      parent = child1
+      order = 2
+      profile = default
+      uuid = 1c590ea7-2f97-4e1e-b3cc-9fb5dddebb93
+    [[[terminal5]]]
+      type = Terminal
+      parent = child1
+      order = 3
+      profile = default
+      uuid = 7ca887a2-44c6-4374-965f-63cde2f3f556
+    [[[terminal6]]]
+      type = Terminal
+      parent = child1
+      order = 4
+      profile = default
+      uuid = 4f86a083-7a3f-4ac8-9ae3-1d6354d3d56e
+    [[[terminal7]]]
+      type = Terminal
+      parent = child1
+      order = 5
+      profile = default
+      uuid = 6e7778ce-00eb-46f0-bcce-5e81119bd084
+[plugins]

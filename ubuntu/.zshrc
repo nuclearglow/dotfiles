@@ -94,19 +94,20 @@ plugins=(
   colorize
   docker
   mosh
-  ng
+  #ng
   node # i.e. node-docs fs
   nvm
   npm
+  #ssh-agent # maybe define multiple identites
   ubuntu
   yarn
   zsh_reload # src
-  # TODO: activate if needed
-  #ssh-agent # maybe define multiple identites
-  #conda-zsh-completion # conda custom completion plugin
-  #z
-  #fzf # better completion for ctrl+r
-  #dotenv # autoload .env files and set the variables
+  conda-zsh-completion # conda custom completion plugin
+  z       # z folder prediction
+  fzf     # automatic ctrl+r completion
+  dotenv  # automatically load .env vars in folder
+  rustup  # rustup completions <- https://github.com/pkulev/zsh-rustup-completion
+  cargo   # rust cargo completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cargo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -119,26 +120,26 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use # This loads nvm
 [ -s "$HOME/.nvmrc" ] && nvm use # This enables the standard node environment from ~/.nvmrc
 
-# # >>> conda initialize >>>
-# # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/nuky/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/nuky/.miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/nuky/.miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/nuky/.miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# # <<< conda initialize <<<
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/nuky/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/nuky/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/nuky/.miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/nuky/.miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
-# # conda config
-# autoload -U compinit && compinit
+# zsh autoloading enabled
+autoload -U compinit && compinit
 
-# # start currently used env
-# conda activate ml
+# start currently used env
+conda activate ml-gpu
 
 # automatically call `nvm use` for all directories with a `.nvmrc` file
 autoload -U add-zsh-hook
@@ -162,12 +163,16 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+# Initialize rust
+source "$HOME/.cargo/env"
+
 ### Custom Dotfiles ###
-# Load the shell dotfiles, and then some:
+#
 # * ~/.exports can be used to extend `$PATH`.
 # * ~/.aliases can be used for aliases
 # * ~/.functions can be used for custom scripts
 # * ~/.extras can be used for other settings you don’t want to commit.
+#
 for file in ~/.{exports,aliases,functions,extras}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;

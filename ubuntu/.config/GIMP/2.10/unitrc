@@ -1,0 +1,16 @@
+# GIMP units
+# 
+# This file contains the user unit database. You can edit this list with the
+# unit editor. You are not supposed to edit it manually, but of course you
+# can do.
+# This file will be entirely rewritten each time you exit.
+
+(unit-info "centimeters"
+    (factor 2.54)
+    (digits 2)
+    (symbol "cm")
+    (abbreviation "cm")
+    (singular "centimeter")
+    (plural "centimeters"))
+
+# end of units
