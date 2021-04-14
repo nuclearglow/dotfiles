@@ -8,7 +8,12 @@
         "moduleResolution": "node",
         "inlineSources": true,
         "lib": ["es2018", "dom"],
-        "types": ["jest"]
+        "types": ["jest"],
+        "paths": {
+            "@app/*": ["src/app/*"],
+            "rxjs": ["node_modules/rxjs"],
+            "rxjs/*": ["node_modules/rxjs/*"]
+        }
     },
     "angularCompilerOptions": {
         "annotateForClosureCompiler": true,

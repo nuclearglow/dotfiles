@@ -9,9 +9,15 @@
     "typescript.preferences.quoteStyle": "single",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "javascript.format.enable": false,
+    "eslint.options": {
+        "extensions": [".ts", ".component.html"]
+    },
     "eslint.validate": [
         "javascript",
-        "typescript"
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "html"
     ],
     "eslint.codeActionsOnSave.mode": "problems",
     "files.autoSave": "off",

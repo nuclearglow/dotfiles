@@ -36,7 +36,7 @@ export EDITOR=vim
 ### Bash-It ###
 
 # Path to the bash it configuration
-export BASH_IT="/home/dwp6827/.bash_it"
+export BASH_IT="/home/nuky/.bash_it"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.

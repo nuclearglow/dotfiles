@@ -13,6 +13,17 @@
         ],
         "scss/at-import-no-partial-leading-underscore": true,
         "scss/selector-no-redundant-nesting-selector": true,
+        "scss/media-feature-value-dollar-variable": "always",
+        "scss/dollar-variable-empty-line-after": null,
+        "scss/dollar-variable-first-in-block": [
+            true,
+            {
+                "ignore": ["comments", "imports"],
+                "except": ["root", "function", "mixin", "if-else", "loops"]
+            }
+        ],
+        "scss/no-duplicate-dollar-variables": [true, { "ignoreInside": ["at-rule"] }],
+        "scss/comment-no-empty": null,
         "sh-waqar/declaration-use-variable": [
             [
                 "/color/",
@@ -21,10 +32,17 @@
                 }
             ]
         ],
+        "comment-no-empty": true,
         "declaration-bang-space-before": "always",
         "declaration-bang-space-after": "never",
+        "declaration-block-no-duplicate-custom-properties": [
+            true,
+            {
+                "ignore": ["consecutive-duplicates-with-different-values"]
+            }
+        ],
         "function-calc-no-invalid": null,
-        "declaration-property-value-blacklist": {
+        "declaration-property-value-disallowed-list": {
             "/^border-\\w+$/": ["none"]
         },
         "color-named": "never",
@@ -43,7 +61,7 @@
         "no-duplicate-selectors": true,
         "max-nesting-depth": 6,
         "property-no-unknown": true,
-        "unit-whitelist": [
+        "unit-allowed-list": [
             "ch",
             "em",
             "ex",

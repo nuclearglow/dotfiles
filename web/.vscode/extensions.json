@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "EditorConfig.EditorConfig",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "infinity1207.angular2-switcher",
+        "johnpapa.Angular2",
+        "Angular.ng-template",
+        "mrmlnc.vscode-scss",
+        "hex-ci.stylelint-plus",
+        "steoates.autoimport",
+        "Orta.vscode-jest",
+        "getgauge.gauge",
+        "ms-vsliveshare.vsliveshare",
+        "ms-vsliveshare.vsliveshare-audio"
+    ]
+}

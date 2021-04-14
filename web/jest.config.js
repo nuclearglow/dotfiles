@@ -5,6 +5,9 @@ module.exports = {
     testMatch: ['<rootDir>/src/**/*.spec.ts'],
     testPathIgnorePatterns: ['/node_modules/', 'dist'],
     testEnvironment: 'jest-environment-jsdom-twelve',
+    moduleNameMapper: {
+        '@app/(.*)': '<rootDir>/src/app/$1'
+    },
     collectCoverage: true,
     collectCoverageFrom: [
         'src/app/**/*.ts',
