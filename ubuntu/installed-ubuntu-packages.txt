@@ -56,6 +56,7 @@ base-passwd					install
 bash						install
 bash-completion					install
 bashtop						install
+bat						install
 bc						install
 beekeeper-studio				install
 biber						install
@@ -187,6 +188,7 @@ evolution-data-server				install
 evolution-data-server-common			install
 exo-utils					install
 fakeroot					install
+fd-find						install
 fdisk						install
 feynmf						install
 ffmpeg						install
@@ -379,7 +381,6 @@ ftp						install
 fuse						install
 fwupd						install
 fwupd-signed					install
-fzf						install
 g++						install
 g++-8						install
 g++-9						install
@@ -694,7 +695,6 @@ libao4:amd64					install
 libaom0:amd64					install
 libapache-pom-java				install
 libapparmor1:amd64				install
-libappindicator1				install
 libappindicator3-1				install
 libappstream4:amd64				install
 libapr1:amd64					install
@@ -769,7 +769,6 @@ libboost-date-time1.71.0:amd64			install
 libboost-filesystem1.71.0:amd64			install
 libboost-iostreams1.71.0:amd64			install
 libboost-locale1.71.0:amd64			install
-libboost-program-options1.71.0:amd64		install
 libboost-thread1.71.0:amd64			install
 libbrlapi0.7:amd64				install
 libbrotli1:amd64				install
@@ -899,7 +898,6 @@ libdbus-1-3:amd64				install
 libdbus-glib-1-2:amd64				install
 libdbusmenu-glib4:amd64				install
 libdbusmenu-gtk3-4:amd64			install
-libdbusmenu-gtk4:amd64				install
 libdbusmenu-qt5-2:amd64				install
 libdc1394-22:amd64				install
 libdca0:amd64					install
@@ -1073,6 +1071,7 @@ libgfortran5:amd64				install
 libgif7:amd64					install
 libgimp2.0					install
 libgirepository-1.0-1:amd64			install
+libgit2-28:amd64				install
 libgjs0g:amd64					install
 libgl-dev:amd64					install
 libgl1:amd64					install
@@ -1121,7 +1120,6 @@ libgoa-1.0-common				install
 libgoa-backend-1.0-1:amd64			install
 libgom-1.0-0:amd64				install
 libgomp1:amd64					install
-libgoogle-perftools4:amd64			install
 libgpaste11					install
 libgpg-error0:amd64				install
 libgpgme11:amd64				install
@@ -1204,6 +1202,7 @@ libhttp-daemon-perl				install
 libhttp-date-perl				install
 libhttp-message-perl				install
 libhttp-negotiate-perl				install
+libhttp-parser2.9:amd64				install
 libhunspell-1.7-0:amd64				install
 libhx509-5-heimdal:amd64			install
 libhyphen0:amd64				install
@@ -1325,6 +1324,9 @@ libmail-sendmail-perl				install
 libmailtools-perl				install
 libmatroska6v5:amd64				install
 libmaxminddb0:amd64				install
+libmbedcrypto3:amd64				install
+libmbedtls12:amd64				install
+libmbedx509-0:amd64				install
 libmbim-glib4:amd64				install
 libmbim-proxy					install
 libmediaart-2.0-0:amd64				install
@@ -1663,7 +1665,6 @@ libpcre2-16-0:amd64				install
 libpcre2-32-0:amd64				install
 libpcre2-8-0:amd64				install
 libpcre3:amd64					install
-libpcrecpp0v5:amd64				install
 libpcsclite1:amd64				install
 libpdfbox-java					install
 libpeas-1.0-0:amd64				install
@@ -1884,7 +1885,6 @@ libtalloc2:amd64				install
 libtasn1-6:amd64				install
 libtbb2:amd64					install
 libtcl8.6:amd64					install
-libtcmalloc-minimal4:amd64			install
 libtdb1:amd64					install
 libteamdctl0:amd64				install
 libteckit0:amd64				install
@@ -2124,7 +2124,6 @@ libxxf86vm1:i386				install
 libxxhash0:amd64				install
 libyajl2:amd64					install
 libyaml-0-2:amd64				install
-libyaml-cpp0.6:amd64				install
 libyaml-tiny-perl				install
 libyelp0:amd64					install
 libykpers-1-1:amd64				install
@@ -2146,11 +2145,9 @@ linux-headers-5.4.0-48				install
 linux-headers-5.4.0-48-generic			install
 linux-headers-5.4.0-59				install
 linux-headers-5.4.0-59-generic			install
-linux-headers-5.8.0-48-generic			install
 linux-headers-5.8.0-49-generic			install
 linux-headers-5.8.0-50-generic			install
 linux-headers-generic-hwe-20.04			install
-linux-hwe-5.8-headers-5.8.0-48			install
 linux-hwe-5.8-headers-5.8.0-49			install
 linux-hwe-5.8-headers-5.8.0-50			install
 linux-image-5.4.0-26-generic			deinstall
@@ -2180,7 +2177,7 @@ linux-image-5.8.0-41-generic			deinstall
 linux-image-5.8.0-43-generic			deinstall
 linux-image-5.8.0-44-generic			deinstall
 linux-image-5.8.0-45-generic			deinstall
-linux-image-5.8.0-48-generic			install
+linux-image-5.8.0-48-generic			deinstall
 linux-image-5.8.0-49-generic			install
 linux-image-5.8.0-50-generic			install
 linux-image-generic-hwe-20.04			install
@@ -2212,7 +2209,7 @@ linux-modules-5.8.0-41-generic			deinstall
 linux-modules-5.8.0-43-generic			deinstall
 linux-modules-5.8.0-44-generic			deinstall
 linux-modules-5.8.0-45-generic			deinstall
-linux-modules-5.8.0-48-generic			install
+linux-modules-5.8.0-48-generic			deinstall
 linux-modules-5.8.0-49-generic			install
 linux-modules-5.8.0-50-generic			install
 linux-modules-extra-5.4.0-26-generic		deinstall
@@ -2242,7 +2239,7 @@ linux-modules-extra-5.8.0-41-generic		deinstall
 linux-modules-extra-5.8.0-43-generic		deinstall
 linux-modules-extra-5.8.0-44-generic		deinstall
 linux-modules-extra-5.8.0-45-generic		deinstall
-linux-modules-extra-5.8.0-48-generic		install
+linux-modules-extra-5.8.0-48-generic		deinstall
 linux-modules-extra-5.8.0-49-generic		install
 linux-modules-extra-5.8.0-50-generic		install
 linux-modules-nvidia-440-5.4.0-26-generic	deinstall
@@ -2275,6 +2272,8 @@ ltrace						install
 lz4						install
 m4						install
 make						install
+makemkv-bin					install
+makemkv-oss					install
 man-db						install
 manpages					install
 manpages-dev					install
@@ -2289,12 +2288,14 @@ mime-support					install
 mobile-broadband-provider-info			install
 modemmanager					install
 mokutil						install
-mongo-tools					install
-mongodb						install
-mongodb-clients					install
 mongodb-compass					install
-mongodb-server					install
-mongodb-server-core				install
+mongodb-database-tools				install
+mongodb-org					install
+mongodb-org-database-tools-extra		install
+mongodb-org-mongos				install
+mongodb-org-server				install
+mongodb-org-shell				install
+mongodb-org-tools				install
 mono-4.0-gac					install
 mono-4.0-service				install
 mono-complete					install
@@ -2838,6 +2839,7 @@ x11proto-dev					install
 xauth						install
 xbitmaps					install
 xbrlapi						install
+xclip						install
 xcursor-themes					install
 xdg-dbus-proxy					install
 xdg-desktop-portal				install

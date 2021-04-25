@@ -3,9 +3,36 @@
 General Infos
 https://wiki-ubuntuusers.de
 
-Setup with Tools
-https://dev.to/brpaz/my-linux-development-environment-of-2018-ch7
-https://github.com/brpaz/my-linux-setup
+## All sources.list files -> `sources/`
+
+## Get all installed Ubuntu packages
+
+`installed-ubuntu-packages.txt`
+
+Created with:
+
+```
+dpkg --get-selections > ~/workspace/dotfiles/ubuntu/installed-ubuntu-packages.txt
+```
+
+Or better use apt-clone:
+
+https://askubuntu.com/questions/17823/how-to-list-all-installed-packages
+
+```
+sudo apt-get install apt-clone
+sudo apt-clone clone path-to/apt-clone-state-ubuntu-$(lsb_release -sr)-$(date +%F).tar.gz
+```
+
+restore:
+`sudo apt-get install apt-clone`
+`sudo apt-clone restore path-to/apt-clone-state-ubuntu.tar.gz`
+
+to newer release
+`sudo apt-get install apt-clone`
+`sudo apt-clone restore-new-distro path-to/apt-clone-state-ubuntu.tar.gz $(lsb_release -sc)`
+
+## Some important tools:
 
 Ulauncher
 sudo add-apt-repository "ppa:agornostal/ulauncher"
@@ -19,12 +46,6 @@ Caffeine
 sudo add-apt-repository ppa:caffeine-developers/ppa
 sudo apt-get update
 sudo apt-get install caffeine
-
-Code
-https://code.visualstudio.com/
-
-Command Line
-https://darrenburns.net/posts/tools
 
 # zsh
 
@@ -55,11 +76,7 @@ git clone git@github.com:nuclearglow/dotfiles.git
 ./dotfiles/ubuntu/configure_zsh.sh
 ```
 
-## conda completion plugin
-
-```shell
-git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
-```
+### install completions from .zshrc plugin list urls
 
 # docker setup
 
@@ -75,7 +92,8 @@ Open zsh on container
 docker run --hostname=ubuntu-base-nuky -it ubuntu-base-nuky zsh
 ```
 
-## Apple Keyboard Support
+
+## Obsolete: Apple Keyboard Support
 
 Tweaks:
 Misc compat options:

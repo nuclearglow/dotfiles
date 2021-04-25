@@ -1,0 +1,7 @@
+# Shell keys currently configured:
+
+# * Right Arrow / End: Complete suggestion
+# * CTRL-R: fzf history completion
+# ** TAB: fzf fuzzy completion for most commands
+# * CTRL-Z: fzf select file
+bindkey '^Z' fzf-file-widget

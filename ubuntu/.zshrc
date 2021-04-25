@@ -108,12 +108,16 @@ plugins=(
   dotenv  # automatically load .env vars in folder
   rustup  # rustup completions <- https://github.com/pkulev/zsh-rustup-completion
   cargo   # rust cargo completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cargo
+  zsh-autosuggestions #  autocomplete command suggestions <- https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # disable zsh autocorrect
 unsetopt correct_all
+
+# complete aliases
+setopt COMPLETE_ALIASES
 
 ### nvm ###
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -163,8 +167,15 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+# Initialize fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Initialize rust
 source "$HOME/.cargo/env"
+
+# Initialize rust-navi shell widget
+# https://github.com/denisidoro/navi/blob/master/docs/installation.md#installing-the-shell-widget
+eval "$(navi widget zsh)"
 
 ### Custom Dotfiles ###
 #
@@ -173,7 +184,7 @@ source "$HOME/.cargo/env"
 # * ~/.functions can be used for custom scripts
 # * ~/.extras can be used for other settings you don’t want to commit.
 #
-for file in ~/.{exports,aliases,functions,extras}; do
+for file in ~/.{aliases,exports,functions,extras,keys}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

@@ -1,0 +1,8 @@
+[v1]
+"cargo-update 6.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-install-update", "cargo-install-update-config"]
+"diesel_cli 1.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["diesel"]
+"git-delta 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["delta"]
+"navi 2.16.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["navi"]
+"procs 0.11.4 (registry+https://github.com/rust-lang/crates.io-index)" = ["procs"]
+"tokei 12.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["tokei"]
+"zellij 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["zellij"]

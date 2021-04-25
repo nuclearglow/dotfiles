@@ -1,5 +1,9 @@
-# ~/bin
-export PATH="$HOME/bin:$PATH"
+# Set KDE theme
+export QT_STYLE_OVERRIDE=kvantum
+export QT_QPA_PLATFORMTHEME=gtk2
 
-# node
+# NodeJS memory bumpup
 export NODE_OPTIONS="--max_old_space_size=4096"
+
+# Manpager
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"

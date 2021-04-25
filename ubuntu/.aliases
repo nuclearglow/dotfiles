@@ -9,6 +9,22 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 alias ls='exa'
 alias ll='exa --all --header --long --group --classify --git'
 
+# bat instead of cat
+alias bat='batcat'
+alias cat='batcat --paging=never'
+
+# bat instead of less
+alias less='batcat'
+
+# fd
+alias fd='/usr/bin/fdfind'
+
+# tokei instead of cloc
+alias cloc='tokei'
+
+# copy pipe
+alias copy='xclip -sel clip'
+
 # dos
 alias dir='exa --all --header --long --group --classify --git'
 alias cls='clear'
@@ -17,6 +33,7 @@ alias c='clear'
 # git overrides
 alias gs='git status'
 alias gcm='git commit -m'
+alias gd='git diff'
 
 # Open all merge conflicts or currently changed files in VS Code
 alias fix="git diff --name-only | uniq | xargs code"
