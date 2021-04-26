@@ -12,11 +12,6 @@
 
 ## Ubuntu minimal setup
 
-* dotfiles
-* .config files
-* bin folder
-* cheats
-
 ## Web basic config files:
 
 -   in `web/`

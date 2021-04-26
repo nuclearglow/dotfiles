@@ -22,8 +22,29 @@ alias fd='/usr/bin/fdfind'
 # tokei instead of cloc
 alias cloc='tokei'
 
+# dust instead of du
+alias du='dust'
+
+# bottom instead of top
+alias top='btm --celsius'
+
+# tldr setup
+alias tldr='tldr'
+
+# bandwhich
+alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enp4s0 --dns-server 10.10.10.1'
+
+# grex
+alias grex='grex --digits --spaces --repetitions --colorize'
+
 # copy pipe
 alias copy='xclip -sel clip'
+
+# prettyping instead of ping
+alias ping='prettyping'
+
+# fd instead of find
+alias find='fd'
 
 # dos
 alias dir='exa --all --header --long --group --classify --git'
