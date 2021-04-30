@@ -1,0 +1,14 @@
+# Save
+
+cat /etc/apt/sources.list /etc/apt/sources.list.d >sources.list
+dpkg --get-selections > installed-ubuntu-packages.txt
+apt-mark showauto > auto.list
+
+# Load
+
+cp sources.list /etc/apt/ # MERGE!
+apt-get update
+/usr/lib/dpkg/methods/apt/update /var/lib/dpkg/
+dpkg --set-selections < installed-ubuntu-packages.txt
+apt-get dselect-upgrade
+xargs apt-mark auto < auto.list

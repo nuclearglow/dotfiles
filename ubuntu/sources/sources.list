@@ -18,9 +18,9 @@ deb http://de.archive.ubuntu.com/ubuntu/ focal universe
 deb http://de.archive.ubuntu.com/ubuntu/ focal-updates universe
 # deb-src http://de.archive.ubuntu.com/ubuntu/ focal-updates universe
 
-## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu 
-## team, and may not be under a free licence. Please satisfy yourself as to 
-## your rights to use the software. Also, please note that software in 
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team, and may not be under a free licence. Please satisfy yourself as to
+## your rights to use the software. Also, please note that software in
 ## multiverse WILL NOT receive any review or updates from the Ubuntu
 ## security team.
 deb http://de.archive.ubuntu.com/ubuntu/ focal multiverse
@@ -63,3 +63,45 @@ deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
 # OnlyOffice
 deb https://download.onlyoffice.com/repo/debian squeeze main
 
+# Ulauncher
+deb http://ppa.launchpad.net/agornostal/ulauncher/ubuntu focal main
+# deb-src http://ppa.launchpad.net/agornostal/ulauncher/ubuntu focal main
+
+# Brave
+deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
+
+# Chrome
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+
+# MS
+deb [arch=amd64] https://packages.microsoft.com/ubuntu/20.04/prod focal main
+deb [arch=amd64] https://packages.microsoft.com/ubuntu/20.04/prod focal main
+
+# Mongodb
+deb [arch=amd64,arm64] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
+deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
+
+deb [arch=amd64] https://packages.microsoft.com/ubuntu/18.04/prod bionic main
+deb [arch=amd64] https://packages.microsoft.com/ubuntu/18.04/prod bionic main
+
+# GIMP
+deb http://ppa.launchpad.net/otto-kesselgulasch/gimp/ubuntu focal main
+# deb-src http://ppa.launchpad.net/otto-kesselgulasch/gimp/ubuntu focal main
+
+# Peek
+deb http://ppa.launchpad.net/peek-developers/stable/ubuntu focal main
+# deb-src http://ppa.launchpad.net/peek-developers/stable/ubuntu focal main
+
+# KeepassXC
+deb http://ppa.launchpad.net/phoerious/keepassxc/ubuntu focal main
+# deb-src http://ppa.launchpad.net/phoerious/keepassxc/ubuntu focal main
+
+# Signal
+deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
+deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
+
+# Slack
+deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+
+# VS Code
+deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main
