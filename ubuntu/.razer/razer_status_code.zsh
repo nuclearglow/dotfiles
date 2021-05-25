@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-# requires: https://github.com/openrazer
-# docs: https://github.com/openrazer/openrazer/wiki/Using-the-mouse-driver
-# inspired by: https://github.com/michaelmcallister/razer-status-code/blob/master/razer-mouse-status.plugin.zsh
+# * requires: https://github.com/openrazer
+# * docs: https://github.com/openrazer/openrazer/wiki/Using-the-mouse-driver
+# * inspired by: https://github.com/michaelmcallister/razer-status-code/blob/master/razer-mouse-status.plugin.zsh
 
 # switch off the logo
 for file in /sys/bus/hid/drivers/razermouse/*/logo_matrix_effect_none; do
@@ -33,25 +33,26 @@ razer_mouse_status_code() {
   local exit_status="${1:-$(print -P %?)}";
 
   case $exit_status in
-      0)
-        _set_brightness 50
-        _set_color $GREEN
-        ;;
-      1)
-        _set_brightness 255
-        _set_color $ORANGE
-        ;;
-      127)
-        _set_brightness 255
-        _set_color $RED
-        ;;
-      -1)
-        _set_brightness 255
-        _set_color $RED
-        ;;
-      *)
-        _set_color $ORANGE
-        ;;
+    0)
+      _set_brightness 50
+      _set_color $GREEN
+      ;;
+    1)
+      _set_brightness 255
+      _set_color $ORANGE
+      ;;
+    127)
+      _set_brightness 255
+      _set_color $RED
+      ;;
+    -1)
+      _set_brightness 255
+      _set_color $RED
+      ;;
+    *)
+      _set_brightness 100
+      _set_color $ORANGE
+      ;;
   esac
 }
 

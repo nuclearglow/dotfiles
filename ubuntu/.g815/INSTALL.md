@@ -13,12 +13,6 @@ ratbagctl singing-gundi profile 0 button 2 action set special unknown
 ratbagctl singing-gundi profile 0 button 3 action set special unknown
 ratbagctl singing-gundi profile 0 button 4 action set special unknown
 
-TODO: macros
-https://manpages.debian.org/experimental/ratbagd/ratbagctl.1.en.html
-https://www.linux.org/threads/ratbag-command-macro-examples.21942/
-https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
-
-
 Setup Lighting
 
 * install g810-led from source
@@ -78,5 +72,3 @@ g810-led -dv 046d -dp c33f -k 1 CC0000
 * load a profile - add this to `~/.zprofile`
 
 g810-led -p ~/.g815/nukeys
-
-
