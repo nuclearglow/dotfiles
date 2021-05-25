@@ -95,7 +95,8 @@ plugins=(
   docker
   mosh
   #ng
-  node # i.e. node-docs fs
+  fd
+  node # enables `node-docs fs`
   nvm
   npm
   #ssh-agent # maybe define multiple identites
@@ -118,6 +119,9 @@ unsetopt correct_all
 
 # complete aliases
 setopt COMPLETE_ALIASES
+
+# set razer mouse status code support
+source ~/.razer/razer_status_code.zsh
 
 ### nvm ###
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -177,8 +181,12 @@ source "$HOME/.cargo/env"
 # https://github.com/denisidoro/navi/blob/master/docs/installation.md#installing-the-shell-widget
 eval "$(navi widget zsh)"
 
+# Initialize thefuck <- https://github.com/nvbn/thefuck#installation
+eval $(thefuck --alias)
+
 ### Custom Dotfiles ###
 #
+# * ~/.keys can be used to set and document keybindings
 # * ~/.exports can be used to extend `$PATH`.
 # * ~/.aliases can be used for aliases
 # * ~/.functions can be used for custom scripts
