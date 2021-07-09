@@ -3,35 +3,6 @@
 General Infos
 https://wiki-ubuntuusers.de
 
-## All sources.list files -> `sources/`
-
-## Get all installed Ubuntu packages
-
-`installed-ubuntu-packages.txt`
-
-Created with:
-
-```
-dpkg --get-selections > ~/workspace/dotfiles/ubuntu/installed-ubuntu-packages.txt
-```
-
-Or better use apt-clone:
-
-https://askubuntu.com/questions/17823/how-to-list-all-installed-packages
-
-```
-sudo apt-get install apt-clone
-sudo apt-clone clone path-to/apt-clone-state-ubuntu-$(lsb_release -sr)-$(date +%F).tar.gz
-```
-
-restore:
-`sudo apt-get install apt-clone`
-`sudo apt-clone restore path-to/apt-clone-state-ubuntu.tar.gz`
-
-to newer release
-`sudo apt-get install apt-clone`
-`sudo apt-clone restore-new-distro path-to/apt-clone-state-ubuntu.tar.gz $(lsb_release -sc)`
-
 ## Some important tools:
 
 Ulauncher

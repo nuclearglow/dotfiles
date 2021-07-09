@@ -24,7 +24,7 @@ export FZF_DEFAULT_OPTS="
 --height=80%
 --multi
 --preview-window=:hidden
---preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --color='hl:200,hl+:207,pointer:014,marker:010,bg+:237,gutter:237'
 --prompt='∼ '
 --pointer='▶'
@@ -36,5 +36,5 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-o:execute(code {+})'
 --bind 'ctrl-x:abort'
 "
-export FZF_DEFAULT_COMMAND='/usr/bin/fdfind --type file --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='/home/nuky/.cargo/bin/fd --type file --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

@@ -21,6 +21,9 @@ unset MAILCHECK
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# nvm
+export NVM_AUTOLOAD=1
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -80,6 +83,12 @@ ENABLE_CORRECTION="true"
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
 
+# History Setup
+HISTFILE=~/.zsh_history
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -93,25 +102,25 @@ plugins=(
   git
   colorize
   docker
+  docker-compose
   mosh
-  #ng
+  extract # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
   fd
-  node # enables `node-docs fs`
   nvm
   npm
-  #ssh-agent # maybe define multiple identites
   ubuntu
   yarn
+  command-not-found # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
   zsh_reload # src
-  conda-zsh-completion # conda custom completion plugin
   z       # z folder prediction
   fzf     # automatic ctrl+r completion
   dotenv  # automatically load .env vars in folder
-  rustup  # rustup completions <- https://github.com/pkulev/zsh-rustup-completion
+  rustup  # rustup completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rustup
   cargo   # rust cargo completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cargo
   zsh-autosuggestions #  autocomplete command suggestions <- https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
 )
 
+# oh my zsh :-)
 source $ZSH/oh-my-zsh.sh
 
 # disable zsh autocorrect
@@ -123,53 +132,8 @@ setopt COMPLETE_ALIASES
 # set razer mouse status code support
 source ~/.razer/razer_status_code.zsh
 
-### nvm ###
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. $NVM_DIR/nvm.sh --no-use # This loads nvm
-[ -s "$HOME/.nvmrc" ] && nvm use # This enables the standard node environment from ~/.nvmrc
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/nuky/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/nuky/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/nuky/.miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/nuky/.miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # zsh autoloading enabled
 autoload -U compinit && compinit
-
-# start currently used env
-conda activate ml-gpu
-
-# automatically call `nvm use` for all directories with a `.nvmrc` file
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # Initialize fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -180,6 +144,9 @@ source "$HOME/.cargo/env"
 # Initialize rust-navi shell widget
 # https://github.com/denisidoro/navi/blob/master/docs/installation.md#installing-the-shell-widget
 eval "$(navi widget zsh)"
+
+# Initialize emplace
+eval "$(emplace init zsh -c $HOME/.emplace/config.toml) >/dev/null 2>&1"
 
 # Initialize thefuck <- https://github.com/nvbn/thefuck#installation
 eval $(thefuck --alias)

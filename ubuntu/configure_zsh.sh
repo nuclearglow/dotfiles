@@ -11,6 +11,7 @@ cp $HOME/dotfiles/ubuntu/.exports $HOME
 cp $HOME/dotfiles/ubuntu/.fzf.zsh $HOME
 cp $HOME/dotfiles/ubuntu/.p10k.zsh $HOME
 cp $HOME/dotfiles/ubuntu/.zshrc $HOME
+cp $HOME/dotfiles/ubuntu/.profile $HOME
 
 mkdir $HOME/bin
 cp $HOME/dotfiles/ubuntu/bin/* $HOME/bin
