@@ -21,8 +21,9 @@ unset MAILCHECK
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# nvm
-export NVM_AUTOLOAD=1
+# zsh-nvm setup
+export NVM_COMPLETION=true
+export NVM_AUTO_USE=true
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -106,6 +107,7 @@ plugins=(
   mosh
   extract # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
   fd
+  zsh-nvm # https://github.com/lukechilds/zsh-nvm
   nvm
   npm
   ubuntu

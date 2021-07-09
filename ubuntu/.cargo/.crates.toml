@@ -14,4 +14,3 @@
 "procs 0.11.9 (registry+https://github.com/rust-lang/crates.io-index)" = ["procs"]
 "tealdeer 1.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["tldr"]
 "tokei 12.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["tokei"]
-"zellij 0.14.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["zellij"]

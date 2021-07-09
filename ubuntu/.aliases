@@ -10,11 +10,11 @@ alias ls='exa'
 alias ll='exa --all --header --long --group --classify --git'
 
 # bat instead of cat
-alias bat='batcat'
-alias cat='batcat --paging=never'
+alias bat='bat'
+alias cat='bat --paging=never'
 
 # bat instead of less
-alias less='batcat'
+alias less='bat'
 
 # fd
 alias fd='/usr/bin/fdfind'
