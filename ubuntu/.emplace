@@ -1,0 +1,592 @@
+([
+(
+source: Apt(()),
+name: "android-sdk-platform-tools-common",
+flags: [],
+),
+(
+source: Apt(()),
+name: "android-tools-adb",
+flags: [],
+),
+(
+source: Apt(()),
+name: "apt-transport-https",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "bandwhich",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "bat",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "bottom",
+flags: [],
+),
+(
+source: Apt(()),
+name: "brave-browser",
+flags: [],
+),
+(
+source: Apt(()),
+name: "ca-certificates",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "cargo-update",
+flags: [],
+),
+(
+source: Apt(()),
+name: "chrome-gnome-shell",
+flags: [],
+),
+(
+source: Apt(()),
+name: "cifs-utils",
+flags: [],
+),
+(
+source: Apt(()),
+name: "code",
+flags: [],
+),
+(
+source: Snap(()),
+name: "color-picker",
+flags: [],
+),
+(
+source: Apt(()),
+name: "containerd.io",
+flags: [],
+),
+(
+source: Apt(()),
+name: "curl",
+flags: [],
+),
+(
+source: Apt(()),
+name: "dconf-editor",
+flags: [],
+),
+(
+source: Apt(()),
+name: "docker-ce",
+flags: [],
+),
+(
+source: Apt(()),
+name: "docker-ce-cli",
+flags: [],
+),
+(
+source: Apt(()),
+name: "docker-compose",
+flags: [],
+),
+(
+source: Apt(()),
+name: "docker.io",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "du-dust",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "emplace\\",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "exa",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "fd-find",
+flags: [],
+),
+(
+source: Apt(()),
+name: "fonts-roboto",
+flags: [],
+),
+(
+source: Apt(()),
+name: "g++",
+flags: [],
+),
+(
+source: Apt(()),
+name: "g810-led",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gifsicle",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gimp",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gimp-plugin-registry",
+flags: [],
+),
+(
+source: Apt(()),
+name: "git",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "git-delta",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "gitweb",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gnome-shell-extension-caffeine",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gnome-shell-extension-system-monitor",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gnome-shell-extensions",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gnome-shell-extensions-gpaste",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gnome-tweak-tool",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gnupg",
+flags: [],
+),
+(
+source: Apt(()),
+name: "google-chrome-stable",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gparted",
+flags: [],
+),
+(
+source: Apt(()),
+name: "gpaste",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "gpg-tui\\",
+flags: [],
+),
+(
+source: Apt(()),
+name: "graphviz",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "grex",
+flags: [],
+),
+(
+source: Apt(()),
+name: "htop",
+flags: [],
+),
+(
+source: Apt(()),
+name: "hunspell-de-de",
+flags: [],
+),
+(
+source: Apt(()),
+name: "imagemagick",
+flags: [],
+),
+(
+source: Apt(()),
+name: "inkscape",
+flags: [],
+),
+(
+source: Apt(()),
+name: "jq",
+flags: [],
+),
+(
+source: Apt(()),
+name: "keepassxc",
+flags: [],
+),
+(
+source: Apt(()),
+name: "keychain",
+flags: [],
+),
+(
+source: Apt(()),
+name: "keyutils",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libfaac0",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libgpgme-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libhidapi-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libratbag",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libssl-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libusb-1.0-0-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libx11-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libxcb-shape0-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libxcb-xfixes0-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libxkbcommon-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libxvidcore4",
+flags: [],
+),
+(
+source: Apt(()),
+name: "lsb-release",
+flags: [],
+),
+(
+source: Apt(()),
+name: "lzma",
+flags: [],
+),
+(
+source: Apt(()),
+name: "make",
+flags: [],
+),
+(
+source: Apt(()),
+name: "mosh",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "navi",
+flags: [],
+),
+(
+source: Apt(()),
+name: "net-tools",
+flags: [],
+),
+(
+source: Apt(()),
+name: "nethogs",
+flags: [],
+),
+(
+source: Apt(()),
+name: "network-manager-vpnc-gnome",
+flags: [],
+),
+(
+source: Apt(()),
+name: "nnn",
+flags: [],
+),
+(
+source: Apt(()),
+name: "okular",
+flags: [],
+),
+(
+source: Apt(()),
+name: "onlyoffice",
+flags: [],
+),
+(
+source: Apt(()),
+name: "onlyoffice-desktopeditors",
+flags: [],
+),
+(
+source: Apt(()),
+name: "onlyoffice-desktopeditors\\",
+flags: [],
+),
+(
+source: Apt(()),
+name: "openssh-server",
+flags: [],
+),
+(
+source: Apt(()),
+name: "p7zip",
+flags: [],
+),
+(
+source: Apt(()),
+name: "peek",
+flags: [],
+),
+(
+source: Apt(()),
+name: "pinta",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "procs",
+flags: [],
+),
+(
+source: Apt(()),
+name: "pygments",
+flags: [],
+),
+(
+source: Apt(()),
+name: "python-pygments",
+flags: [],
+),
+(
+source: Apt(()),
+name: "python3-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "python3-pip",
+flags: [],
+),
+(
+source: Apt(()),
+name: "python3-pygments",
+flags: [],
+),
+(
+source: Apt(()),
+name: "python3-setuptools",
+flags: [],
+),
+(
+source: Apt(()),
+name: "qt5-style-kvantum",
+flags: [],
+),
+(
+source: Apt(()),
+name: "qt5-style-kvantum-themes",
+flags: [],
+),
+(
+source: Apt(()),
+name: "rar",
+flags: [],
+),
+(
+source: Apt(()),
+name: "ratbagd",
+flags: [],
+),
+(
+source: Apt(()),
+name: "rename",
+flags: [],
+),
+(
+source: Apt(()),
+name: "rsync",
+flags: [],
+),
+(
+source: Apt(()),
+name: "signal-desktop",
+flags: [],
+),
+(
+source: Apt(()),
+name: "silversearcher-ag",
+flags: [],
+),
+(
+source: Apt(()),
+name: "sl",
+flags: [],
+),
+(
+source: Apt(()),
+name: "sublime-text",
+flags: [],
+),
+(
+source: Snap(()),
+name: "sublime-text-3",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "tealdeer",
+flags: [],
+),
+(
+source: Apt(()),
+name: "telegram-desktop",
+flags: [],
+),
+(
+source: Apt(()),
+name: "terminator",
+flags: [],
+),
+(
+source: Apt(()),
+name: "texlive-full",
+flags: [],
+),
+(
+source: Pip3(()),
+name: "thefuck",
+flags: [],
+),
+(
+source: Apt(()),
+name: "thunar",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "tokei",
+flags: [],
+),
+(
+source: Apt(()),
+name: "ttf-mscorefonts-installer",
+flags: [],
+),
+(
+source: Apt(()),
+name: "ubuntu-desktop",
+flags: [],
+),
+(
+source: Apt(()),
+name: "ubuntu-restricted-extras",
+flags: [],
+),
+(
+source: Apt(()),
+name: "ulauncher",
+flags: [],
+),
+(
+source: Apt(()),
+name: "unrar",
+flags: [],
+),
+(
+source: Apt(()),
+name: "unzip",
+flags: [],
+),
+(
+source: Apt(()),
+name: "vim",
+flags: [],
+),
+(
+source: Apt(()),
+name: "vlc",
+flags: [],
+),
+(
+source: Apt(()),
+name: "wget",
+flags: [],
+),
+(
+source: Apt(()),
+name: "xclip",
+flags: [],
+),
+(
+source: Cargo(()),
+name: "zellij",
+flags: [],
+),
+(
+source: Apt(()),
+name: "zip",
+flags: [],
+),
+])
