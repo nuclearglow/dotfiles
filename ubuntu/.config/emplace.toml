@@ -1,0 +1,6 @@
+repo_directory = "/home/nuky/.local/share/emplace"
+
+[repo]
+branch = "main"
+file = "ubuntu/.emplace"
+url = "git@github.com:nuclearglow/dotfiles.git"
