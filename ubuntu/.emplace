@@ -470,6 +470,11 @@ name: "rename",
 flags: [],
 ),
 (
+source: Cargo(()),
+name: "rm-improved",
+flags: [],
+),
+(
 source: Apt(()),
 name: "rsync",
 flags: [],
