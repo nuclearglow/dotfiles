@@ -235,6 +235,11 @@ name: "hunspell-de-de",
 flags: [],
 ),
 (
+source: Cargo(()),
+name: "hx",
+flags: [],
+),
+(
 source: Apt(()),
 name: "imagemagick",
 flags: [],
