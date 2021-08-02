@@ -5,12 +5,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
-else
-    export EDITOR='code'
-fi
+export EDITOR='vim'
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -33,7 +28,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
 ZLE_RPROMPT_INDENT=0
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -108,7 +102,6 @@ plugins=(
   extract # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
   fd
   zsh-nvm # https://github.com/lukechilds/zsh-nvm
-  nvm
   npm
   ubuntu
   yarn
@@ -140,7 +133,7 @@ autoload -U compinit && compinit
 # Initialize fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Initialize rust
+# Initialize Rust/Cargo
 source "$HOME/.cargo/env"
 
 # Initialize rust-navi shell widget
@@ -148,7 +141,7 @@ source "$HOME/.cargo/env"
 eval "$(navi widget zsh)"
 
 # Initialize emplace
-eval "$(emplace init zsh -c $HOME/.emplace/config.toml) >/dev/null 2>&1"
+eval "$(emplace init zsh -c $HOME/.config/emplace.toml) >/dev/null 2>&1"
 
 # Initialize thefuck <- https://github.com/nvbn/thefuck#installation
 eval $(thefuck --alias)

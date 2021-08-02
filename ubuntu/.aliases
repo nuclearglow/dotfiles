@@ -16,9 +16,6 @@ alias cat='bat --paging=never'
 # bat instead of less
 alias less='bat'
 
-# fd
-alias fd='/usr/bin/fdfind'
-
 # tokei instead of cloc
 alias cloc='tokei'
 
@@ -32,13 +29,17 @@ alias top='btm --celsius'
 alias tldr='tldr'
 
 # bandwhich
-alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enp4s0 --dns-server 10.10.10.1'
+alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enx806d97154e45 --dns-server 10.10.10.1'
 
 # grex
 alias grex='grex --digits --spaces --repetitions --colorize'
 
 # copy pipe
 alias copy='xclip -sel clip'
+
+# hx
+alias hex='hx'
+alias binary='hx -fb -c4'
 
 # prettyping instead of ping
 alias ping='prettyping'
