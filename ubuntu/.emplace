@@ -80,6 +80,11 @@ name: "dconf-editor",
 flags: [],
 ),
 (
+source: Cargo(()),
+name: "diskonaut",
+flags: [],
+),
+(
 source: Apt(()),
 name: "docker-ce",
 flags: [],
