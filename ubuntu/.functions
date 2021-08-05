@@ -122,3 +122,13 @@ function docker_trace() {
     docker_trace $parent $level
   fi
 }
+
+# Install fnm completions in oh-my-zsh custom completion folder
+function install_fnm_completions() {
+	fnm completions --shell zsh > $HOME/.oh-my-zsh/completions/_fnm
+}
+
+function timezsh() {
+  	shell=${1-$SHELL}
+  	for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}

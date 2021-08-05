@@ -16,15 +16,11 @@ unset MAILCHECK
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# zsh-nvm setup
-export NVM_COMPLETION=true
-export NVM_AUTO_USE=true
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
 ZLE_RPROMPT_INDENT=0
@@ -101,7 +97,6 @@ plugins=(
   mosh
   extract # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
   fd
-  zsh-nvm # https://github.com/lukechilds/zsh-nvm
   npm
   ubuntu
   yarn
@@ -145,6 +140,20 @@ eval "$(emplace init zsh -c $HOME/.config/emplace.toml) >/dev/null 2>&1"
 
 # Initialize thefuck <- https://github.com/nvbn/thefuck#installation
 eval $(thefuck --alias)
+
+# Initialize fnm <- https://github.com/Schniz/fnm#shell-setup
+eval "$(fnm env)"
+
+# Initialize fnm autoload zsh hook
+autoload -U add-zsh-hook
+_fnm_autoload_hook () {
+  if [[ -f .node-version && -r .node-version ]]; then
+    echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .node-version))\033[0m ➤"; fnm use;
+    elif [[ -f .nvmrc && -r .nvmrc ]]; then
+    echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .nvmrc))\033[0m ➤ "; fnm use;
+  fi
+}
+add-zsh-hook chpwd _fnm_autoload_hook && _fnm_autoload_hook
 
 ### Custom Dotfiles ###
 #
