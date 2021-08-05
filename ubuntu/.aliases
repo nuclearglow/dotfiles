@@ -16,9 +16,6 @@ alias cat='bat --paging=never'
 # bat instead of less
 alias less='bat'
 
-# fd
-alias fd='/usr/bin/fdfind'
-
 # tokei instead of cloc
 alias cloc='tokei'
 
@@ -38,13 +35,21 @@ alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enp4s0 --dns-server 10.10.10.1'
 alias grex='grex --digits --spaces --repetitions --colorize'
 
 # copy pipe
+# example: copy current path to clipboard: pwd | copy
 alias copy='xclip -sel clip'
 
 # prettyping instead of ping
 alias ping='prettyping'
 
+# list open ports using netstat
+alias ports='netstat --listening --program --numeric --tcp --udp --extend'
+
 # fd instead of find
 alias find='fd'
+
+# hx
+alias hex='hx'
+alias binary='hx -fb -c4'
 
 # dos
 alias dir='exa --all --header --long --group --classify --git'
@@ -72,7 +77,7 @@ alias week='date +%V'
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
-# Intuitive map function
+# map pipe
 # For example, to list all directories that contain a certain file:
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"

@@ -1,3 +1,6 @@
+# Enable zsh profiler, run zprof for zsh self profiling
+# zmodload zsh/zprof
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
