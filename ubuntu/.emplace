@@ -125,6 +125,11 @@ name: "fd-find",
 flags: [],
 ),
 (
+source: Cargo(()),
+name: "fnm",
+flags: [],
+),
+(
 source: Apt(()),
 name: "fonts-roboto",
 flags: [],
