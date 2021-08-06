@@ -296,6 +296,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "libnss3-tools",
+flags: [],
+),
+(
+source: Apt(()),
 name: "libratbag",
 flags: [],
 ),
