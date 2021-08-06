@@ -206,6 +206,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "golang-go",
+flags: [],
+),
+(
+source: Apt(()),
 name: "google-chrome-stable",
 flags: [],
 ),
