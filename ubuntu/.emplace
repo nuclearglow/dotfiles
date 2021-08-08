@@ -301,6 +301,16 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "libfontconfig1-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libfreetype6-dev",
+flags: [],
+),
+(
+source: Apt(()),
 name: "libgpgme-dev",
 flags: [],
 ),
@@ -445,6 +455,11 @@ name: "pinta",
 flags: [],
 ),
 (
+source: Apt(()),
+name: "pkg-config",
+flags: [],
+),
+(
 source: Cargo(()),
 name: "procs",
 flags: [],
@@ -457,6 +472,11 @@ flags: [],
 (
 source: Apt(()),
 name: "python-pygments",
+flags: [],
+),
+(
+source: Apt(()),
+name: "python3",
 flags: [],
 ),
 (
