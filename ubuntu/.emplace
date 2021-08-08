@@ -590,6 +590,11 @@ name: "thunar",
 flags: [],
 ),
 (
+source: Apt(()),
+name: "tmux",
+flags: [],
+),
+(
 source: Cargo(()),
 name: "tokei",
 flags: [],
