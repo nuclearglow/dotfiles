@@ -61,6 +61,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "cmake",
+flags: [],
+),
+(
+source: Apt(()),
 name: "code",
 flags: [],
 ),
