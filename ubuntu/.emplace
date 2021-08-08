@@ -1,5 +1,10 @@
 ([
 (
+source: Cargo(()),
+name: "alacritty",
+flags: [],
+),
+(
 source: Apt(()),
 name: "android-sdk-platform-tools-common",
 flags: [],
