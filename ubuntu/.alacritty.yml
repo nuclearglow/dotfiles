@@ -73,7 +73,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Windowed
+  startup_mode: Maximized
 
   # Window title
   title: Alacritty
@@ -369,7 +369,7 @@ background_opacity: 1.0
 cursor:
   # Cursor style
   style:
-    # Cursor shape
+   # Cursor shape
     #
     # Values for `shape`:
     #   - ▇ Block
@@ -421,9 +421,9 @@ cursor:
 shell:
   program: /usr/bin/zsh
   args:
-    - -l
-    - -c
-    - "tmux attach"
+     - -l
+     - -c
+     - "tmux attach"
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

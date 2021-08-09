@@ -347,6 +347,10 @@ bind -n C-PageDown select-window -n
 # do not evaluate .zprofile, directly start an interactive shell
 set-option -g default-command zsh
 
+# Use keychain for SSH authentication
+set-environment -g 'SSH_AUTH_SOCK' /run/user/1000/keyring/ssh
+
+# custom pane border
 setw -g pane-border-status top
 setw -g pane-border-format "─"
 
