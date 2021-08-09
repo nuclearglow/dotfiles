@@ -1,5 +1,10 @@
 ([
 (
+source: Cargo(()),
+name: "alacritty",
+flags: [],
+),
+(
 source: Apt(()),
 name: "android-sdk-platform-tools-common",
 flags: [],
@@ -52,6 +57,11 @@ flags: [],
 (
 source: Apt(()),
 name: "cifs-utils",
+flags: [],
+),
+(
+source: Apt(()),
+name: "cmake",
 flags: [],
 ),
 (
@@ -206,6 +216,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "golang-go",
+flags: [],
+),
+(
+source: Apt(()),
 name: "google-chrome-stable",
 flags: [],
 ),
@@ -286,12 +301,27 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "libfontconfig1-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libfreetype6-dev",
+flags: [],
+),
+(
+source: Apt(()),
 name: "libgpgme-dev",
 flags: [],
 ),
 (
 source: Apt(()),
 name: "libhidapi-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libnss3-tools",
 flags: [],
 ),
 (
@@ -425,6 +455,11 @@ name: "pinta",
 flags: [],
 ),
 (
+source: Apt(()),
+name: "pkg-config",
+flags: [],
+),
+(
 source: Cargo(()),
 name: "procs",
 flags: [],
@@ -437,6 +472,11 @@ flags: [],
 (
 source: Apt(()),
 name: "python-pygments",
+flags: [],
+),
+(
+source: Apt(()),
+name: "python3",
 flags: [],
 ),
 (
@@ -547,6 +587,11 @@ flags: [],
 (
 source: Apt(()),
 name: "thunar",
+flags: [],
+),
+(
+source: Apt(()),
+name: "tmux",
 flags: [],
 ),
 (
