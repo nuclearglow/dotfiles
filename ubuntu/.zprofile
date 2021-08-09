@@ -10,10 +10,6 @@ if [ -n "$SESSION_TYPE" ]; then
     # on ssh just display a welcome message
     cat ~/.ssh/hobel
 else
-    # Set up keychain
-    # TODO: set keys
-    eval `keychain --eval --agents ssh id_rsa`
-
     # Set up keyboard lighting
     g810-led -p ~/.g815/nukeys
 
