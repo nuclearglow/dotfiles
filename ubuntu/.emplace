@@ -295,6 +295,11 @@ name: "keyutils",
 flags: [],
 ),
 (
+source: Cargo(()),
+name: "kiro-editor",
+flags: [],
+),
+(
 source: Apt(()),
 name: "libfaac0",
 flags: [],
