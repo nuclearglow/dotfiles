@@ -664,4 +664,9 @@ source: Apt(()),
 name: "zip",
 flags: [],
 ),
+(
+source: Snap(()),
+name: "zoom-client",
+flags: [],
+),
 ])
