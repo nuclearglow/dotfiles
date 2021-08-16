@@ -301,6 +301,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "kubectl",
+flags: [],
+),
+(
+source: Apt(()),
 name: "libfaac0",
 flags: [],
 ),
