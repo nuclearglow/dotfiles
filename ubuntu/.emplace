@@ -550,6 +550,11 @@ name: "signal-desktop",
 flags: [],
 ),
 (
+source: Go(()),
+name: "sigs.k8s.io/kind@v0.11.1",
+flags: [],
+),
+(
 source: Apt(()),
 name: "silversearcher-ag",
 flags: [],
