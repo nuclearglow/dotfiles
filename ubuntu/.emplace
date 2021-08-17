@@ -511,6 +511,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "python3.9",
+flags: [],
+),
+(
+source: Apt(()),
 name: "qt5-style-kvantum",
 flags: [],
 ),
