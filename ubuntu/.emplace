@@ -331,6 +331,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "libfdk-aac1",
+flags: [],
+),
+(
+source: Apt(()),
 name: "libfontconfig1-dev",
 flags: [],
 ),
