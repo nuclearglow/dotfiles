@@ -160,6 +160,11 @@ name: "fonts-roboto",
 flags: [],
 ),
 (
+source: Snap(()),
+name: "freac",
+flags: [],
+),
+(
 source: Apt(()),
 name: "g++",
 flags: [],
