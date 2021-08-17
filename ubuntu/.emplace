@@ -516,6 +516,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "python3.9-venv",
+flags: [],
+),
+(
+source: Apt(()),
 name: "qt5-style-kvantum",
 flags: [],
 ),
