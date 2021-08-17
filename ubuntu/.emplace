@@ -566,6 +566,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "software-properties-common",
+flags: [],
+),
+(
+source: Apt(()),
 name: "sublime-text",
 flags: [],
 ),
