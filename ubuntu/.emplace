@@ -130,8 +130,23 @@ name: "exa",
 flags: [],
 ),
 (
+source: Apt(()),
+name: "faac",
+flags: [],
+),
+(
+source: Apt(()),
+name: "faad",
+flags: [],
+),
+(
 source: Cargo(()),
 name: "fd-find",
+flags: [],
+),
+(
+source: Apt(()),
+name: "flac",
 flags: [],
 ),
 (
@@ -306,6 +321,11 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "lame",
+flags: [],
+),
+(
+source: Apt(()),
 name: "libfaac0",
 flags: [],
 ),
@@ -327,6 +347,16 @@ flags: [],
 (
 source: Apt(()),
 name: "libhidapi-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libmad0",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libmpcdec6",
 flags: [],
 ),
 (
@@ -392,6 +422,11 @@ flags: [],
 (
 source: Apt(()),
 name: "mosh",
+flags: [],
+),
+(
+source: Apt(()),
+name: "mppenc",
 flags: [],
 ),
 (
@@ -667,6 +702,16 @@ flags: [],
 (
 source: Apt(()),
 name: "vlc",
+flags: [],
+),
+(
+source: Apt(()),
+name: "vorbis-tools",
+flags: [],
+),
+(
+source: Apt(()),
+name: "wavpack",
 flags: [],
 ),
 (
