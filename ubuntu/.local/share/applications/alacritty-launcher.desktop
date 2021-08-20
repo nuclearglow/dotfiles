@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Alacritty
+Terminal=false
+Exec=/home/nuky/.cargo/bin/alacritty
+Icon=/home/nuky/.local/share/applications/alacritty-icon.png
