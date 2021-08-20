@@ -90,6 +90,11 @@ name: "dconf-editor",
 flags: [],
 ),
 (
+source: Apt(()),
+name: "direnv",
+flags: [],
+),
+(
 source: Cargo(()),
 name: "diskonaut",
 flags: [],
