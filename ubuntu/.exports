@@ -7,3 +7,4 @@ export NODE_OPTIONS="--max_old_space_size=4096"
 
 # Manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
