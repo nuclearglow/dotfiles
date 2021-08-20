@@ -130,8 +130,23 @@ name: "exa",
 flags: [],
 ),
 (
+source: Apt(()),
+name: "faac",
+flags: [],
+),
+(
+source: Apt(()),
+name: "faad",
+flags: [],
+),
+(
 source: Cargo(()),
 name: "fd-find",
+flags: [],
+),
+(
+source: Apt(()),
+name: "flac",
 flags: [],
 ),
 (
@@ -142,6 +157,11 @@ flags: [],
 (
 source: Apt(()),
 name: "fonts-roboto",
+flags: [],
+),
+(
+source: Snap(()),
+name: "freac",
 flags: [],
 ),
 (
@@ -301,7 +321,22 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "kubectl",
+flags: [],
+),
+(
+source: Apt(()),
+name: "lame",
+flags: [],
+),
+(
+source: Apt(()),
 name: "libfaac0",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libfdk-aac1",
 flags: [],
 ),
 (
@@ -322,6 +357,16 @@ flags: [],
 (
 source: Apt(()),
 name: "libhidapi-dev",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libmad0",
+flags: [],
+),
+(
+source: Apt(()),
+name: "libmpcdec6",
 flags: [],
 ),
 (
@@ -387,6 +432,11 @@ flags: [],
 (
 source: Apt(()),
 name: "mosh",
+flags: [],
+),
+(
+source: Apt(()),
+name: "mppenc",
 flags: [],
 ),
 (
@@ -506,6 +556,16 @@ flags: [],
 ),
 (
 source: Apt(()),
+name: "python3.9",
+flags: [],
+),
+(
+source: Apt(()),
+name: "python3.9-venv",
+flags: [],
+),
+(
+source: Apt(()),
 name: "qt5-style-kvantum",
 flags: [],
 ),
@@ -545,6 +605,11 @@ name: "signal-desktop",
 flags: [],
 ),
 (
+source: Go(()),
+name: "sigs.k8s.io/kind@v0.11.1",
+flags: [],
+),
+(
 source: Apt(()),
 name: "silversearcher-ag",
 flags: [],
@@ -552,6 +617,11 @@ flags: [],
 (
 source: Apt(()),
 name: "sl",
+flags: [],
+),
+(
+source: Apt(()),
+name: "software-properties-common",
 flags: [],
 ),
 (
@@ -642,6 +712,16 @@ flags: [],
 (
 source: Apt(()),
 name: "vlc",
+flags: [],
+),
+(
+source: Apt(()),
+name: "vorbis-tools",
+flags: [],
+),
+(
+source: Apt(()),
+name: "wavpack",
 flags: [],
 ),
 (
