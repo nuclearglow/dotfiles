@@ -1,10 +1,24 @@
+# Go binaries
+export PATH=$HOME/go/bin:$PATH
+
+# Kubernetes
+export KUBECONFIG=$HOME/.kube/config
+
+# Docker Registry
+export DOCKER_REGISTRY=$(hostname):5000
+export PGPORT=5432
+export PGADMIN_PORT=5050
+
 # Set KDE theme
 export QT_STYLE_OVERRIDE=kvantum
 export QT_QPA_PLATFORMTHEME=gtk2
 
-# NodeJS memory bumpup
+# NodeJS
 export NODE_OPTIONS="--max_old_space_size=4096"
+export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 # Manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# Github CLI
+export GH_EDITOR="code"

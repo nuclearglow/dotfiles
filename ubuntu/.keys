@@ -6,3 +6,6 @@
 # * CTRL-Z: fzf select file
 # * CTRL-T: fzf select file
 bindkey '^Z' fzf-file-widget
+
+# Accept zsh-autosuggestion on END <- https://github.com/zsh-users/zsh-autosuggestions#key-bindings
+bindkey '^[[F' autosuggest-accept

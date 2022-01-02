@@ -446,7 +446,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach"
+    - "tmux -2 attach"
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

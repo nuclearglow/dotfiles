@@ -1,13 +1,16 @@
 # Enable zsh profiler, run zprof for zsh self profiling
 # zmodload zsh/zprof
 
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Editor
 export EDITOR='vim'
 
 # Compilation flags
@@ -41,13 +44,13 @@ ZLE_RPROMPT_INDENT=0
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=13
+#export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
@@ -94,22 +97,23 @@ setopt hist_ignore_all_dups
 # ohmyzsh plugins
 plugins=(
   git
+  gitfast
   colorize
   docker
   docker-compose
+  gulp
   mosh
-  extract # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
+  extract             # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
   fd
   npm
   ubuntu
   yarn
-  command-not-found # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
-  zsh_reload # src
-  z       # z folder prediction
-  fzf     # automatic ctrl+r completion
-  dotenv  # automatically load .env vars in folder
-  rustup  # rustup completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rustup
-  cargo   # rust cargo completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cargo
+  kubectl
+  gh                  # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh
+  command-not-found   # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
+  fzf                 # automatic ctrl+r and ctrl+t completion
+  direnv              # automatically load .envrc vars in folder
+  rust                # rust completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust
   zsh-autosuggestions #  autocomplete command suggestions <- https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
 )
 
@@ -119,14 +123,11 @@ source $ZSH/oh-my-zsh.sh
 # disable zsh autocorrect
 unsetopt correct_all
 
-# complete aliases
-setopt COMPLETE_ALIASES
-
 # set razer mouse status code support
-source ~/.razer/razer_status_code.zsh
+#source ~/.razer/razer_status_code.zsh
 
 # zsh autoloading enabled
-autoload -U compinit && compinit
+autoload -U compinit && compinit -i
 
 # Initialize fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -134,25 +135,24 @@ autoload -U compinit && compinit
 # Initialize Rust/Cargo
 source "$HOME/.cargo/env"
 
-# Initialize rust-navi shell widget
-# https://github.com/denisidoro/navi/blob/master/docs/installation.md#installing-the-shell-widget
-eval "$(navi widget zsh)"
+# Initialize fnm <- https://github.com/Schniz/fnm#shell-setup
+eval "$(fnm env)"
 
-# Initialize emplace
-eval "$(emplace init zsh -c $HOME/.config/emplace.toml) >/dev/null 2>&1"
+# Initialize direnv <- https://direnv.net/
+eval "$(direnv hook zsh)"
+
+# Initialize zoxide <- https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
 
 # Initialize thefuck <- https://github.com/nvbn/thefuck#installation
 eval $(thefuck --alias)
-
-# Initialize fnm <- https://github.com/Schniz/fnm#shell-setup
-eval "$(fnm env)"
 
 # Initialize fnm autoload zsh hook
 autoload -U add-zsh-hook
 _fnm_autoload_hook () {
   if [[ -f .node-version && -r .node-version ]]; then
     echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .node-version))\033[0m ➤"; fnm use;
-    elif [[ -f .nvmrc && -r .nvmrc ]]; then
+  elif [[ -f .nvmrc && -r .nvmrc ]]; then
     echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .nvmrc))\033[0m ➤ "; fnm use;
   fi
 }
@@ -167,7 +167,7 @@ add-zsh-hook chpwd _fnm_autoload_hook && _fnm_autoload_hook
 # * ~/.extras can be used for other settings you don’t want to commit.
 #
 for file in ~/.{aliases,exports,functions,extras,keys}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 

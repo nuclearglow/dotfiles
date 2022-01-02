@@ -129,6 +129,5 @@ function install_fnm_completions() {
 }
 
 function timezsh() {
-  	shell=${1-$SHELL}
-  	for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+	hyperfine --warmup 5 '${1-$SHELL} -i -c exit 0;'
 }
