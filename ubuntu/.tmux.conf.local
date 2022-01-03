@@ -344,6 +344,10 @@ bind-key C-Space send-prefix
 bind -n C-PageUp select-window -p
 bind -n C-PageDown select-window -n
 
+# force HOME and END to work in all terminals, especially alacritty
+bind-key -n Home send Escape "OH"
+bind-key -n End send Escape "OF"
+
 # do not evaluate .zprofile, directly start an interactive shell
 set-option -g default-command zsh
 

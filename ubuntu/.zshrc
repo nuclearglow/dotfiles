@@ -126,6 +126,9 @@ unsetopt correct_all
 # set razer mouse status code support
 #source ~/.razer/razer_status_code.zsh
 
+# complete aliases
+setopt COMPLETE_ALIASES
+
 # zsh autoloading enabled
 autoload -U compinit && compinit -i
 
