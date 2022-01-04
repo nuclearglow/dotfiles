@@ -14,4 +14,4 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
 # Accept zsh-autosuggestion on END <- https://github.com/zsh-users/zsh-autosuggestions#key-bindings
-#bindkey '^[[F' autosuggest-accept
+bindkey '^[[F' autosuggest-accept
