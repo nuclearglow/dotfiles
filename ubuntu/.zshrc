@@ -29,7 +29,7 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
-ZLE_RPROMPT_INDENT=0
+export ZLE_RPROMPT_INDENT=0
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/

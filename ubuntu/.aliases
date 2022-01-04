@@ -50,7 +50,8 @@ alias ping='prettyping'
 alias find='fd'
 
 # list open ports using netstat
-alias ports='ss -tulpn'
+alias myports='ports --mine'
+alias allports='sudo /home/nuky/.cargo/bin/ports --udp --ipv6'
 
 # usde python3.9 as default
 alias python3='python3.9'
