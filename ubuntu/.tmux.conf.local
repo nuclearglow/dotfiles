@@ -356,7 +356,7 @@ set-environment -g 'SSH_AUTH_SOCK' /run/user/1000/keyring/ssh
 
 # custom pane border
 setw -g pane-border-status top
-setw -g pane-border-format "| (◔_◔) |"
+setw -g pane-border-format "|    |"
 
 # -- tpm -----------------------------------------------------------------------
 

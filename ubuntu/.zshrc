@@ -123,11 +123,11 @@ source $ZSH/oh-my-zsh.sh
 # disable zsh autocorrect
 unsetopt correct_all
 
-# set razer mouse status code support
-#source ~/.razer/razer_status_code.zsh
-
 # complete aliases
 setopt COMPLETE_ALIASES
+
+# set razer mouse status code support
+#source ~/.razer/razer_status_code.zsh
 
 # zsh autoloading enabled
 autoload -U compinit && compinit -i
@@ -139,7 +139,7 @@ autoload -U compinit && compinit -i
 source "$HOME/.cargo/env"
 
 # Initialize fnm <- https://github.com/Schniz/fnm#shell-setup
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd)"
 
 # Initialize direnv <- https://direnv.net/
 eval "$(direnv hook zsh)"
@@ -151,15 +151,15 @@ eval "$(zoxide init zsh)"
 eval $(thefuck --alias)
 
 # Initialize fnm autoload zsh hook
-autoload -U add-zsh-hook
-_fnm_autoload_hook () {
-  if [[ -f .node-version && -r .node-version ]]; then
-    echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .node-version))\033[0m ➤"; fnm use;
-  elif [[ -f .nvmrc && -r .nvmrc ]]; then
-    echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .nvmrc))\033[0m ➤ "; fnm use;
-  fi
-}
-add-zsh-hook chpwd _fnm_autoload_hook && _fnm_autoload_hook
+# autoload -U add-zsh-hook
+# _fnm_autoload_hook () {
+#   if [[ -f .node-version && -r .node-version ]]; then
+#     echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .node-version))\033[0m ➤"; fnm use;
+#   elif [[ -f .nvmrc && -r .nvmrc ]]; then
+#     echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .nvmrc))\033[0m ➤ "; fnm use;
+#   fi
+# }
+# add-zsh-hook chpwd _fnm_autoload_hook && _fnm_autoload_hook
 
 ### Custom Dotfiles ###
 #

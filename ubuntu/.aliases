@@ -8,7 +8,8 @@ alias src="exec zsh"
 
 # exa instead of ls
 alias ls='exa'
-alias ll='exa --all --header --long --group --classify --git'
+alias ll='exa --all --header --long --group --classify --git --icons --group-directories-first'
+alias lstree='exa --all --header --tree --level=3 --long --group --classify --git --icons --group-directories-first'
 
 # bat instead of cat
 alias bat='bat'
@@ -30,7 +31,10 @@ alias top='btm --celsius'
 alias tldr='tldr'
 
 # bandwhich
-alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enp4s0 --dns-server 10.10.10.1'
+# network interfaces:
+# enp4s0
+# enx806d97154e45
+alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enx806d97154e45 --dns-server 10.10.10.1'
 
 # grex
 alias grex='grex --digits --spaces --repetitions --colorize'

@@ -6,6 +6,8 @@ export KUBECONFIG=$HOME/.kube/config
 
 # Docker Registry
 export DOCKER_REGISTRY=$(hostname):5000
+
+# Postgres Defaults
 export PGPORT=5432
 export PGADMIN_PORT=5050
 
@@ -14,7 +16,7 @@ export QT_STYLE_OVERRIDE=kvantum
 export QT_QPA_PLATFORMTHEME=gtk2
 
 # NodeJS
-export NODE_OPTIONS="--max_old_space_size=4096"
+export NODE_OPTIONS="--max_old_space_size=8192"
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
 # Manpager

@@ -2,18 +2,18 @@
     pager = delta
 
 [diff]
-	colorMoved = default
+    colorMoved = default
 
 [interactive]
     diffFilter = delta --color-only
 
 [delta]
-	features = side-by-side line-numbers decorations
+    features = side-by-side line-numbers decorations
     plus-style = "syntax #012800"
     minus-style = "syntax #340001"
     syntax-theme = Monokai Extended Bright
-	navigate = true
-	whitespace-error-style = 22 reverse
+    navigate = true
+    whitespace-error-style = 22 reverse
 
 [delta "decorations"]
     commit-decoration-style = bold yellow box ul
