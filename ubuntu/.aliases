@@ -31,16 +31,12 @@ alias top='btm --celsius'
 alias tldr='tldr'
 
 # bandwhich
-# network interfaces:
-# enp4s0
-# enx806d97154e45
 alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enx806d97154e45 --dns-server 10.10.10.1'
 
 # grex
 alias grex='grex --digits --spaces --repetitions --colorize'
 
-# copy pipe
-# example: copy current path to clipboard: pwd | copy
+# copy pipe i.e. copy current path to clipboard: pwd | copy
 alias copy='xclip -sel clip'
 
 # hx
@@ -61,18 +57,22 @@ alias allports='sudo /home/nuky/.cargo/bin/ports --udp --ipv6'
 alias python3='python3.9'
 
 # DOS 6.22
-alias dir='exa --all --header --long --group --classify --git'
 alias cls='clear'
 alias c='clear'
+alias dir='exa --all --header --long --group --classify --git --icons --group-directories-first'
 
-# git overrides
+# git
 alias gs='git status'
 alias gcm='git commit -m'
 alias gd='git diff'
 alias gco='git checkout'
 alias gdel='git branch -d'
+alias branch='git rev-parse --abbrev-ref HEAD'
 
-# Open all merge conflicts or currently changed files in VS Code
+# git interactive branch selection, enter checks it out, tab copies it to the clipboard
+alias branches="git for-each-ref --sort='authordate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads | fzf --tac --bind 'enter:execute(echo {} | rev | cut -f1 | rev | xargs git checkout)+abort' --bind 'tab:execute-silent(echo {} | rev | cut -f1 | rev | xclip -selection clipboard)+abort'"
+
+# open all git merge conflicts or currently changed files in VS Code
 alias fix="git diff --name-only | uniq | xargs code"
 
 # git commit with commitizen

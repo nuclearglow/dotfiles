@@ -15,3 +15,6 @@ bindkey '^[[F' end-of-line
 
 # Accept zsh-autosuggestion on END <- https://github.com/zsh-users/zsh-autosuggestions#key-bindings
 bindkey '^[[F' autosuggest-accept
+
+# STRG-B run alias branches - interactive git branch selection
+bindkey -s '^B' 'branches^M'
