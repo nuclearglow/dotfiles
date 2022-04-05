@@ -316,7 +316,7 @@ tmux_conf_theme_clock_style="24"
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=false
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- user customizations -------------------------------------------------------
@@ -356,7 +356,7 @@ set-environment -g 'SSH_AUTH_SOCK' /run/user/1000/keyring/ssh
 
 # custom pane border
 setw -g pane-border-status top
-setw -g pane-border-format "|    |"
+setw -g pane-border-format "| 😴 🍵 😵 |"
 
 # -- tpm -----------------------------------------------------------------------
 

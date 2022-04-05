@@ -150,16 +150,8 @@ eval "$(zoxide init zsh)"
 # Initialize thefuck <- https://github.com/nvbn/thefuck#installation
 eval $(thefuck --alias)
 
-# Initialize fnm autoload zsh hook
-# autoload -U add-zsh-hook
-# _fnm_autoload_hook () {
-#   if [[ -f .node-version && -r .node-version ]]; then
-#     echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .node-version))\033[0m ➤"; fnm use;
-#   elif [[ -f .nvmrc && -r .nvmrc ]]; then
-#     echo -n "detected \033[0;33m.nvmrc\033[0m ⬢ \033[0;95m$(echo $(bat .nvmrc))\033[0m ➤ "; fnm use;
-#   fi
-# }
-# add-zsh-hook chpwd _fnm_autoload_hook && _fnm_autoload_hook
+# Initialize WASMEdge
+source "$HOME/.wasmedge/env"
 
 ### Custom Dotfiles ###
 #

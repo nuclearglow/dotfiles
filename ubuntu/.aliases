@@ -68,6 +68,7 @@ alias gd='git diff'
 alias gco='git checkout'
 alias gdel='git branch -d'
 alias branch='git rev-parse --abbrev-ref HEAD'
+alias gup='git push --set-upstream origin `branch`'
 
 # git interactive branch selection, enter checks it out, tab copies it to the clipboard
 alias branches="git for-each-ref --sort='authordate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads | fzf --tac --bind 'enter:execute(echo {} | rev | cut -f1 | rev | xargs git checkout)+abort' --bind 'tab:execute-silent(echo {} | rev | cut -f1 | rev | xclip -selection clipboard)+abort'"
