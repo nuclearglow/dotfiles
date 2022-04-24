@@ -340,9 +340,13 @@ unbind-key C-b
 set-option -g prefix C-Space
 bind-key C-Space send-prefix
 
-# cycle tabs using ctrl+pageup/down
+# cycle tabs using ctrl+PageUp/PageDown
 bind -n C-PageUp select-window -p
 bind -n C-PageDown select-window -n
+
+# set ctrl+shift+left and ctrl+shift+right to move the terminal tabs
+bind-key -n C-S-Left swap-window -t -1\; select-window -t -1
+bind-key -n C-S-Right swap-window -t +1\; select-window -t +1
 
 # force HOME and END to work in all terminals, especially alacritty
 bind-key -n Home send Escape "OH"
@@ -356,7 +360,7 @@ set-environment -g 'SSH_AUTH_SOCK' /run/user/1000/keyring/ssh
 
 # custom pane border
 setw -g pane-border-status top
-setw -g pane-border-format "| 😴 🍵 😵 |"
+setw -g pane-border-format "╮ 🦹  #(sh ~/workspace/dotfiles/linux/bin/weather_tmux.sh)  ╭"
 
 # -- tpm -----------------------------------------------------------------------
 
@@ -409,8 +413,12 @@ set -g @continuum-restore 'on'
 # # /!\ do not "uncomment" the functions: the leading "# " characters are needed
 #
 # weather() {
-#   curl -m 1 wttr.in?format=3 2>/dev/null
+#   curl -m 1 "wttr.in?format=3" 2>/dev/null
 #   sleep 900 # sleep for 15 minutes, throttle network requests whatever the value of status-interval
+# }
+#
+# testing() {
+#   echo "test"
 # }
 #
 # online() {
