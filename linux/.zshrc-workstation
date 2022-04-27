@@ -103,18 +103,19 @@ plugins=(
   docker-compose
   gulp
   mosh
-  extract             # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
+  extract                 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract
   fd
   npm
   ubuntu
   yarn
   kubectl
-  gh                  # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh
-  command-not-found   # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
-  fzf                 # automatic ctrl+r and ctrl+t completion
-  direnv              # automatically load .envrc vars in folder
-  rust                # rust completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust
-  zsh-autosuggestions #  autocomplete command suggestions <- https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+  gh                      # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh
+  command-not-found       # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
+  fzf                     # automatic ctrl+r and ctrl+t completion
+  direnv                  # automatically load .envrc vars in folder
+  rust                    # rust completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust
+  zsh-autosuggestions     #  autocomplete command suggestions <- https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+  zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 )
 
 # oh my zsh :-)
@@ -131,6 +132,21 @@ setopt COMPLETE_ALIASES
 
 # zsh autoloading enabled
 autoload -U compinit && compinit -i
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/nuky/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/nuky/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/nuky/.miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/nuky/.miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 # Initialize fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -149,9 +165,6 @@ eval "$(zoxide init zsh)"
 
 # Initialize thefuck <- https://github.com/nvbn/thefuck#installation
 eval $(thefuck --alias)
-
-# Initialize WASMEdge
-source "$HOME/.wasmedge/env"
 
 ### Custom Dotfiles ###
 #
