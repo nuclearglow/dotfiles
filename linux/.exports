@@ -1,15 +1,4 @@
-# Go binaries
-export PATH=$HOME/go/bin:$PATH
-
-# Kubernetes
-export KUBECONFIG=$HOME/.kube/config
-
-# Docker Registry
-export DOCKER_REGISTRY=$(hostname):5000
-
-# Postgres Defaults
-export PGPORT=5432
-export PGADMIN_PORT=5050
+# exports on every system
 
 # Set KDE theme
 export QT_STYLE_OVERRIDE=kvantum

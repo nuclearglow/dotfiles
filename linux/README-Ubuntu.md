@@ -44,7 +44,20 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~
 
 ```shell
 git clone git@github.com:nuclearglow/dotfiles.git
-./dotfiles/ubuntu/configure_zsh.sh
+```
+
+TODO:
+set up the sourcings: - maybe also softlinks?
+
+```
+
+```
+
+TODO:
+set up the softlinks for tmux
+
+```
+
 ```
 
 ### install completions from .zshrc plugin list urls

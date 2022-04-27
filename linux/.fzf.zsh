@@ -36,5 +36,5 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-o:execute(code {+})'
 --bind 'ctrl-x:abort'
 "
-export FZF_DEFAULT_COMMAND='/home/nuky/.cargo/bin/fd --type file --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='/home/nuky/.cargo/bin/fd --no-ignore --type file --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
