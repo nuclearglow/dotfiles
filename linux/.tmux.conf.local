@@ -331,6 +331,9 @@ set -g status-position top
 # mouse mode
 set -g mouse on
 
+# reset DISPLAY
+set-option -g update-environment 'DISPLAY'
+
 # make scrolling with wheels work
 bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
 bind -n WheelDownPane select-pane -t= \; send-keys -M

@@ -16,5 +16,8 @@ bindkey '^[[F' end-of-line
 # Accept zsh-autosuggestion on END <- https://github.com/zsh-users/zsh-autosuggestions#key-bindings
 bindkey '^[[F' autosuggest-accept
 
-# STRG-B run alias branches - interactive git branch selection
+# STRG-B run alias branches - interactive git branch selection - see .aliases
 bindkey -s '^B' 'branches^M'
+
+# reset display on Ctrl+s - see .functions
+bindkey -s '^S' 'tmux_update_display^M'
