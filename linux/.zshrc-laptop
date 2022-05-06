@@ -151,9 +151,6 @@ eval "$(zoxide init zsh)"
 # Initialize thefuck <- https://github.com/nvbn/thefuck#installation
 eval $(thefuck --alias)
 
-# Initialize WASMEdge
-source "/home/nuky/.wasmedge/env"
-
 ### Custom Dotfiles ###
 #
 # * ~/.keys can be used to set and document keybindings

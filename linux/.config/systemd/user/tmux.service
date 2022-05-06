@@ -1,0 +1,18 @@
+[Unit]
+Description=tmux default session (detached)
+Documentation=man:tmux(1)
+After=graphical.target
+
+[Service]
+Type=forking
+Environment=DISPLAY=:1
+ExecStart=/usr/bin/tmux new-session -d
+
+ExecStop=/home/nuky/.tmux/plugins/tmux-resurrect/scripts/save.sh
+ExecStop=/usr/bin/tmux kill-server
+KillMode=mixed
+
+RestartSec=2
+
+[Install]
+WantedBy=default.target
