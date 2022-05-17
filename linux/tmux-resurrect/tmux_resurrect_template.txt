@@ -1,0 +1,91 @@
+pane	appserver	1	0	:-	1	nuky@crunchy:~/workspace/application	:/home/nuky/workspace/application	1	zsh	:
+pane	appserver	2	0	:#	1	LOG_LEVEL=debug watchexec --exts ts --watch src --restart --signal SIGINT  	:/home/nuky/workspace/application/appserver	1	watchexec	:watchexec --exts ts --watch src --restart --signal SIGINT --clear node --inspect=6969 -r ts-node/register src/cmd/startControl.ts
+pane	appserver	3	1	:*	1	npm run test:watch	:/home/nuky/workspace/application	1	npm	:npm run test:watch
+pane	appserver	4	0	:#	1	npm run -w @everestsystems/content-core watch	:/home/nuky/workspace/application	1	npm	:npm run watch
+pane	bunker	1	0	:#	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	bunker	2	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	bunker	3	0	:-	1	nuky@crunchy:~/bunker/music/youtube-are-sounds-elektrik	:/home/nuky/bunker/music/youtube-are-sounds-elektrik	1	zsh	:
+pane	bunker	4	1	:*	1	nuky@crunchy:~/bunker/music	:/home/nuky/bunker/music	1	zsh	:
+pane	bunker	5	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	bunker	6	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	bunker	7	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	bunker	8	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	dotfiles	1	1	:*	1	nuky@crunchy:~/workspace/dotfiles	:/home/nuky/workspace/dotfiles	1	zsh	:zsh
+pane	dotfiles	2	0	:	1	nuky@crunchy:~/workspace/dotfiles/fonts/patched	:/home/nuky/workspace/dotfiles/fonts/patched	1	zsh	:
+pane	dotfiles	3	0	:	1	nuky@crunchy:~/.local/share/fonts	:/home/nuky/.local/share/fonts	1	zsh	:
+pane	dotfiles	4	0	:-	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	everest	1	1	:*	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	everest	2	0	:-	1	nuky@crunchy:~/workspace/ui	:/home/nuky/workspace/ui	1	zsh	:
+pane	everest	3	0	:	1	nuky@crunchy:~/workspace/application	:/home/nuky/workspace/application	1	zsh	:
+pane	everest	4	0	:	1	nuky@crunchy:~/workspace/content	:/home/nuky/workspace/content	1	zsh	:
+pane	everest	5	0	:	1	nuky@crunchy:~/workspace/local-run	:/home/nuky/workspace/local-run	1	zsh	:
+pane	everest	6	0	:	1	nuky@crunchy:~/workspace	:/home/nuky/workspace	1	zsh	:
+pane	everest	7	0	:	1	./target/release/kernel_server	:/home/nuky/workspace/kernel	1	./target/release/kernel_server	:./target/release/kernel_server
+pane	everest	8	0	:	1	nuky@crunchy:~/workspace/rest	:/home/nuky/workspace/rest	1	zsh	:
+pane	everest	9	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	everest	10	0	:	1	nuky@crunchy:~/workspace/everdocs	:/home/nuky/workspace/everdocs	1	zsh	:
+pane	everest	11	0	:	1	nuky@crunchy:~/workspace/e2e-tests	:/home/nuky/workspace/e2e-tests	1	zsh	:
+pane	ml	1	1	:*	1	nuky@crunchy:~/workspace/retro-ml/reinforcement-learning/rtype-train	:/home/nuky/workspace/retro-ml/reinforcement-learning/rtype-train	1	zsh	:
+pane	ml	2	0	:	1	nuky@crunchy:~/workspace/retro-ml/reinforcement-learning	:/home/nuky/workspace/retro-ml/reinforcement-learning	1	zsh	:
+pane	ml	3	0	:	1	nuky@crunchy:~/.miniconda3/envs/retro-ml/lib/python3.8/site-packages/retro/data/stable	:/home/nuky/.miniconda3/envs/retro-ml/lib/python3.8/site-packages/retro/data/stable	1	zsh	:
+pane	ml	4	0	:-	1	nuky@crunchy:~/workspace/retro-ml/reinforcement-learning	:/home/nuky/workspace/retro-ml/reinforcement-learning	1	zsh	:
+pane	retrolist	1	1	:*	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	retrolist	2	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	retrolist	3	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	retrolist	4	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	retrolist	5	0	:-	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	rust	1	1	:*	1	nuky@crunchy:~/workspace/retro-ml/reinforcement-learning	:/home/nuky/workspace/retro-ml/reinforcement-learning	1	zsh	:
+pane	rust	2	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	rust	3	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	rust	4	0	:	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	rust	5	0	:-	1	nuky@crunchy:~	:/home/nuky	1	zsh	:
+pane	ui	1	0	:	1	nuky@crunchy:~/workspace/ui	:/home/nuky/workspace/ui	1	zsh	:
+pane	ui	2	1	:*	1	yarn start:https	:/home/nuky/workspace/ui	1	node	:node /tmp/fnm_multishells/17190_1652698049927/bin/yarn start:https
+pane	ui	3	0	:-	1	nuky@crunchy:~/workspace/ui	:/home/nuky/workspace/ui	1	zsh	:
+pane	ui	4	0	:#	1	nuky@crunchy:~/workspace/ui	:/home/nuky/workspace/ui	1	zsh	:
+window	appserver	1	:zsh	0	:-	b3de,83x62,0,0,1	:
+window	appserver	2	:server	0	:#	b3df,83x62,0,0,2	off
+window	appserver	3	:tests	1	:*	b3e0,83x62,0,0,3	off
+window	appserver	4	:watch	0	:#	b3e1,83x62,0,0,4	off
+window	bunker	1	:zsh	0	:#	d1c2,382x68,0,0,5	on
+window	bunker	2	:rpg	0	:	d1c3,382x68,0,0,6	off
+window	bunker	3	:music	0	:-	d1c4,382x68,0,0,7	off
+window	bunker	4	:photos	1	:*	d1c5,382x68,0,0,8	off
+window	bunker	5	:video	0	:	d1c6,382x68,0,0,9	off
+window	bunker	6	:RIPPED	0	:	690f,382x68,0,0,10	off
+window	bunker	7	:wg	0	:	6910,382x68,0,0,11	off
+window	bunker	8	:zsh	0	:	6911,382x68,0,0,12	:
+window	dotfiles	1	:zsh	1	:*	6762,213x58,0,0,13	on
+window	dotfiles	2	:zsh	0	:	6913,382x68,0,0,14	on
+window	dotfiles	3	:zsh	0	:	6914,382x68,0,0,15	on
+window	dotfiles	4	:zsh	0	:-	6915,382x68,0,0,16	on
+window	everest	1	:zsh	1	:*	6766,213x58,0,0,17	:
+window	everest	2	:ui	0	:-	6767,213x58,0,0,18	off
+window	everest	3	:application	0	:	6768,213x58,0,0,19	off
+window	everest	4	:content	0	:	e75f,213x58,0,0,20	off
+window	everest	5	:local-run	0	:	e760,213x58,0,0,21	off
+window	everest	6	:update	0	:	e761,213x58,0,0,22	off
+window	everest	7	:kernel	0	:	e762,213x58,0,0,23	off
+window	everest	8	:rest	0	:	e763,213x58,0,0,24	off
+window	everest	9	:vscode-ext	0	:	e764,213x58,0,0,25	off
+window	everest	10	:everdocs	0	:	e765,213x58,0,0,26	off
+window	everest	11	:e2e	0	:	e916,382x68,0,0,27	off
+window	ml	1	:zsh	1	:*	e917,382x68,0,0,28	:
+window	ml	2	:roms	0	:	e918,382x68,0,0,29	off
+window	ml	3	:env	0	:	6910,382x68,0,0,30	off
+window	ml	4	:spyder	0	:-	6911,382x68,0,0,31	off
+window	retrolist	1	:zsh	1	:*	6912,382x68,0,0,32	on
+window	retrolist	2	:backend	0	:	6913,382x68,0,0,33	off
+window	retrolist	3	:frontend	0	:	6914,382x68,0,0,34	off
+window	retrolist	4	:zsh	0	:	6915,382x68,0,0,35	:
+window	retrolist	5	:zsh	0	:-	6916,382x68,0,0,36	:
+window	rust	1	:zsh	1	:*	6917,382x68,0,0,37	:
+window	rust	2	:shut	0	:	6918,382x68,0,0,38	off
+window	rust	3	:ports-cli	0	:	6919,382x68,0,0,39	off
+window	rust	4	:playground	0	:	e910,382x68,0,0,40	off
+window	rust	5	:zsh	0	:-	e911,382x68,0,0,41	:
+window	ui	1	:zsh	0	:	db42,78x62,0,0,42	:
+window	ui	2	:server	1	:*	db43,78x62,0,0,43	off
+window	ui	3	:tests	0	:-	db44,78x62,0,0,44	off
+window	ui	4	:storybook	0	:#	e915,382x68,0,0,45	off
+state	dotfiles	everest
