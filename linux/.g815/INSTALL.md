@@ -7,11 +7,11 @@ ratbagctl list # swap out the keyboard name
 
 * add this to .zprofile
 
-ratbagctl singing-gundi profile 0 button 0 action set special unknown
-ratbagctl singing-gundi profile 0 button 1 action set special unknown
-ratbagctl singing-gundi profile 0 button 2 action set special unknown
-ratbagctl singing-gundi profile 0 button 3 action set special unknown
-ratbagctl singing-gundi profile 0 button 4 action set special unknown
+ratbagctl cheering-viscacha profile 0 button 0 action set special unknown
+ratbagctl cheering-viscacha profile 0 button 1 action set special unknown
+ratbagctl cheering-viscacha profile 0 button 2 action set special unknown
+ratbagctl cheering-viscacha profile 0 button 3 action set special unknown
+ratbagctl cheering-viscacha profile 0 button 4 action set special unknown
 
 Setup Lighting
 
