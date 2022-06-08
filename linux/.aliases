@@ -63,7 +63,7 @@ alias dir='exa --all --header --long --group --classify --git --icons --group-di
 
 # git
 alias gs='git status'
-alias gcm='git commit -m'
+alias gcm='git commit -S -m'
 alias gd='git diff'
 alias gco='git checkout'
 alias gdel='git branch -d'
