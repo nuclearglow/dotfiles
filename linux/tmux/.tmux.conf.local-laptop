@@ -352,6 +352,10 @@ bind-key -n C-S-Right swap-window -t +1\; select-window -t +1
 bind-key -n Home send Escape "OH"
 bind-key -n End send Escape "OF"
 
+# set F1 to search in tmux buffer
+bind -n F1 copy-mode \; command-prompt -p "(search up)" "send -X search-backward \"%%%\""
+bind -T copy-mode-vi F1 copy-mode \; command-prompt -p "(search up)" "send -X search-backward \"%%%\""
+
 # do not evaluate .zprofile, directly start an interactive shell
 set-option -g default-command zsh
 
