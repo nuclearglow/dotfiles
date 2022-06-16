@@ -395,6 +395,7 @@ tmux_conf_update_plugins_on_reload=true
 # visit https://github.com/tmux-plugins for available plugins
 #set -g @plugin 'tmux-plugins/tpm'
 
+
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
@@ -403,6 +404,13 @@ set -g @continuum-boot 'on'
 set -g @continuum-save-interval '15'
 set -g @resurrect-capture-pane-contents 'on'
 set -g @continuum-restore 'on'
+
+set -g @plugin 'fcsonline/tmux-thumbs'
+set -g @thumbs-command 'echo -n {} | xclip -sel clip && tmux display-message "Copied {}"'
+set -g @thumbs-upcase-command 'echo -n {} | xclip -sel clip && tmux set-buffer -- {} && tmux paste-buffer'
+set -g @thumbs-unique enabled
+set -g @thumbs-fg-color yellow
+set -g @thumbs-hint-fg-color magenta
 
 # -- custom variables ----------------------------------------------------------
 

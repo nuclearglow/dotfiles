@@ -401,6 +401,13 @@ set -g @continuum-save-interval '15'
 set -g @resurrect-capture-pane-contents 'on'
 set -g @continuum-restore 'on'
 
+set -g @plugin 'fcsonline/tmux-thumbs'
+set -g @thumbs-command 'echo -n {} | xclip -sel clip && tmux display-message "Copied {}"'
+set -g @thumbs-upcase-command 'echo -n {} | xclip -sel clip && tmux set-buffer -- {} && tmux paste-buffer'
+set -g @thumbs-unique enabled
+set -g @thumbs-fg-color yellow
+set -g @thumbs-hint-fg-color magenta
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
