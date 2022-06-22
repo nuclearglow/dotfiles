@@ -5,7 +5,8 @@
 After installing all tools:
 
 ```shell
-ln -vfns /home/nuky/workspace/dotfiles/linux/.keys .aliases
+ln -vfns /home/nuky/workspace/dotfiles/linux/.aliases .aliases
+ln -vfns /home/nuky/workspace/dotfiles/linux/.exports .exports
 ln -vfns /home/nuky/workspace/dotfiles/linux/.keys .functions
 ln -vfns /home/nuky/workspace/dotfiles/linux/.fzf.zsh .fzf.zsh
 ln -vfns /home/nuky/workspace/dotfiles/linux/.keys .keys
