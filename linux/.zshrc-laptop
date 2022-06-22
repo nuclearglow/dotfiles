@@ -11,6 +11,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Editor
+# needs `sudo apt install neovim`
 export EDITOR='nvim'
 
 # Compilation flags
