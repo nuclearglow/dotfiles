@@ -1,10 +1,21 @@
 * Install all necessary packages
 * Copy the files from here to $HOME
 * Copy rest of the files from .. to $HOME
-* Linking:
 
+After installing all tools:
+
+```shell
+ln -vfns /home/nuky/workspace/dotfiles/linux/.keys .aliases
+ln -vfns /home/nuky/workspace/dotfiles/linux/.keys .functions
+ln -vfns /home/nuky/workspace/dotfiles/linux/.fzf.zsh .fzf.zsh
+ln -vfns /home/nuky/workspace/dotfiles/linux/.keys .keys
+ln -vfns /home/nuky/workspace/dotfiles/linux/.p10k.zsh .p10k.zsh
+ln -vfns /home/nuky/workspace/dotfiles/linux/.tmux.conf .tmux.conf
+ln -vfns /home/nuky/workspace/dotfiles/linux/.tmux.conf.local .tmux.conf.local
 ```
-ln -s /home/nuky/workspace/dotfiles/linux/.tmux.conf .tmux.conf
-ln -s /home/nuky/workspace/dotfiles/linux/.tmux.conf .tmux.conf
-cd ~/.tmux/resurrect && ln -s /home/nuky/workspace/dotfiles/linux/tmux-resurrect/tmux_resurrect_template.txt last
+
+Choose correct zshrc:
+
+```shell
+ln -vfns /home/nuky/workspace/dotfiles/linux/.zshrc-* .zshrc
 ```
