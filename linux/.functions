@@ -132,6 +132,7 @@ function timezsh() {
 	hyperfine --warmup 5 '${1-$SHELL} -i -c exit 0;'
 }
 
-function tmux_update_display() {
-  export DISPLAY="`tmux show-env | sed -n 's/^DISPLAY=//p'`"
+function bashquote () {
+	printf '%q' "$(cat)"
+	echo
 }

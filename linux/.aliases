@@ -76,6 +76,10 @@ alias branches="git for-each-ref --sort='authordate:iso8601' --format='%(authord
 # open all git merge conflicts or currently changed files in VS Code
 alias fix="git diff --name-only | uniq | xargs code"
 
+# tmux only: search through the current pane, grab unique URLs, use fzf for selection, open in browser
+# needs: `sudo apt install tmux moreutils`
+alias urls="tmux capture-pane -J -p | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*' | sort -u | ifne fzf-tmux -d20 --multi --bind ctrl-a:select-all,ctrl-A:deselect-all | xargs --no-run-if-empty xdg-open"
+
 # git commit with commitizen
 alias cz='npx cz'
 
