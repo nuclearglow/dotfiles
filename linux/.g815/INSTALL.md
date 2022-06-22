@@ -71,4 +71,12 @@ g810-led -dv 046d -dp c33f -k 1 CC0000
 
 * load a profile - add this to `~/.zprofile`
 
+```
 g810-led -p ~/.g815/nukeys
+```
+
+* also add the contents of `./nukeys` to the udev rules:
+
+```
+sudo nvim /etc/g810-led/profile
+```
