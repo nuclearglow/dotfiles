@@ -21,5 +21,5 @@ bindkey '^[[F' autosuggest-accept
 # STRG-B run alias branches - interactive git branch selection - see .aliases
 bindkey -s '^B' 'branches^M'
 
-# STRG+U run alias urls - interactive URL selection to open in browser - see .aliases
-bindkey -s '^U' 'urls^M'
+# STRG+U run function tmuxurls - interactive URL selection to open in browser - see .functions
+bindkey -s '^U' 'tmuxurls^M'
