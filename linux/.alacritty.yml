@@ -47,6 +47,12 @@ window:
   #  columns: 0
   #  lines: 0
 
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  background_opacity: 1.0
+
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
@@ -87,6 +93,9 @@ window:
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
   startup_mode: Maximized
+
+  # new theme variant
+  decorations_theme_variant: dark
 
   # Window title
   title: Alacritty
