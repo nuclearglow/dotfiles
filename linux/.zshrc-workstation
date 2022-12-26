@@ -154,6 +154,9 @@ unset __conda_setup
 # Initialize Rust/Cargo
 source "$HOME/.cargo/env"
 
+# Initialize Julia
+export PATH=$HOME/.julia/julia-1.8.3/bin:$PATH
+
 # Initialize fnm <- https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --use-on-cd)"
 
@@ -162,9 +165,6 @@ eval "$(direnv hook zsh)"
 
 # Initialize zoxide <- https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
-
-# Initialize thefuck <- https://github.com/nvbn/thefuck#installation
-eval $(thefuck --alias)
 
 ### Custom Dotfiles ###
 #
