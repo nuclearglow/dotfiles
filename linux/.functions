@@ -32,6 +32,30 @@ if [ $? -eq 0 ]; then
 	}
 fi;
 
+# fzf completion for package.json run scripts
+function run() {
+	if ! command -v fzf &> /dev/null; then
+    	echo "fzf not found. Run 'brew install fzf'";
+	fi
+	if ! command -v jq &> /dev/null; then
+    	echo "jq not found. Run 'brew install jq'";
+	fi
+	local runner="npm";
+	if cat package.json > /dev/null 2>&1; then
+		line=$(cat package.json | jq .scripts | sed '1d;$d' | fzf)
+		if [[ -n $line ]]; then
+			[[ -f "yarn.lock" ]] && runner="yarn";
+			script=$(echo $line | cut -d'"' -f2)
+			print -s "running $runner run $script";
+			$runner run $script;
+		else
+			echo "No script to run selected"
+		fi
+	else
+		echo "Error: No package.json"
+	fi
+}
+
 # Create a data URL from a file
 function dataurl() {
 	local mimeType=$(file -b --mime-type "$1");

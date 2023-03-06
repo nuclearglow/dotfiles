@@ -151,6 +151,9 @@ eval "$(zoxide init zsh)"
 # Initialize thefuck <- https://github.com/nvbn/thefuck#installation
 eval $(thefuck --alias)
 
+# Initialize flux <- https://fluxcd.io/flux/cmd/flux_completion_zsh/
+command -v flux >/dev/null && . <(flux completion zsh)
+
 ### Custom Dotfiles ###
 #
 # * ~/.keys can be used to set and document keybindings
