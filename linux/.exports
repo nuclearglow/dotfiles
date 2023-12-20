@@ -13,3 +13,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Github CLI
 export GH_EDITOR="code"
+
+# Python venv
+export PYAUTOENV_VENV_NAME=".venv"

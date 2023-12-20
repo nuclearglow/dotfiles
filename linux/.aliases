@@ -31,7 +31,8 @@ alias top='btm --celsius'
 alias tldr='tldr'
 
 # bandwhich
-alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enx806d97154e45 --dns-server 10.10.10.1'
+alias bandwhich-home='sudo ~/.cargo/bin/bandwhich -i enx806d97154e45 --dns-server 10.10.10.1'
+alias bandwhich='sudo ~/.cargo/bin/bandwhich'
 
 # grex
 alias grex='grex --digits --spaces --repetitions --colorize'

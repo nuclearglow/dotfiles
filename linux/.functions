@@ -169,3 +169,12 @@ function tmuxurls() {
 		tmux display-message "No URLs found!";
 	fi
 }
+
+function uitest() {
+    if [[ $# -eq 0 ]] ; then
+    	echo "ERROR: No UI test specified.";
+        return 1;
+    fi
+	yarn craco test ${1} --transformIgnorePatterns "node_modules/(?!(antd)/)/"
+}
+
