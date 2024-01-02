@@ -1,0 +1,61 @@
+[bell]
+duration = 0
+
+[colors.bright]
+black = "#686868"
+blue = "#57c7ff"
+cyan = "#9aedfe"
+green = "#00d22b"
+magenta = "#ff6ac1"
+red = "#ff5c57"
+white = "#eff0eb"
+yellow = "#efa504"
+
+[colors.normal]
+black = "#282a36"
+blue = "#57c7ff"
+cyan = "#9aedfe"
+green = "#00d22b"
+magenta = "#ff6ac1"
+red = "#ff5c57"
+white = "#f1f1f0"
+yellow = "#efa504"
+
+[colors.primary]
+background = "#1e1e1e"
+foreground = "#00d22b"
+
+[colors.selection]
+background = "#feffff"
+text = "#282a36"
+
+[cursor]
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "Off"
+shape = "Beam"
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font.normal]
+family = "MesloLGS Nerd Font"
+style = "Regular"
+
+[scrolling]
+history = 100000
+
+[shell]
+args = ["-l", "-c", "tmux -2 attach-session -t freelance"]
+program = "/usr/bin/zsh"
+
+[window]
+decorations = "none"
+decorations_theme_variant = "Dark"
+startup_mode = "Maximized"
+title = "Alacritty"
+
+[window.padding]
+x = 0
+y = 7

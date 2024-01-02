@@ -27,16 +27,12 @@ env:
 window:
   # Background opacity
   #
-  # Window opacity as a floating point number from `0.0` to `1.0`.
-  # The value `0.0` is completely transparent and `1.0` is opaque.
-  background_opacity: 1.0
-
   # Decorations theme variant (Linux/BSD only)
   #
   # Override the variant of the GTK theme/Wayland client side decorations.
   # Commonly supported values are `dark` and `light`. Set this to `None` to use
   # the default theme variant.
-  decorations_theme_variant: "dark"
+  decorations_theme_variant: "Dark"
 
   # Window dimensions (changes require restart)
   #
@@ -93,9 +89,6 @@ window:
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
   startup_mode: Maximized
-
-  # new theme variant
-  decorations_theme_variant: dark
 
   # Window title
   title: Alacritty

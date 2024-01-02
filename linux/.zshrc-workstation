@@ -16,6 +16,9 @@ export EDITOR='vim'
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+# Set up max file descriptors limit
+ulimit -n unlimited
+
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
@@ -109,6 +112,7 @@ plugins=(
   ubuntu
   yarn
   kubectl
+  kubetail
   gh                      # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh
   command-not-found       # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
   fzf                     # automatic ctrl+r and ctrl+t completion
@@ -154,11 +158,11 @@ unset __conda_setup
 # Initialize Rust/Cargo
 source "$HOME/.cargo/env"
 
-# Initialize Julia
-export PATH=$HOME/.julia/julia-1.8.3/bin:$PATH
-
 # Initialize fnm <- https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --use-on-cd)"
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
 
 # Initialize direnv <- https://direnv.net/
 eval "$(direnv hook zsh)"

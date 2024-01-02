@@ -13,3 +13,15 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Github CLI
 export GH_EDITOR="code"
+
+# Kubernetes
+export KUBECONFIG=$HOME/.kube/config
+
+# Android
+export ANDROID_HOME=/usr/lib/android-sdk
+
+# Initialize Julia
+export PATH=$HOME/.julia/julia-1.8.3/bin:$PATH
+
+# Initialize GoBin
+export PATH=$HOME/go/bin:$PATH

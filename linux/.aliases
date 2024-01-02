@@ -31,7 +31,7 @@ alias top='btm --celsius'
 alias tldr='tldr'
 
 # bandwhich
-alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enx806d97154e45 --dns-server 10.10.10.1'
+alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enp5s0 --dns-server 10.10.10.1'
 
 # grex
 alias grex='grex --digits --spaces --repetitions --colorize'
@@ -63,7 +63,7 @@ alias dir='exa --all --header --long --group --classify --git --icons --group-di
 
 # git
 alias gs='git status'
-alias gcm='git commit -S -m'
+alias gcm='git commit -m'
 alias gd='git diff'
 alias gco='git checkout'
 alias gdel='git branch -d'
