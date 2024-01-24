@@ -161,14 +161,18 @@ source "$HOME/.cargo/env"
 # Initialize fnm <- https://github.com/Schniz/fnm#shell-setup
 eval "$(fnm env --use-on-cd)"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 # Initialize direnv <- https://direnv.net/
 eval "$(direnv hook zsh)"
 
 # Initialize zoxide <- https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
+
+# Load Angular CLI autocompletion if ng command exists (depends on .nvmrc)
+if command -v ng &> /dev/null
+then
+  source <(ng completion script)
+  ng version
+fi
 
 ### Custom Dotfiles ###
 #
