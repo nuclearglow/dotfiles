@@ -167,7 +167,7 @@ eval "$(direnv hook zsh)"
 # Initialize zoxide <- https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
-# Load Angular CLI autocompletion if ng command exists (depends on .nvmrc)
+# Load Angular CLI autocompletion if ng command exists (depends on .nvmrc), an .nvmrc file is present and we are not in the home directory
 if command -v ng &> /dev/null && [ -f ".nvmrc" ] && [ "$PWD" != "$HOME" ];
 then
   source <(ng completion script)
