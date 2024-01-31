@@ -111,8 +111,7 @@ plugins=(
   npm
   ubuntu
   yarn
-  kubectl
-  kubetail
+  kubectl                 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl
   gh                      # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh
   command-not-found       # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
   fzf                     # automatic ctrl+r and ctrl+t completion
