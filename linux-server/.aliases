@@ -1,0 +1,53 @@
+# zsh
+alias src="exec zsh"
+
+# exa instead of ls
+alias ls='exa'
+alias ll='exa --all --header --long --group --classify --icons --group-directories-first'
+alias lstree='exa --all --header --tree --level=3 --long --group --classify --icons --group-directories-first'
+#
+# bat instead of cat
+alias bat='bat'
+alias cat='bat --paging=never'
+
+# bat instead of less
+alias less='bat'
+
+# prettyping instead of ping
+alias ping='prettyping'
+
+# fd instead of find
+alias find='fd'
+
+# DOS 6.22
+alias cls='clear'
+alias c='clear'
+alias dir='exa --all --header --long --group --classify --git --icons --group-directories-first'
+
+# git
+alias gs='git status'
+alias gcm='git commit -m'
+alias gd='git diff'
+alias gco='git checkout'
+alias gdel='git branch -d'
+alias branch='git rev-parse --abbrev-ref HEAD'
+alias gup='git push --set-upstream origin `branch`'
+
+# git interactive branch selection, enter checks it out, tab copies it to the clipboard
+alias branches="git for-each-ref --sort='authordate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads | fzf --tac --bind 'enter:execute(echo {} | rev | cut -f1 | rev | xargs git checkout)+abort' --bind 'tab:execute-silent(echo {} | rev | cut -f1 | rev | xclip -selection clipboard)+abort'"
+
+# git|k force EN alias
+alias git='LANG=en_US.UTF-8 git'
+alias gitk='LANG=en_US.UTF-8 gitk'
+
+# Get week number
+alias week='date +%V'
+
+# map pipe
+# For example, to list all directories that contain a certain file:
+# find . -name .gitattributes | map dirname
+alias map="xargs -n1"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
