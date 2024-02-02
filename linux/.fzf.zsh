@@ -1,16 +1,16 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/nuky/.fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/nuky/.fzf/bin"
+if [[ ! "$PATH" == *${HOME}/.fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}${HOME}/.fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/nuky/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source ${HOME}/.fzf/shell/completion.zsh 2> /dev/null
 
 # Key bindings
 # ------------
-source "/home/nuky/.fzf/shell/key-bindings.zsh"
+source ${HOME}/.fzf/shell/key-bindings.zsh
 
 # Configuration
 # ------------
@@ -36,5 +36,5 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-o:execute(code {+})'
 --bind 'ctrl-x:abort'
 "
-export FZF_DEFAULT_COMMAND='/home/nuky/.cargo/bin/fd --no-ignore --type file --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND="${HOME}/.cargo/bin/fd --no-ignore --type file --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
