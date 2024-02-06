@@ -112,7 +112,6 @@ plugins=(
   ubuntu
   yarn
   kubectl                 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl
-  gh                      # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gh
   command-not-found       # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
   fzf                     # automatic ctrl+r and ctrl+t completion
   direnv                  # automatically load .envrc vars in folder
@@ -165,6 +164,9 @@ eval "$(direnv hook zsh)"
 
 # Initialize zoxide <- https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
+
+# Initialize flux <- https://fluxcd.io/flux/cmd/flux_completion_zsh/
+command -v flux >/dev/null && . <(flux completion zsh)
 
 # Load Angular CLI autocompletion if ng command exists (depends on .nvmrc), an .nvmrc file is present and we are not in the home directory
 if command -v ng &> /dev/null && [ -f ".nvmrc" ] && [ "$PWD" != "$HOME" ];

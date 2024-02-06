@@ -15,7 +15,7 @@ ratbagctl cheering-viscacha profile 0 button 4 action set special unknown
 
 Setup Lighting
 
-* install g810-led from source
+* install g810-led from source or `sudo apt install g810-led`
 
 * https://delightlylinux.wordpress.com/2020/05/21/programming-the-logitech-g513-rgb-keyboard-lights-in-linux-with-g810-led/
 

@@ -1,7 +1,6 @@
 # Aliases here
 
 # zsh
-alias knife='nocorrect knife'
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias src="exec zsh"
@@ -58,7 +57,6 @@ alias python3='python3.9'
 
 # DOS 6.22
 alias cls='clear'
-alias c='clear'
 alias dir='exa --all --header --long --group --classify --git --icons --group-directories-first'
 
 # git

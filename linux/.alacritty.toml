@@ -40,7 +40,7 @@ shape = "Beam"
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 [font.normal]
-family = "MesloLGS Nerd Font"
+family = "MesloLGS NF"
 style = "Regular"
 
 [scrolling]

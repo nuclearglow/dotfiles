@@ -17,6 +17,9 @@ export EDITOR='vim'
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+# Set up max file descriptors limit
+ulimit -n unlimited
+
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
@@ -153,6 +156,13 @@ eval $(thefuck --alias)
 
 # Initialize flux <- https://fluxcd.io/flux/cmd/flux_completion_zsh/
 command -v flux >/dev/null && . <(flux completion zsh)
+
+ # Load Angular CLI autocompletion if ng command exists (depends on .nvmrc), an .nvmrc file is present and we are not in the home directory
+if command -v ng &> /dev/null && [ -f ".nvmrc" ] && [ "$PWD" != "$HOME" ];
+then
+  source <(ng completion script)
+  ng version
+fi
 
 ### Custom Dotfiles ###
 #
