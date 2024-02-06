@@ -3,7 +3,7 @@
 ## Base Package Installation
 
 ```shell
-sudo apt install zsh curl exa bat bat
+sudo apt install zsh curl exa
 ```
 
 ### fd-find
@@ -11,11 +11,12 @@ sudo apt install zsh curl exa bat bat
 ```shell
 sudo apt install fd-find
 sudo ln -s $(which fdfind) /usr/local/bin/fd
+```
 
 ### bat
 
 ```shell
-sudo apt install fd-find
+sudo apt install bat
 mkdir bin
 cd bin
 ln -s /usr/bin/batcat bat
@@ -23,13 +24,15 @@ ln -s /usr/bin/batcat bat
 
 ### fzf
 
+- [Installation](https://github.com/junegunn/fzf?tab=readme-ov-file#using-git)
 
+```shell
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+```
 
 ### zsh
 
-- `which zsh` -> /usr/bin/zsh
--> `chsh zsh` -> /usr/bin/zsh
--> respawn shell
+- `which zsh` -> /usr/bin/zsh -> `chsh zsh` -> /usr/bin/zsh -> respawn shell
 
 ### Oh my zsh
 
@@ -39,7 +42,3 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
-
-
-
-
