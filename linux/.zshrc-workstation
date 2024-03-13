@@ -118,6 +118,7 @@ plugins=(
   rust                    # rust completions <- https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust
   zsh-autosuggestions     #  autocomplete command suggestions <- https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
   zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
+  zsh-dotnet-completion   # https://github.com/memark/zsh-dotnet-completion?tab=readme-ov-file#as-an-oh-my-zsh-custom-plugin
 )
 
 # oh my zsh :-)
@@ -164,16 +165,6 @@ eval "$(direnv hook zsh)"
 
 # Initialize zoxide <- https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
-
-# Initialize flux <- https://fluxcd.io/flux/cmd/flux_completion_zsh/
-command -v flux >/dev/null && . <(flux completion zsh)
-
-# Load Angular CLI autocompletion if ng command exists (depends on .nvmrc), an .nvmrc file is present and we are not in the home directory
-if command -v ng &> /dev/null && [ -f ".nvmrc" ] && [ "$PWD" != "$HOME" ];
-then
-  source <(ng completion script)
-  ng version
-fi
 
 ### Custom Dotfiles ###
 #
