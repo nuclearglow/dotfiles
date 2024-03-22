@@ -1,0 +1,17 @@
+# exports on every system
+
+# NodeJS
+#export NODE_OPTIONS="--max_old_space_size=8192"
+
+# Manpager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Kubernetes
+export KUBECONFIG=$HOME/.kube/config
+
+# HomeDir
+export WINHOME=/mnt/c/Users/E098007/
+export USERPROFILE=/mnt/c/Users/E098007/
+
+# Dotnet
+export PATH="$PATH:$HOME/.dotnet/tools/"
