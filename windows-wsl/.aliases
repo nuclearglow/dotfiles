@@ -29,6 +29,9 @@ alias top='btm --celsius'
 # tldr setup
 alias tldr='tldr'
 
+# bandwhich
+# TODO: alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enp5s0 --dns-server 10.10.10.1'
+
 # grex
 alias grex='grex --digits --spaces --repetitions --colorize'
 
@@ -83,3 +86,8 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # List VS Code Extensions
 alias list-code-extensions='code --list-extensions | xargs -L 1 echo code --install-extension'
+
+# npm aliases
+alias npm-linked="npm ls -g --depth=0 --link=true"
+alias npm-unlink-all="npm-linked | xargs npm unlink"
+alias npm-globals="npm list -g"
