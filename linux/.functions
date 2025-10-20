@@ -1,5 +1,14 @@
 #!/usr/bin/env zsh
 
+# update all ollama models at once
+function ollama-update-all {
+	if ! command -v ollama &> /dev/null; then
+    	echo "fzf not found. Run 'brew install fzf'";
+		exit(1);
+	fi
+	ollama list | awk 'NR>1 {print $1}' | xargs -I {} sh -c 'echo "Updating model: {}"; ollama pull {}; echo "--"' && echo "All models updated."
+}
+
 # print colormap in terminal
 function colormap() {
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
@@ -36,9 +45,11 @@ fi;
 function run() {
 	if ! command -v fzf &> /dev/null; then
     	echo "fzf not found. Run 'brew install fzf'";
+		exit(1);
 	fi
 	if ! command -v jq &> /dev/null; then
     	echo "jq not found. Run 'brew install jq'";
+		exit(1);
 	fi
 	local runner="npm";
 	if cat package.json > /dev/null 2>&1; then

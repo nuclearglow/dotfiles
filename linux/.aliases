@@ -6,9 +6,9 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 alias src="exec zsh"
 
 # exa instead of ls
-alias ls='exa'
-alias ll='exa --all --header --long --group --classify --git --icons --group-directories-first'
-alias lstree='exa --all --header --tree --level=3 --long --group --classify --git --icons --group-directories-first'
+alias ls='eza'
+alias ll='eza --all --header --long --group --classify --git --icons --group-directories-first'
+alias lstree='eza --all --header --tree --level=3 --long --group --classify --git --icons --group-directories-first'
 
 # bat instead of cat
 alias bat='bat'
@@ -29,14 +29,12 @@ alias top='btm --celsius'
 # tldr setup
 alias tldr='tldr'
 
-# bandwhich
-alias bandwhich='sudo ~/.cargo/bin/bandwhich -i enp5s0 --dns-server 10.10.10.1'
-
 # grex
 alias grex='grex --digits --spaces --repetitions --colorize'
 
 # copy pipe i.e. copy current path to clipboard: pwd | copy
-alias copy='xclip -sel clip'
+# https://archlinux.org/packages/?name=wl-clipboard
+alias copy='wl-copy'
 
 # hx
 alias hex='hx'
@@ -57,7 +55,7 @@ alias python3='python3.9'
 
 # DOS 6.22
 alias cls='clear'
-alias dir='exa --all --header --long --group --classify --git --icons --group-directories-first'
+alias dir='eza --all --header --long --group --classify --git --icons --group-directories-first'
 
 # git
 alias gs='git status'
@@ -69,13 +67,10 @@ alias branch='git rev-parse --abbrev-ref HEAD'
 alias gup='git push --set-upstream origin `branch`'
 
 # git interactive branch selection, enter checks it out, tab copies it to the clipboard
-alias branches="git for-each-ref --sort='authordate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads | fzf --tac --bind 'enter:execute(echo {} | rev | cut -f1 | rev | xargs git checkout)+abort' --bind 'tab:execute-silent(echo {} | rev | cut -f1 | rev | xclip -selection clipboard)+abort'"
+alias branches="git for-each-ref --sort='authordate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads | fzf --tac --bind 'enter:execute(echo {} | rev | cut -f1 | rev | xargs git checkout)+abort' --bind 'tab:execute-silent(echo {} | rev | cut -f1 | rev | wl-copy)+abort'"
 
 # open all git merge conflicts or currently changed files in VS Code
 alias fix="git diff --name-only | uniq | xargs code"
-
-# git commit with commitizen
-alias cz='npx cz'
 
 # git|k force EN alias
 alias git='LANG=en_US.UTF-8 git'
@@ -106,3 +101,4 @@ alias chrome-debug='google-chrome --remote-debugging-port=9222 --user-data-dir="
 
 # List VS Code Extensions
 alias list-code-extensions='code --list-extensions | xargs -L 1 echo code --install-extension'
+

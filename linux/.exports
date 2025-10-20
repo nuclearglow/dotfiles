@@ -1,5 +1,8 @@
 # exports on every system
 
+# ollama download directory
+export OLLAMA_MODELS=$HOME/.ollama/models
+
 # Set KDE theme
 export QT_STYLE_OVERRIDE=kvantum
 export QT_QPA_PLATFORMTHEME=gtk2
@@ -11,17 +14,29 @@ export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 # Manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# Github CLI
-export GH_EDITOR="code"
-
 # Kubernetes
 export KUBECONFIG=$HOME/.kube/config
 
 # Android
 export ANDROID_HOME=/usr/lib/android-sdk
 
-# Initialize Julia
-export PATH=$HOME/.julia/julia-1.8.3/bin:$PATH
-
 # Initialize GoBin
 export PATH=$HOME/go/bin:$PATH
+
+# Terminal Color Escape Sequences
+export COLOR_WHITE="1;37"
+export COLOR_BLACK="0;30"
+export COLOR_RED="0;31"
+export COLOR_GREEN="0;32"
+export COLOR_BROWN_ORANGE="0;33"
+export COLOR_BLUE="0;34"
+export COLOR_PURPLE="0;35"
+export COLOR_CYAN="0;36"
+export COLOR_LIGHT_GRAY="0;37"
+export COLOR_DARK_GRAY="1;30"
+export COLOR_LIGHT_RED="1;31"
+export COLOR_LIGHT_GREEN="1;32"
+export COLOR_YELLOW="1;33"
+export COLOR_LIGHT_BLUE="1;34"
+export COLOR_LIGHT_PURPLE="1;35"
+export COLOR_LIGHT_CYAN="1;36"

@@ -8,16 +8,17 @@ fi
 
 if [ -n "$SESSION_TYPE" ]; then
     # on ssh just display a welcome message
-    cat ~/.ssh/hobel
+    cat ~/.ssh/crunchy
 else
+    # Set Keyboard XKB Layout
+    setxkbmap -model pc105 -layout de -variant nodeadkeys -option terminate:ctrl_alt_bksp
+
     # Set up keyboard lighting
     g810-led -p ~/.g815/nukeys
 
-    # Set up the G Keys
-    # TODO: set codename
-    ratbagctl singing-gundi profile 0 button 0 action set special unknown
-    ratbagctl singing-gundi profile 0 button 1 action set special unknown
-    ratbagctl singing-gundi profile 0 button 2 action set special unknown
-    ratbagctl singing-gundi profile 0 button 3 action set special unknown
-    ratbagctl singing-gundi profile 0 button 4 action set special unknown
+    # Set up keychain
+    #export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
+    #eval `keychain --quick --eval --agents ssh id_svenvowe`
+    #eval $(ssh-agent)
+    #ssh-add
 fi
