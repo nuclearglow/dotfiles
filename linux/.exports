@@ -23,6 +23,16 @@ export ANDROID_HOME=/usr/lib/android-sdk
 # Initialize GoBin
 export PATH=$HOME/go/bin:$PATH
 
+# Pre-Commit Cache folder
+export PRE_COMMIT_HOME=$HOME/.pre-commit
+
+export MISE_ENV_SHELL_EXPAND=true
+
+# AI Settings
+
+# Gemini AI Default Model
+export GEMINI_MODEL="gemini-2.5-flash"
+
 # Terminal Color Escape Sequences
 export COLOR_WHITE="1;37"
 export COLOR_BLACK="0;30"

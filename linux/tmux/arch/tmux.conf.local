@@ -441,8 +441,8 @@ set-option -g default-command zsh
 # Use keychain for SSH authentication
 set-environment -g 'SSH_AUTH_SOCK' /run/user/1000/keyring/ssh
 
-# reset variables but not DISPLAY
-set-option -g update-environment 'KRB5CCNAME SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY'
+# reset variables
+set-option -ag update-environment "DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR DBUS_SESSION_BUS_ADDRESS"
 
 # -- tpm -----------------------------------------------------------------------
 

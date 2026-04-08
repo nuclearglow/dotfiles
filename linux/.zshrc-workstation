@@ -44,6 +44,7 @@ export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
 export ZLE_RPROMPT_INDENT=0
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -166,6 +167,12 @@ eval "$(direnv hook zsh)"
 # Initialize zoxide <- https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
+# Initialize uv <- https://docs.astral.sh/uv/getting-started/installation/
+eval "$(uv generate-shell-completion zsh)"
+
+# TODO: Initialize mise <- https://mise.jdx.dev/ - then deactivate fnm and direnv
+# eval "$(/usr/bin/mise activate zsh)"
+
 ### Custom Dotfiles ###
 #
 # * ~/.keys can be used to set and document keybindings
@@ -187,3 +194,8 @@ fi
 # powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/nuky/.lmstudio/bin"
+# End of LM Studio CLI section
+

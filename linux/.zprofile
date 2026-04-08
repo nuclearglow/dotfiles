@@ -15,10 +15,4 @@ else
 
     # Set up keyboard lighting
     g810-led -p ~/.g815/nukeys
-
-    # Set up keychain
-    #export SSH_ASKPASS="/usr/bin/qt4-ssh-askpass"
-    #eval `keychain --quick --eval --agents ssh id_svenvowe`
-    #eval $(ssh-agent)
-    #ssh-add
 fi
