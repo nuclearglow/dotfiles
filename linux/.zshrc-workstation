@@ -1,9 +1,6 @@
 # Enable zsh profiler, run zprof for zsh self profiling
 # zmodload zsh/zprof
 
-# enable ZSH ssh agent foprwarding
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-
 # enable Makefile completion
 zstyle ':completion::complete:make:*:targets' call-command true
 
@@ -144,9 +141,6 @@ setopt COMPLETE_ALIASES
 # zsh autoloading enabled
 autoload -U compinit && compinit -i
 
-# Initialize Keychain SSH
-source ~/.keychain/`uname -n`-sh
-
 # Initialize fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -186,16 +180,10 @@ for file in ~/.{aliases,exports,functions,extras,keys}; do
 done;
 unset file;
 
-# if we're in TMUX, load the environment variables
-if [ -n "${TMUX}" ]; then
-  eval "$(tmux show-environment -s)"
-fi
+# warn when a tool replaced a dotfiles symlink with a regular file
+(( $+commands[dotfiles-check] )) && dotfiles-check -q
 
 # powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/nuky/.lmstudio/bin"
-# End of LM Studio CLI section
 

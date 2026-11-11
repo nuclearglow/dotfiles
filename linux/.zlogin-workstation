@@ -5,23 +5,3 @@ then
 else
     echo "macchina not found. `cargo install macchina`"
 fi;
-
-# Predictable SSH authentication socket location.
-#SOCK=/run/user/1000/keyring/ssh
-#if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
-#then
-#    ln -sf $SSH_AUTH_SOCK $SOCK
-#    export SSH_AUTH_SOCK=$SOCK
-#fi
-
-# Only start keychain if ALACRITTY is set
-if [ -n "$ALACRITTY" ];
-then
-  eval `keychain --eval id_svenvowe`
-
-  # only start ssh-agent if not already running
-  if ! ssh-add -l > /dev/null 2>&1; then
-    eval $(ssh-agent -s)
-    ssh-add
-  fi
-fi
