@@ -27,7 +27,7 @@ alias cloc='tokei'
 alias du='dust'
 
 # bottom instead of top
-alias top='btm --celsius'
+alias top='btop'
 
 # tldr setup
 alias tldr='tldr'

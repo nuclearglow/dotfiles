@@ -1,1 +1,3 @@
 docker/webdev-router/config/certs/*
+# private: hostname and folder names, only needed locally for tmux2herdr.py
+archive/tmux/resurrect-*.txt

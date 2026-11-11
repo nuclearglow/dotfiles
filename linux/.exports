@@ -50,3 +50,19 @@ export COLOR_YELLOW="1;33"
 export COLOR_LIGHT_BLUE="1;34"
 export COLOR_LIGHT_PURPLE="1;35"
 export COLOR_LIGHT_CYAN="1;36"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/nuky/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# >>> oh-my-opencode-slim background subagents >>>
+export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
+# <<< oh-my-opencode-slim background subagents <<<
+
+# pnpm
+export PNPM_HOME="/home/nuky/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

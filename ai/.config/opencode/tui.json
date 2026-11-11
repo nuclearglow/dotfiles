@@ -5,5 +5,8 @@
     "enabled": true
   },
   "theme": "system",
-  "diff_style": "auto"
+  "diff_style": "auto",
+  "plugin": [
+    "oh-my-opencode-slim"
+  ]
 }

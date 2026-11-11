@@ -4,7 +4,7 @@
     "alibaba": {
       "options": {
         "timeout": 600000,
-        "chunkTimeout": 30000,
+        "chunkTimeout": 30000
       }
     },
     "lmstudio": {
@@ -29,20 +29,20 @@
           }
         },
         "gemma-4-e4b": {
-            "name": "Gemma 4 (Local)",
-            "limit": {
-                "context": 131072,
-                "output": 8192
-            }
+          "name": "Gemma 4 (Local)",
+          "limit": {
+            "context": 131072,
+            "output": 8192
+          }
         },
         "qwen/qwen3.6-27b": {
           "limit": {
-              "context": 90000,
-              "output": 8192
-            }
+            "context": 90000,
+            "output": 8192
+          }
         }
       }
-    },
+    }
   },
   "compaction": {
     "auto": true,
@@ -63,36 +63,44 @@
     "ansible": false
   },
   "permission": {
-    "bash": {
-      "*": "ask",
-      "git *": "deny",
-      "git log": "allow",
-      "git log *": "allow",
-      "git status": "allow",
-      "git status *": "allow",
-      "npm *": "ask",
-      "npm show *": "allow",
-      "npm run check *": "allow",
-      "npm run test:e2e": "allow",
-      "npx prisma generate *": "allow",
-      "rm *": "deny",
-      "grep *": "allow",
-      "ls": "allow",
-      "ls *": "allow",
-      "head *": "allow",
-    },
-    "edit": {
-      "*": "ask",
-      "README.md": "allow",
-      "docs/*": "allow"
-    },
+    "*": "allow",
+    "webfetch": "ask",
     "read": {
       "*": "allow",
       "*.env": "deny",
-      "*.envrc": "deny"
+      "*.envrc": "deny",
+      "*.env.*": "ask"
     },
-    "skill": {
-      "*": "ask"
+    "external_directory": {
+      "~/workspace/**": "allow"
+    }
+  },
+  "plugin": [
+    "oh-my-opencode-slim"
+  ],
+  "lsp": true,
+  "mcp": {
+    "rea": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "rea-agents@6.8.0",
+        "mcp"
+      ],
+      "enabled": true,
+      "environment": {
+        "GHIDRA_INSTALL_DIR": "/opt/ghidra",
+        "HOPPER_LAUNCHER_PATH": "/opt/hopper/bin/Hopper",
+        "JAVA_HOME": "/usr/lib/jvm/java-27-openjdk",
+        "REA_TSHARK_COMMAND": "/usr/bin/tshark",
+        "REA_SIGROK_COMMAND": "/usr/bin/sigrok-cli",
+        "REA_WABT_BIN_DIRECTORY": "/usr/bin",
+        "REA_JADX_MCP_JAR": "/home/nuky/.local/share/rea/jadx-headless-mcp-0.7.1-all.jar",
+        "REA_BINWALK_COMMAND": "/usr/bin/binwalk",
+        "REA_UNBLOB_COMMAND": "/usr/bin/unblob",
+        "REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS": "120"
+      }
     }
   }
 }

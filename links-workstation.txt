@@ -1,0 +1,34 @@
+# Symlinks of the Arch workstation (crunchy): <path in $HOME>  <path in this repo>
+# Checked by `dotfiles-check`, used by `rea-update` (ai/ entries).
+
+# shell
+.zshrc                      linux/.zshrc-workstation
+.zlogin                     linux/.zlogin-workstation
+.zprofile                   linux/.zprofile
+.aliases                    linux/.aliases
+.exports                    linux/.exports
+.functions                  linux/.functions
+.keys                       linux/.keys
+.fzf.zsh                    linux/.fzf.zsh
+.p10k.zsh                   linux/.p10k.zsh
+
+# editor
+.vimrc                      linux/.vimrc
+.vim/colors/monokai.vim     linux/.vim/colors/monokai.vim
+
+# terminal
+.alacritty.toml             linux/alacritty/arch/.alacritty.toml
+.config/herdr/config.toml   linux/herdr/config.toml
+
+# hardware
+.g815/nukeys                linux/.g815/nukeys
+
+# scripts
+bin/dotfiles-check          linux/bin/dotfiles-check
+bin/rea-update              linux/bin/rea-update
+
+# ai agent harnesses
+.config/opencode/opencode.json            ai/.config/opencode/opencode.json
+.config/opencode/tui.json                 ai/.config/opencode/tui.json
+.config/opencode/oh-my-opencode-slim.json ai/.config/opencode/oh-my-opencode-slim.json
+.omp/agent/config.yml                     ai/.omp/agent/config.yml

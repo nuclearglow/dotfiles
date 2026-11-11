@@ -1,0 +1,111 @@
+{
+  "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
+  "preset": "opencode-go",
+  "presets": {
+    "openai": {
+      "orchestrator": {
+        "model": "openai/gpt-5.6-terra",
+        "variant": "xhigh",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "openai/gpt-5.6-sol",
+        "variant": "xhigh",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "skills": [],
+        "mcps": [
+          "websearch",
+          "context7",
+          "gh_grep"
+        ]
+      },
+      "explorer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "xhigh",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "opencode-go": {
+      "orchestrator": {
+        "model": "opencode/claude-opus-5-5",
+        "variant": "max",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "opencode/claude-opus-5-5",
+        "variant": "max",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "explorer": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "high",
+        "skills": [],
+        "mcps": [
+          "websearch",
+          "context7",
+          "gh_grep"
+        ]
+      },
+      "designer": {
+        "model": "opencode/gemini-4-argon",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "observer": {
+        "model": "opencode-go/gpt-6-luna",
+        "variant": "max",
+        "skills": [],
+        "mcps": []
+      }
+    }
+  },
+  "disabled_agents": []
+}
