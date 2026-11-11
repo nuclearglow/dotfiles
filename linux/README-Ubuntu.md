@@ -42,27 +42,29 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~
 git clone git@github.com:nuclearglow/dotfiles.git
 ```
 
-- Copy the files from here to $HOME
-- Copy rest of the files from .. to $HOME
-
-After installing all tools:
+After installing all tools, symlink the dotfiles into `$HOME`:
 
 ```shell
-ln -vfns /home/nuky/workspace/dotfiles/linux/.alacritty.yml .alacritty.yml
+cd ~
+ln -vfns /home/nuky/workspace/dotfiles/linux/alacritty/popos/.alacritty.toml .alacritty.toml
 ln -vfns /home/nuky/workspace/dotfiles/linux/.aliases .aliases
 ln -vfns /home/nuky/workspace/dotfiles/linux/.exports .exports
 ln -vfns /home/nuky/workspace/dotfiles/linux/.functions .functions
 ln -vfns /home/nuky/workspace/dotfiles/linux/.fzf.zsh .fzf.zsh
 ln -vfns /home/nuky/workspace/dotfiles/linux/.keys .keys
 ln -vfns /home/nuky/workspace/dotfiles/linux/.p10k.zsh .p10k.zsh
-ln -vfns /home/nuky/workspace/dotfiles/linux/.tmux.conf .tmux.conf
-ln -vfns /home/nuky/workspace/dotfiles/linux/.tmux.conf.local .tmux.conf.local
+ln -vfns /home/nuky/workspace/dotfiles/linux/.zprofile .zprofile
+ln -vfns /home/nuky/workspace/dotfiles/linux/.vimrc .vimrc
+cp /home/nuky/workspace/dotfiles/linux/.extras .extras   # local secrets, never linked
 ```
 
-Choose correct zshrc:
+Choose the matching zshrc / zlogin (`-workstation` or `-laptop`):
 
 ```shell
-ln -vfns /home/nuky/workspace/dotfiles/linux/.zshrc-* .zshrc
+ln -vfns /home/nuky/workspace/dotfiles/linux/.zshrc-laptop .zshrc
+ln -vfns /home/nuky/workspace/dotfiles/linux/.zlogin-laptop .zlogin
 ```
+
+tmux was retired, its old config is in `archive/tmux/`.
 
 ### install completions from .zshrc plugin list urls

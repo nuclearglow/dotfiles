@@ -1,85 +1,37 @@
 # Docker
 
-Build image
+## Images
+
+| Folder | What |
+|---|---|
+| `webdev-builder/` | Web development builder image (Ubuntu 18.04, Java, OWASP dependency check) |
+| `angular-deploy/` | nginx image serving a built Angular app with runtime config via `ngssc`; meant to be copied into an Angular project (expects `dist/`, `ngssc`, `start.sh` there) |
+| `webdev-router/` | Traefik HTTPS router for local development ([README](webdev-router/README.md)) |
+
+## Image development
+
+Enter the folder of the image you want to work on, then:
 
 ```shell
-docker build -t ubuntu-base-nuky .
+docker build -t webdev-builder .               # build
+docker run -it --name webdev-builder webdev-builder bash   # start and open a shell
+docker cp webdev-builder:/path/to/file local/path/to/file  # copy a file out
 ```
 
-Open zsh on container
+## Cheat sheet
 
 ```shell
-docker run --hostname=ubuntu-base-nuky -it ubuntu-base-nuky zsh
-```
-
-## Docker Image Development
-
-Enter the folder which image you want to work on.
-
-Build the image:
-
-```shell
-docker build -t webdev-builder .
-```
-
-To start the container and open a shell:
-
-```shell
-docker run -it webdev-builder bash
-```
-
-To copy a file from the container to the local fs:
-
-```shell
-docker cp webdev-builder:/path/to/file local/path/to/file
-```
-
-# Docker Cheat Sheet
-
-Start a container
-
-```shell
-docker run container-id
-```
-
-Open a shell in a container
-
-```
-docker -it container-id bash
-```
-
-Run a container, detach, expose ports destination:source on host and give it a name
-
-```shell
-docker run -d -p 8888:80 --name container-name container-id
-```
-
-See the ports exposed by a running container
-
-```shell
-docker port container-name
-```
-
-Delete and remove / prune all containers
-
-```
-docker container prune
+docker run image                                    # start a container
+docker exec -it container-name bash                 # shell in a running container
+docker run -d -p 8888:80 --name container-name image  # detached, host:container port, named
+docker port container-name                          # show exposed ports
+docker container prune                              # remove all stopped containers
 ```
 
 @see: https://docker-curriculum.com/
 
-# Installation
+## Installation
 
-## Mac OS X
-
-```shell
-brew cask install docker
-```
-
-# Linux
-
-TODO
-
-# Docker Images
-
-- `angular-builder`: Angular Builder Image with support for SCSS, Jest, ... TODO
+- Arch: `sudo pacman -S docker docker-compose && sudo systemctl enable --now docker.socket`,
+  then `sudo usermod -aG docker $USER` and log in again
+- Mac OS X: `brew install --cask docker`

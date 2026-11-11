@@ -1,27 +1,30 @@
 # Setup HTTPS dev for localhost
 
-* Install reqs:
+Traefik routes `https://localhost` to local containers, with a basic-auth protected dashboard at
+`https://localhost/dashboard/`.
 
-`sudo apt-get install libnss3-tools apache2-utils`
+* Install requirements:
+  * Arch: `sudo pacman -S nss apache mkcert` (`htpasswd` is part of `apache`)
+  * Ubuntu: `sudo apt-get install libnss3-tools apache2-utils`, then install
+    [mkcert](https://github.com/FiloSottile/mkcert)
 
-* Download and install mkcert
+* Install the local CA: `mkcert -install`
 
-https://github.com/FiloSottile/mkcert
+* Create a cert for localhost in `./config/certs` (git-ignored, see `config/traefik.toml`):
 
-* Install CA
+```shell
+mkcert -cert-file config/certs/localhost.pem -key-file config/certs/localhost-key.pem localhost
+```
 
-`mkcert -install`
+* Create the dashboard user in `.env` (git-ignored). Single quotes keep the `$` of the hash literal:
 
-* Make cert for localhost and put cert+key to
+```shell
+echo "TRAEFIK_DASHBOARD_USERS='$(htpasswd -nb admin <password>)'" > .env
+```
 
-`./config/certs`
+* Create the external network once and start routing:
 
-* Create basic auth user and insert to `docker-compose.yml`:
-
-`echo $(htpasswd -nb admin password) | sed -e s/\\$/\\$\\$/g`
-
-* Edit `docker-compose.yml` and set your config
-
-* Start routing
-
-`docker-compose up`
+```shell
+docker network create web
+docker compose up
+```

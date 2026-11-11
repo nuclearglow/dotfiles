@@ -36,9 +36,8 @@ services:
             - "traefik.http.routers.traefik.middlewares=admin"
             - "traefik.http.routers.traefik.tls=true"
             - "traefik.http.routers.traefik.entrypoints=websecure"
-            # dashboard basic auth
-            # echo $(htpasswd -nb admin password) | sed -e s/\\$/\\$\\$/g
-            - "traefik.http.middlewares.admin.basicauth.users=admin:$$apr1$$eJmCq7JN$$6qTnMj1hi9qXBOYBhdMhy."
+            # dashboard basic auth, set TRAEFIK_DASHBOARD_USERS in .env (see README)
+            - "traefik.http.middlewares.admin.basicauth.users=${TRAEFIK_DASHBOARD_USERS:?set TRAEFIK_DASHBOARD_USERS in .env}"
         volumes:
             - "/var/run/docker.sock:/var/run/docker.sock:ro"
             - "./config/:/config"

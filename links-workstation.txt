@@ -12,6 +12,9 @@
 .fzf.zsh                    linux/.fzf.zsh
 .p10k.zsh                   linux/.p10k.zsh
 
+# node (fnm reads it for shells starting in ~)
+.nvmrc                      linux/.nvmrc
+
 # editor
 .vimrc                      linux/.vimrc
 .vim/colors/monokai.vim     linux/.vim/colors/monokai.vim
