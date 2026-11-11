@@ -1,0 +1,49 @@
+modelRoles:
+  smol: opencode-go/deepseek-v4.1-flash:low
+  plan: opencode-go/kimi-k3.1-pro:high
+  advisor: opencode-go/qwen3.7-max:medium
+  default: opencode-go/deepseek-v4.1-flash:high
+  slow: opencode-go/gpt-6-luna:high
+symbolPreset: unicode
+theme:
+  dark: dark-reef
+  light: light
+setupVersion: 2
+statusLine:
+  preset: nerd
+  separator: powerline
+display:
+  shimmer: kitt
+  showTokenUsage: true
+advisor:
+  enabled: true
+prewalk:
+  enabled: true
+collab:
+  displayName: nuky
+autoResume: true
+features:
+  unexpectedStopDetection: smart
+branchSummary:
+  enabled: true
+memory:
+  backend: local
+autolearn:
+  enabled: true
+edit:
+  mode: hashline
+readLineNumbers: false
+lsp:
+  formatOnWrite: true
+bash:
+  enabled: true
+astGrep:
+  enabled: true
+checkpoint:
+  enabled: true
+security:
+  enabled: true
+secrets:
+  enabled: true
+composer:
+  shape: claude

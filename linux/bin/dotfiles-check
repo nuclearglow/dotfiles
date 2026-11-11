@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+# Verify that the dotfiles symlinks listed in links-workstation.txt are intact.
+# Only reports problems and prints the command to fix them; never changes anything.
+
+set -u
+
+usage() {
+    cat <<EOF
+Usage: dotfiles-check [-q] [-d]
+
+Checks every entry of the link list (default: <dotfiles>/links-workstation.txt).
+
+  -q  quiet: print nothing if all links are fine, one line per problem otherwise
+  -d  show a diff when a link was replaced by a file with different content
+  -h  show this help
+
+Environment: DOTFILES (repo root), DOTFILES_LINKS (link list).
+Exit status: 0 all fine, 1 problems found, 2 usage or setup error.
+EOF
+}
+
+quiet=0
+diffs=0
+while getopts qdh opt; do
+    case $opt in
+        q) quiet=1 ;;
+        d) diffs=1 ;;
+        h) usage; exit 0 ;;
+        *) usage >&2; exit 2 ;;
+    esac
+done
+
+self=$(readlink -f -- "${BASH_SOURCE[0]}")
+DOTFILES=${DOTFILES:-$(cd -- "${self%/*}/../.." && pwd)}
+LINKS=${DOTFILES_LINKS:-$DOTFILES/links-workstation.txt}
+
+if [[ ! -r $LINKS ]]; then
+    echo "dotfiles-check: link list not found: $LINKS" >&2
+    exit 2
+fi
+
+if [[ -t 1 ]]; then
+    red=$'\e[31m' yellow=$'\e[33m' green=$'\e[32m' dim=$'\e[2m' reset=$'\e[0m'
+else
+    red='' yellow='' green='' dim='' reset=''
+fi
+
+problems=0
+
+problem() { # <live> <message> [fix command]
+    problems=$((problems + 1))
+    if (( quiet )); then
+        echo "${yellow}dotfiles-check:${reset} ~/$1 ${red}$2${reset}"
+    else
+        echo "${red}✗${reset} ~/$1 ${red}$2${reset}"
+        [[ -n ${3:-} ]] && echo "    ${dim}fix:${reset} $3"
+    fi
+}
+
+while read -r live repo _; do
+    [[ -z ${live:-} || $live == \#* ]] && continue
+    l=$HOME/$live
+    r=$DOTFILES/$repo
+    relink="ln -sfn $r ~/$live"
+
+    if [[ ! -e $r ]]; then
+        problem "$live" "repo file missing: $repo"
+    elif [[ -L $l && $l -ef $r ]]; then
+        (( quiet )) || echo "${green}✓${reset} ~/$live ${dim}→ $repo${reset}"
+    elif [[ -L $l ]]; then
+        problem "$live" "points to $(readlink -- "$l") instead of $repo" "$relink"
+    elif [[ -e $l ]]; then
+        if cmp -s -- "$l" "$r"; then
+            problem "$live" "is a regular file (same content as repo)" "$relink"
+        else
+            problem "$live" "is a regular file with changes not in the repo" \
+                "review with 'dotfiles-check -d', then: cp ~/$live $r && $relink"
+            if (( diffs )); then
+                diff -u --label "repo: $repo" --label "live: ~/$live" -- "$r" "$l" | sed 's/^/    /'
+            fi
+        fi
+    elif [[ $live == */* ]]; then
+        problem "$live" "is missing" "mkdir -p ~/${live%/*} && $relink"
+    else
+        problem "$live" "is missing" "$relink"
+    fi
+done <"$LINKS"
+
+if (( problems )); then
+    (( quiet )) && echo "${yellow}dotfiles-check:${reset} run 'dotfiles-check' for fixes"
+    exit 1
+fi
+exit 0

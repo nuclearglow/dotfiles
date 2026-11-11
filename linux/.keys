@@ -1,7 +1,6 @@
 # Shell keys currently configured:
 
 #  Right Arrow / End: Complete suggestion
-#  CTRL+SPACE tmux search
 #  CTRL-R: fzf history completion
 #  TAB: fzf fuzzy completion for most commands
 # CTRL-T: fzf select file
@@ -10,10 +9,10 @@
 bindkey '^Z' fzf-file-widget
 
 # HOME
-bindkey '^[[H' beginning-of-line
+bindkey '^[OH' beginning-of-line
 
 # END
-bindkey '^[[F' end-of-line
+bindkey '^[OF' end-of-line
 
 # Accept zsh-autosuggestion on END <- https://github.com/zsh-users/zsh-autosuggestions#key-bindings
 bindkey '^[[F' autosuggest-accept
@@ -21,5 +20,3 @@ bindkey '^[[F' autosuggest-accept
 # STRG-B run alias branches - interactive git branch selection - see .aliases
 bindkey -s '^B' 'branches^M'
 
-# STRG+U run function tmuxurls - interactive URL selection to open in browser - see .functions
-bindkey -s '^U' 'tmuxurls^M'

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "alibaba": {
+      "options": {
+        "timeout": 600000,
+        "chunkTimeout": 30000
+      }
+    },
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      },
+      "models": {
+        "qwen3/qwen3-coder-next": {
+          "name": "Qwen3 Coder Next (Local)",
+          "limit": {
+            "context": 131072,
+            "output": 8192
+          }
+        },
+        "qwen/qwen3.5-9b": {
+          "name": "Qwen3.5 9B (Local)",
+          "limit": {
+            "context": 262144,
+            "output": 8192
+          }
+        },
+        "gemma-4-e4b": {
+          "name": "Gemma 4 (Local)",
+          "limit": {
+            "context": 131072,
+            "output": 8192
+          }
+        },
+        "qwen/qwen3.6-27b": {
+          "limit": {
+            "context": 90000,
+            "output": 8192
+          }
+        }
+      }
+    }
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+  "tools": {
+    "write": true,
+    "zsh": true,
+    "python": true,
+    "code": true,
+    "files": true,
+    "terminal": true,
+    "git": true,
+    "docker": false,
+    "kubernetes": false,
+    "terraform": false,
+    "ansible": false
+  },
+  "permission": {
+    "*": "allow",
+    "webfetch": "ask",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.envrc": "deny",
+      "*.env.*": "ask"
+    },
+    "external_directory": {
+      "~/workspace/**": "allow"
+    }
+  },
+  "plugin": [
+    "oh-my-opencode-slim"
+  ],
+  "lsp": true,
+  "mcp": {
+    "rea": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "rea-agents@6.8.0",
+        "mcp"
+      ],
+      "enabled": true,
+      "environment": {
+        "GHIDRA_INSTALL_DIR": "/opt/ghidra",
+        "HOPPER_LAUNCHER_PATH": "/opt/hopper/bin/Hopper",
+        "JAVA_HOME": "/usr/lib/jvm/java-27-openjdk",
+        "REA_TSHARK_COMMAND": "/usr/bin/tshark",
+        "REA_SIGROK_COMMAND": "/usr/bin/sigrok-cli",
+        "REA_WABT_BIN_DIRECTORY": "/usr/bin",
+        "REA_JADX_MCP_JAR": "/home/nuky/.local/share/rea/jadx-headless-mcp-0.7.1-all.jar",
+        "REA_BINWALK_COMMAND": "/usr/bin/binwalk",
+        "REA_UNBLOB_COMMAND": "/usr/bin/unblob",
+        "REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS": "120"
+      }
+    }
+  }
+}

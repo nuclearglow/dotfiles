@@ -1,0 +1,7 @@
+# If available, display sysinfo
+if command -v ~/.cargo/bin/macchina >/dev/null 2>&1;
+then
+    ~/.cargo/bin/macchina
+else
+    echo "macchina not found. `cargo install macchina`"
+fi;

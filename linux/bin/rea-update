@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+# Run `rea setup` (install/update the rea MCP server) without breaking the dotfiles symlinks.
+#
+# rea refuses to edit client configs that are symlinks, so for the duration of the run every
+# ai/ link from links-workstation.txt is swapped for a real copy. Afterwards (also on failure
+# or Ctrl-C) changes are copied into the repo and the symlinks are restored.
+
+set -u
+
+usage() {
+    cat <<EOF
+Usage: rea-update [VERSION] [-- SETUP_ARGS...]
+
+  VERSION     rea-agents version to run (default: latest)
+  SETUP_ARGS  arguments for 'rea setup', replacing the default: --client opencode
+
+Examples:
+  rea-update                       # latest rea, configure opencode
+  rea-update 6.9.0                 # specific version
+  rea-update -- --client opencode --dry-run
+
+Environment:
+  REA_NODE        fnm Node version to run rea with (default: 26)
+  DOTFILES        repo root
+  DOTFILES_LINKS  link list
+EOF
+}
+
+# Node.js versions supported by rea-agents (package.json "engines" of rea 6.8.0).
+node_supported() { # <version>
+    local major minor patch
+    IFS=. read -r major minor patch <<<"$1"
+    case $major in
+        22) (( minor > 23 || (minor == 23 && patch >= 4) )) ;;
+        24) (( minor > 22 || (minor == 22 && patch >= 1) )) ;;
+        *) (( major > 26 || (major == 26 && (minor > 12 || (minor == 12 && patch >= 1))) )) ;;
+    esac
+}
+
+version=latest
+setup_args=(--client opencode)
+while (( $# )); do
+    case $1 in
+        -h|--help) usage; exit 0 ;;
+        --) shift; setup_args=("$@"); break ;;
+        -*) usage >&2; exit 2 ;;
+        *) version=$1; shift ;;
+    esac
+done
+
+self=$(readlink -f -- "${BASH_SOURCE[0]}")
+bindir=${self%/*}
+DOTFILES=${DOTFILES:-$(cd -- "$bindir/../.." && pwd)}
+LINKS=${DOTFILES_LINKS:-$DOTFILES/links-workstation.txt}
+export DOTFILES DOTFILES_LINKS=$LINKS
+
+if [[ ! -r $LINKS ]]; then
+    echo "rea-update: link list not found: $LINKS" >&2
+    exit 2
+fi
+
+# Run rea with a fixed Node version instead of whatever fnm picked for the current directory.
+node_version=${REA_NODE:-26}
+if command -v fnm >/dev/null; then
+    runner=(fnm exec "--using=$node_version" --)
+else
+    runner=()
+fi
+node=$("${runner[@]}" node -p process.versions.node 2>/dev/null)
+if [[ -z $node ]] || ! node_supported "$node"; then
+    echo "rea-update: Node ${node:-not found} (REA_NODE=$node_version) is not supported by rea," >&2
+    echo "rea-update: it needs 22.x >= 22.23.4, 24.x >= 24.22.1 or >= 26.12.1." >&2
+    exit 1
+fi
+
+lives=()
+repos=()
+while read -r live repo _; do
+    [[ -z ${live:-} || $live == \#* || $repo != ai/* ]] && continue
+    lives+=("$HOME/$live")
+    repos+=("$DOTFILES/$repo")
+done <"$LINKS"
+
+# Only touch links that are intact; anything else needs a human look first.
+for i in "${!lives[@]}"; do
+    if ! [[ -L ${lives[i]} && ${lives[i]} -ef ${repos[i]} ]]; then
+        echo "rea-update: ${lives[i]/#$HOME/\~} is not a symlink to the repo, aborting." >&2
+        echo "rea-update: run 'dotfiles-check' first." >&2
+        exit 1
+    fi
+done
+
+restored=0
+restore() {
+    (( restored )) && return
+    restored=1
+    local i l r changed=()
+    for i in "${!lives[@]}"; do
+        l=${lives[i]} r=${repos[i]}
+        [[ -L $l ]] && continue
+        if [[ -f $l ]] && ! cmp -s -- "$l" "$r"; then
+            cp -- "$l" "$r" && changed+=("${r#"$DOTFILES"/}")
+        fi
+        mkdir -p -- "${l%/*}"
+        ln -sfn -- "$r" "$l.rea-update.$$" && mv -fT -- "$l.rea-update.$$" "$l"
+    done
+    if (( ${#changed[@]} )); then
+        echo "rea-update: rea changed ${changed[*]}"
+        echo "rea-update: review with: git -C $DOTFILES diff -- ai/"
+    fi
+    "$bindir/dotfiles-check" -q
+}
+trap restore EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+for i in "${!lives[@]}"; do
+    cp -p --remove-destination -- "${repos[i]}" "${lives[i]}" || exit 1
+done
+
+"${runner[@]}" npx -y "rea-agents@$version" setup "${setup_args[@]}"

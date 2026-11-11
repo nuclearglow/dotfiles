@@ -1,17 +1,10 @@
 # Linux Desktop
 
-Ulauncher
-sudo add-apt-repository "ppa:agornostal/ulauncher"
-sudo apt-get update
-sudo apt-get install ulauncher
+Ulauncher sudo add-apt-repository "ppa:agornostal/ulauncher" sudo apt-get update sudo apt-get install ulauncher
 
-Peek
-https://github.com/phw/peek#ubuntu
+Peek https://github.com/phw/peek#ubuntu
 
-Caffeine
-sudo add-apt-repository ppa:caffeine-developers/ppa
-sudo apt-get update
-sudo apt-get install caffeine
+Caffeine sudo add-apt-repository ppa:caffeine-developers/ppa sudo apt-get update sudo apt-get install caffeine
 
 ## fzf
 
@@ -25,8 +18,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 ### install and make default
 
-https://wiki.ubuntuusers.de/Zsh/
-https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell
+https://wiki.ubuntuusers.de/Zsh/ https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell
 
 ### oh-my-zsh
 

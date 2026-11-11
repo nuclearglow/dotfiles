@@ -1,3 +1,17 @@
+[window]
+title = "Alacritty"
+decorations = "none"
+decorations_theme_variant = "Dark"
+startup_mode = "Maximized"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 7
+y = 7
+
 [bell]
 duration = 0
 
@@ -30,7 +44,7 @@ background = "#feffff"
 text = "#282a36"
 
 [cursor]
-unfocused_hollow = false
+unfocused_hollow = true
 
 [cursor.style]
 blinking = "Off"
@@ -38,24 +52,18 @@ shape = "Beam"
 
 [env]
 WINIT_X11_SCALE_FACTOR = "1.0"
+ALACRITTY = "true"
 
 [font.normal]
-family = "MesloLGS NF"
+family = "MesloLGS Nerd Font"
 style = "Regular"
 
 [scrolling]
 history = 100000
 
-[shell]
-args = ["-l", "-c", "tmux -2 attach-session -t freelance"]
+[selection]
+save_to_clipboard = true
+
+[terminal.shell]
 program = "/usr/bin/zsh"
-
-[window]
-decorations = "none"
-decorations_theme_variant = "Dark"
-startup_mode = "Maximized"
-title = "Alacritty"
-
-[window.padding]
-x = 0
-y = 7
+args = ["-l", "-c", "tmux -2 attach-session -t freelance"]
