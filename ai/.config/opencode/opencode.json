@@ -24,7 +24,7 @@
         "qwen/qwen3.5-9b": {
           "name": "Qwen3.5 9B (Local)",
           "limit": {
-            "context": 8192,
+            "context": 262144,
             "output": 8192
           }
         },
@@ -33,6 +33,12 @@
             "limit": {
                 "context": 131072,
                 "output": 8192
+            }
+        },
+        "qwen/qwen3.6-27b": {
+          "limit": {
+              "context": 90000,
+              "output": 8192
             }
         }
       }
